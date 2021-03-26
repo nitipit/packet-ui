@@ -1,30 +1,48 @@
 @use "sass:color";
 @use '../_mixin';
 
-@mixin slider-thumb($thumb-color: color.adjust(white, $lightness: 80%)) {
+@mixin slider-thumb(
+        $color: color.adjust(white, $lightness: 80%),
+        $width: 1.2em,
+        $height: 1.2em,
+        $border: 1px solid,
+        $border-radius: 50%
+    ) {
     appearance: none;
-    width: 1.2em;
-    height: 1.2em;
-    background-color: $thumb-color;
+    width: $width;
+    height: $height;
+    background-color: $color;
     border: 1px solid;
-    border-color: color.adjust($thumb-color, $lightness: -50%);
-    border-radius: 50%;
+    border-color: color.adjust($color, $lightness: -50%);
+    border-radius: $border-radius;
     cursor: pointer;
 }
 
 @mixin slider(
         $thumb-color: color.adjust(white, $lightness: -10%),
         $thumb-color-active: orange,
-        $bar-color: color.adjust(white, $lightness: -20%)) {
+        $thumb-width: 1.2em,
+        $thumb-height: 1.2em,
+        $thumb-border: 1px solid,
+        $thumb-border-radius: 50%,
+        $bar-color: color.adjust(white, $lightness: -20%),
+        $bar-height: 0.25em
+    ) {
     appearance: none;
-    height: 0.2em;
+    height: $bar-height;
     background-color: $bar-color;
     outline: none;
     transition: opacity .2s;
     padding: 0;
 
     &::-webkit-slider-thumb {
-        @include slider-thumb($thumb-color);
+        @include slider-thumb(
+            $color: $thumb-color,
+            $width: $thumb-width,
+            $height: $thumb-height,
+            $border: $thumb-border,
+            $border-radius: $thumb-border-radius
+        );
     }
     &::-webkit-slider-thumb:hover {
         background-color: $thumb-color-active;
@@ -33,7 +51,13 @@
         background-color: $thumb-color-active;
     }
     &::-moz-range-thumb {
-        @include slider-thumb($thumb-color);
+        @include slider-thumb(
+            $color: $thumb-color,
+            $width: $thumb-width,
+            $height: $thumb-height,
+            $border: $thumb-border,
+            $border-radius: $thumb-border-radius
+        );
     }
     &::-moz-range-thumb:hover {
         background-color: $thumb-color-active;

@@ -103,22 +103,22 @@
 ### SCSS
 
 ```scss
+@use 'sass:color';
 @use 'path/to/_ui.scss';
 
 input[type="range"] {
     @include ui.slider(
-        $thumb-color: grey,
+        $thumb-color: color.adjust(white, $lightness: -10%),
         $thumb-color-active: orange,
-        $bar-color: grey)
+        $thumb-width: 1.2em,
+        $thumb-height: 1.2em,
+        $thumb-border: 1px solid,
+        $thumb-border-radius: 50%,
+        $bar-color: color.adjust(white, $lightness: -20%),
+        $bar-height: 0.25em
+    )
 }
 ```
-
-|Argument|Description|Example value|
-|---|---|---|
-|`$thumb-color`|Slider's thumb color : Color supported by **CSS**, **Stylus** or **Bits UI Color**|`red` `#AAA`|
-|`$thumb-color-active`|Slider's thumb color for **active** and **hover** state|`red` `#AAA`|
-|`$bar-color`|Slider's bar color|`red` `#AAA`|
-
 
 ## Tag Input
 ---

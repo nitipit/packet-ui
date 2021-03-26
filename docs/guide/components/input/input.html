@@ -128,41 +128,22 @@ customElements.define('pkt-icon', Icon);  // define custom element for icons
 <pre><code class="language-html">&lt;input type=&quot;range&quot;&gt;
 </code></pre>
 <h3>SCSS</h3>
-<pre><code class="language-scss">@use 'path/to/_ui.scss';
+<pre><code class="language-scss">@use 'sass:color';
+@use 'path/to/_ui.scss';
 
 input[type=&quot;range&quot;] {
     @include ui.slider(
-        $thumb-color: grey,
+        $thumb-color: color.adjust(white, $lightness: -10%),
         $thumb-color-active: orange,
-        $bar-color: grey)
+        $thumb-width: 1.2em,
+        $thumb-height: 1.2em,
+        $thumb-border: 1px solid,
+        $thumb-border-radius: 50%,
+        $bar-color: color.adjust(white, $lightness: -20%),
+        $bar-height: 0.25em
+    )
 }
 </code></pre>
-<table>
-<thead>
-<tr>
-  <th>Argument</th>
-  <th>Description</th>
-  <th>Example value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-  <td><code>$thumb-color</code></td>
-  <td>Slider's thumb color : Color supported by <strong>CSS</strong>, <strong>Stylus</strong> or <strong>Bits UI Color</strong></td>
-  <td><code>red</code> <code>#AAA</code></td>
-</tr>
-<tr>
-  <td><code>$thumb-color-active</code></td>
-  <td>Slider's thumb color for <strong>active</strong> and <strong>hover</strong> state</td>
-  <td><code>red</code> <code>#AAA</code></td>
-</tr>
-<tr>
-  <td><code>$bar-color</code></td>
-  <td>Slider's bar color</td>
-  <td><code>red</code> <code>#AAA</code></td>
-</tr>
-</tbody>
-</table>
 <h2>Tag Input</h2>
 <hr />
 <div style="margin-top: 2rem;">
