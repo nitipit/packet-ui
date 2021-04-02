@@ -1,34 +1,39 @@
-import {html, render} from 'lit-html'
+import {html, render} from 'lit-html';
 
 export class Sidebar extends HTMLElement {
     constructor() {
-        super()
+        super();
         if (typeof this.getAttribute('show') === 'undefined') {
-            return
+            return;
         }
-        this.el = {}
-        let wrapper = this.querySelector('[el="wrapper"]') ||
-            html`<div el="wrapper">`
-        let overlay = this.querySelector('[el="overlay"]') ||
-            html`<div el="overlay">`
-        this.template = html`
-            ${wrapper}
+        this.el = {};
+        this.el.sidebar = null;
+        this.el.overlay = null;
+    }
+
+    template() {
+        let sidebar = this.querySelector('[el="sidebar"]')
+            || html`<div el="sidebar">`;
+        let overlay = this.querySelector('[el="overlay"]')
+            || html`<div el="overlay">`;
+        return html`
+            ${sidebar}
             ${overlay}
         `
     }
 
     render() {
-        render(this.template, this)
-        this.el.wrapper = this.querySelector('[el="wrapper"]')
-        this.el.overlay = this.querySelector('[el="overlay"]')
+        render(this.template(), this);
+        this.el.sidebar = this.querySelector('[el="sidebar"]');
+        this.el.overlay = this.querySelector('[el="overlay"]');
         this.el.overlay.addEventListener('click', () => {
-            this.hide_sidebar()
+            this.hide_sidebar();
         })
     }
 
     connectedCallback() {
-        this.render()
-        let media_query = '(min-width: ' + this.getAttribute('show') + ')'
+        this.render();
+        let media_query = '(min-width: ' + this.getAttribute('show') + ')';
         this.media_query = window.matchMedia(media_query);
         if (this.media_query.matches) {
             setTimeout(() => {
@@ -42,24 +47,24 @@ export class Sidebar extends HTMLElement {
 
     media_change() {
         if (this.media_query.matches) {
-            this.show_sidebar_no_overlay()
+            this.show_sidebar_no_overlay();
         } else {
-            this.hide_sidebar()
+            this.hide_sidebar();
         }
     }
 
     show_sidebar() {
-        this.el.wrapper.classList.add('show')
-        this.el.overlay.classList.add('show')
+        this.el.sidebar.classList.add('show');
+        this.el.overlay.classList.add('show');
     }
 
     show_sidebar_no_overlay() {
-        this.el.wrapper.classList.add('show')
-        this.el.overlay.classList.remove('show')
+        this.el.sidebar.classList.add('show');
+        this.el.overlay.classList.remove('show');
     }
 
     hide_sidebar() {
-        this.el.wrapper.classList.remove('show')
-        this.el.overlay.classList.remove('show')
+        this.el.sidebar.classList.remove('show');
+        this.el.overlay.classList.remove('show');
     }
 }

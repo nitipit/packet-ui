@@ -3,6 +3,7 @@ import xml from 'highlight.js/lib/languages/xml.js';
 import javascript from 'highlight.js/lib/languages/javascript.js';
 import css from 'highlight.js/lib/languages/css.js';
 import scss from 'highlight.js/lib/languages/scss.js';
+import '../src/packet-ui.js';
 
 hljs.registerLanguage('html', xml);
 hljs.registerLanguage('javascript', javascript);

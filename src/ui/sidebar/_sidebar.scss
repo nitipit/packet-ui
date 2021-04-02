@@ -3,7 +3,7 @@
 @mixin sidebar($bg-color: orange) {
     position: absolute;
     top: 0;
-    [el="wrapper"] {
+    [el="sidebar"] {
         @include mixin.bg-color($bg-color);
         position: fixed;
         z-index: 101;
@@ -17,27 +17,6 @@
         will-change: transform;
         &.show {
             transform: translateX(0)
-        }
-    }
-
-    ul.sidebar {
-        $padding-left: 1rem;
-        margin: 0;
-        padding-left: $padding-left;
-        list-style: none;
-        a {
-            line-height: 2rem;
-            display: block;
-        }
-        li {
-            padding-left: 0;
-            min-height: 2rem;
-            line-height: 2rem;
-        }
-        ul {
-            margin: 0;
-            list-style: none;
-            padding-left: $padding-left;
         }
     }
 
