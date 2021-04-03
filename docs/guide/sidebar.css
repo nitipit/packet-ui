@@ -9,7 +9,7 @@
   z-index: 100;
 }
 
-pkt-sidebar [el=wrapper] {
+pkt-sidebar [el=sidebar] {
   width: 260px;
 }
 pkt-sidebar [el=title] {
@@ -48,7 +48,7 @@ pkt-sidebar [el=content] .h {
 pkt-sidebar [el=content] a {
   display: block;
   width: 100%;
-  padding: 0 0.5rem;
+  padding: 0.2rem 0.5rem;
   text-decoration: none;
 }
 pkt-sidebar [el=content] a:hover {

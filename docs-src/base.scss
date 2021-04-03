@@ -2,6 +2,8 @@
 @use '_mixin';
 @use 'sass:color';
 @use 'sass:map';
+@use '../node_modules/normalize.css/normalize.css';
+@use '../src/packet-ui.scss';
 
 @font-face {
     font-family: 'fira-sans';
@@ -23,6 +25,7 @@
 
 html {
     font-family: fira-sans;
+    font-size: 18px;
 }
 
 a { color: inherit; }
@@ -72,4 +75,12 @@ blockquote {
     pkt-icon {
         color: map.get(var.$scheme, color-a1);
     }
+}
+
+#sidebar-button {
+    position: fixed;
+    top: 1.5rem;
+    left: 1.5rem;
+    font-size: 1.25rem;
+    z-index: 100;
 }

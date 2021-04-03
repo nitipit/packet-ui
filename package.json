@@ -22,5 +22,8 @@
     "files": [
         "dist/**/*",
         "src/**/*"
-    ]
+    ],
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.0.0-beta.2"
+    }
 }

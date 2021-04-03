@@ -3,15 +3,13 @@
 
 <title>Packet UI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-<link rel="stylesheet" href="../../../static/lib/packet-ui/normalize.css?v=26">
-<link rel="stylesheet" href="../../../static/lib/packet-ui/packet-ui.css?v=26">
 <link icon rel="preload" set="adwaita"
-    href="../../../static/lib/adwaita-icon-web/adwaita.svg?v=26"
+    href="../../../_lib/adwaita-icon-web/adwaita.svg?v=26"
     as="image" type="image/svg+xml">
 <link icon rel="preload" set="brand"
-    href="../../../static/asset/icon/brand/symbol-defs.svg?v=26"
+    href="../../../_static/icon/symbol-defs.svg?v=26"
     as="image" type="image/svg+xml">
-<link rel="stylesheet" href="../../../static/lib/highlight.js/atom-one-dark.css?v=26">
+<link rel="stylesheet" href="../../../_lib/highlight.js/atom-one-dark.css?v=26">
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36104934-6"></script>
@@ -24,15 +22,13 @@
 <!-- End Google Analytics -->
 
 <script type="module">
-import { Icon } from '../../../static/lib/adwaita-icon-web/icon.js';
+import { Icon } from '../../../_lib/adwaita-icon-web/icon.js';
 customElements.define('pkt-icon', Icon);  // define custom element for icons
 </script>
+<link rel="stylesheet" href="../../../_lib/packet-ui/packet-ui.css?v=26">
+<script defer src="../../../_lib/packet-ui/packet-ui.js?v=26"></script>
 <link rel="stylesheet" href="../../../base.css?v=26">
-
-<script defer src="../../../static/lib/packet-ui/packet-ui.js?v=26"></script>
-<script defer src="../../../base.js"></script>
-
-
+<script defer src="../../../base.js?v=26"></script>
 
 
 <link rel="stylesheet" href="../../../guide/base.css?v=26">
@@ -115,6 +111,8 @@ pkt-checkbox {
 
 
 
+
+
 <script>
 var sidebar = null // declare `sidebar` as global variable
 window.addEventListener('load', function () {
@@ -130,7 +128,7 @@ window.addEventListener('load', function () {
     <pkt-icon set="adwaita" name="view-dual"></pkt-icon>
 </div>
 <pkt-sidebar id="sidebar" show="1150px">
-    <div el="wrapper">
+    <div el="sidebar">
         <div el="title" class="bg-a1">
             <a href="../../../">Packet UI</a>
             <pkt-button-square onclick="sidebar.hide_sidebar()">
@@ -155,6 +153,7 @@ window.addEventListener('load', function () {
             <a href="../../../guide/components/input/input.html">Input</a>
             <a href="../../../guide/components/menu/menu.html">Menu</a>
             <a href="../../../guide/components/path/path.html">Path</a>
+            <a href="../../../guide/components/panel-edge/panel-edge.html">Panel Edge</a>
             <a href="../../../guide/components/progress/progress.html">Progress</a>
             <a href="../../../guide/components/sidebar/sidebar.html">Sidebar</a>
             <a href="../../../guide/components/switch/switch.html">Switch</a>

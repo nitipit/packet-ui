@@ -24,6 +24,7 @@ pkt-sidebar {
             text-align: center;
             width: 100%;
             text-decoration: none;
+
         }
         pkt-button-square {
             font-size: 1.5rem;
@@ -43,7 +44,7 @@ pkt-sidebar {
         a {
             display: block;
             width: 100%;
-            padding: 0 0.5rem;
+            padding: 0.2rem 0.5rem;
             text-decoration: none;
             &:hover {
                 background-color: red;

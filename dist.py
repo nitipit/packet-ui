@@ -2,7 +2,6 @@ import asyncio
 from pathlib import Path
 import shutil
 import argparse
-from watchgod import awatch, Change
 
 
 class PacketUI:
@@ -24,81 +23,61 @@ class PacketUI:
         # Copy SCSS
         src_dir = self.src_dir.joinpath('style')
         dest_dir = self.dist_dir.joinpath('style')
+        print(f'copy: {src_dir} -> {dest_dir} ...')
         shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
+        print('Finished')
 
         # Copy UI JS & SCSS
         src_dir = self.src_dir.joinpath('ui')
         dest_dir = self.dist_dir.joinpath('ui')
+        print(f'copy: {src_dir} -> {dest_dir} ...')
         shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
-        proc = await asyncio.create_subprocess_shell(
-            f"npx parcel build --dist-dir {self.dist_dir} "
+        print('Finished')
+
+        cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
             f"{self.node_modules_dir.joinpath('normalize.css/normalize.css')}"
-        )
+        print(f'{cmd} ...')
+        proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
+        print('Finished')
 
         # Copy Fonts
+        src_dir = self.src_dir.joinpath('font')
+        dest_dir = self.dist_dir.joinpath('font')
+        print(f'copy: {src_dir} -> {dest_dir} ...')
         shutil.copytree(
-            self.src_dir.joinpath('font'),
-            self.dist_dir.joinpath('font'),
+            src_dir,
+            dest_dir,
             dirs_exist_ok=True,
         )
+        print('Finished')
 
     async def build(self):
         # Build packet-ui.js
         cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
             f"{self.src_dir.joinpath('packet-ui.js')}"
+        print(f'{cmd} ...')
         proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
-        proc.terminate()
+        print('Finished')
 
         # Build SCSS
-        proc = await asyncio.create_subprocess_shell(
-            f"npx sass --style=compressed {self.src_dir}:{self.dist_dir}"
-        )
+        cmd = f"npx sass --style=compressed {self.src_dir}:{self.dist_dir}"
+        print(f'{cmd} ...')
+        proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
-        proc.terminate()
-
+        print('Finished')
 
         # Copy source files
         await self._src_copy()
 
-    async def _parcel_watch(self):
-        cmd = f"npx parcel watch --dist-dir {self.dist_dir} " +\
-            f"{self.src_dir.joinpath('packet-ui.js')}"
+    async def dev(self):
+        dest_dir = self.src_dir.parent.joinpath('docs/_lib/packet-ui/')
+        cmd = f'engrave dev {self.src_dir} {dest_dir}'
+        print(f'{cmd} ...')
         proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
-        proc.terminate()
-
-    async def _sass_watch(self):
-        proc = await asyncio.create_subprocess_shell(
-            f"npx sass --watch {self.src_dir}:{self.dist_dir}"
-        )
-        await proc.communicate()
-        proc.terminate()
-
-    async def _file_watch(self):
-        async for changes in awatch(self.src_dir):
-            for change, path in changes:
-                path = Path(path)
-                dest = path.relative_to(self.src_dir)
-                dest = self.dist_dir.joinpath(dest)
-                if (path.suffix == '.js')\
-                        or (path.suffix == '.scss')\
-                        or (path.suffix == '.sass'):
-                    pass
-                if change == Change.deleted:
-                    dest.unlink()
-                else:
-                    dest.parent.mkdir(parents=True, exist_ok=True)
-                    shutil.copy(path, dest)
-                    print(f'copied: {dest}')
-
-    async def dev(self):
-        await asyncio.gather(
-            self._parcel_watch(),
-            self._sass_watch(),
-            self._file_watch(),
-        )
+        print('Finished')
 
 
 async def main():
