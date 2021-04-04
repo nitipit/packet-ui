@@ -27,7 +27,7 @@ async def packet_ui():
     src = _dir.joinpath('src').relative_to(_dir)
     src = f'{src}/{{packet-ui.js,packet-ui.scss}}'
     dest_dir = _dir.joinpath('docs/_lib/packet-ui/').relative_to(_dir)
-    cmd = f"npx parcel watch '{src}' --dist-dir='{dest_dir}' --watch-for-stdin"
+    cmd = f"npx parcel watch '{src}' --dist-dir='{dest_dir}'"
     print(cmd)
     proc = await asyncio.create_subprocess_shell(
         cmd,
