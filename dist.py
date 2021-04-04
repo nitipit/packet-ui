@@ -1,7 +1,6 @@
 import asyncio
 from pathlib import Path
 import shutil
-import argparse
 
 
 class PacketUI:
@@ -12,12 +11,6 @@ class PacketUI:
         self.src_dir = src_dir.resolve()
         self.dist_dir = dist_dir.resolve()
         self.node_modules_dir = node_modules_dir
-
-    async def _scss(self):
-        proc = await asyncio.create_subprocess_shell(
-            f"npx sass {self.src_dir}:{self.dist_dir}"
-        )
-        await proc.communicate()
 
     async def _src_copy(self):
         # Copy SCSS
@@ -71,14 +64,6 @@ class PacketUI:
         # Copy source files
         await self._src_copy()
 
-    async def dev(self):
-        dest_dir = self.src_dir.parent.joinpath('docs/_lib/packet-ui/')
-        cmd = f'engrave dev {self.src_dir} {dest_dir}'
-        print(f'{cmd} ...')
-        proc = await asyncio.create_subprocess_shell(cmd)
-        await proc.communicate()
-        print('Finished')
-
 
 async def main():
     base_dir = Path(__file__).parent
@@ -87,15 +72,7 @@ async def main():
         dist_dir=base_dir.joinpath('dist'),
         node_modules_dir=base_dir.joinpath('node_modules')
     )
-
-    parser = argparse.ArgumentParser(description='Packet UI Distribution')
-    parser.add_argument('mode', nargs='?', default='build')
-
-    args = parser.parse_args()
-    if args.mode == 'dev':
-        await packet_ui.dev()
-    else:
-        await packet_ui.build()
+    await packet_ui.build()
 
 
 asyncio.run(main())
