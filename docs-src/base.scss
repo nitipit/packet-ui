@@ -11,7 +11,7 @@
     font-style: normal;
     font-weight: 400;
     src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-        url(./_static/fonts/FiraSans-Regular.ttf);
+        url(./static/fonts/FiraSans-Regular.ttf);
 }
 
 @font-face {
@@ -20,7 +20,7 @@
     font-style: normal;
     font-weight: 400;
     src: local('Cantarell Regular'), local('Cantarell-Regular'),
-        url(./_static/fonts/Cantarell-Regular.ttf);
+        url(./static/fonts/Cantarell-Regular.ttf);
 }
 
 html {

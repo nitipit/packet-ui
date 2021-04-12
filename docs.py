@@ -9,7 +9,7 @@ _dir = Path(__file__).parent
 def lib():
     shutil.copytree(
         _dir.joinpath('node_modules/adwaita-icon-web/dist/'),
-        'docs/_lib/adwaita-icon-web/',
+        'docs/lib/adwaita-icon-web/',
         dirs_exist_ok=True)
 
 
