@@ -1,0 +1,43 @@
+@use '../_mixin';
+
+@mixin button-group-border($radius: 4px) {
+    border-radius: 0;
+    &:first-of-type {
+        @include mixin.border-right-radius(0);
+        @include mixin.border-left-radius($radius);
+    }
+    &:last-of-type {
+        @include mixin.border-left-radius(0);
+        @include mixin.border-right-radius($radius);
+    }
+}
+
+@mixin button-group($radius: 4px) {
+    display: flex;
+    > button, > .button {
+        width: 100%;
+        @include button-group-border($radius);
+    }
+    > pkt-button-square, > .pkt-button-square {
+        @include button-group-border($radius)
+    }
+    > pkt-input-radio-btn, > .pkt-input-radio-btn,
+    > pkt-tab, > .pkt-tab {
+        button {
+            border-radius: 0;
+        }
+        &:first-of-type {
+            button {
+                @include mixin.border-right-radius(0);
+                @include mixin.border-left-radius($radius);
+            }
+        }
+
+        &:last-of-type {
+            button {
+                @include mixin.border-left-radius(0);
+                @include mixin.border-right-radius($radius);
+            }
+        }
+    }
+}

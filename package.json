@@ -1,8 +1,9 @@
 {
     "name": "packet-ui",
-    "version": "1.1.5",
+    "version": "1.2.1",
     "description": "Simple and Stylish <Web Components/> User Interface",
     "repository": "git@github.com:nitipit/packet-ui.git",
+    "url": "https://nitipit.github.io/packet-ui/",
     "author": "Nitipit Nontasuwan <nitipit@gmail.com>",
     "license": "MIT",
     "dependencies": {

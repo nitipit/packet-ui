@@ -1,2 +1,4 @@
 # Packet UI
-## Simple and elegant HTML5 User Interface with Javascript and CSS
+Simple and Stylish HTML5 User Interface with Javascript and CSS
+
+Website: https://nitipit.github.io/packet-ui/

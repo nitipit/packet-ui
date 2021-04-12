@@ -1,4 +1,4 @@
-Jinja2==2.11.2
+Jinja2==2.11.3
 mistune==2.0.0rc1
-watchgod==0.6
-engrave==1.0.3
+watchgod==0.7
+engrave==1.0.7
