@@ -1,6 +1,7 @@
 @use 'sass:map';
 @use '../_var';
 @use '../mixin';
+@use '../ui';
 
 #sidebar-button {
     position: fixed;
@@ -33,22 +34,25 @@ pkt-sidebar {
         }
     }
     [el="content"] {
-        padding-left: 0.5rem;
         padding-bottom: 5rem;
         .h {
             font-size: 1.25rem;
             font-weight: bold;
             margin-top: 1rem;
+            padding-left: 0.5rem;
         }
-
+        div.list {
+            padding-left: 0.5rem;
+        }
         a {
             display: block;
             width: 100%;
-            padding: 0.2rem 0.5rem;
-            text-decoration: none;
+            font-size: 1rem;
+            padding: 0.1rem 0.5rem;
             &:hover {
-                background-color: red;
+                @include mixin.bg-int-color(red);
             }
         }
+
     }
 }
