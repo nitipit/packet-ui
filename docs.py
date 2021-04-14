@@ -13,6 +13,21 @@ def lib():
         dirs_exist_ok=True)
 
 
+async def packet_ui_js():
+    cmd = "npx parcel watch 'src/packet-ui.js' " +\
+          "--dist-dir='docs/lib/packet-ui/'"
+    print(cmd)
+    proc = await asyncio.create_subprocess_shell(cmd)
+    await proc.communicate()
+
+
+async def packet_ui_scss():
+    cmd = "npx sass --watch src/packet-ui.scss docs/lib/packet-ui/packet-ui.css"
+    print(cmd)
+    proc = await asyncio.create_subprocess_shell(cmd)
+    await proc.communicate()
+
+
 async def engrave():
     cmd = 'engrave dev --server 127.0.0.1:8000 docs-src docs'
     proc = await asyncio.create_subprocess_shell(cmd)
@@ -21,6 +36,10 @@ async def engrave():
 
 async def main():
     lib()
-    await engrave()
+    await asyncio.gather(
+        engrave(),
+        packet_ui_js(),
+        packet_ui_scss(),
+    )
 
 asyncio.run(main())

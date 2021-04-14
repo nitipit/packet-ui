@@ -2,8 +2,6 @@
 @use '_mixin';
 @use 'sass:color';
 @use 'sass:map';
-@use '../node_modules/normalize.css/normalize.css';
-@use '../src/packet-ui.scss';
 @use '../node_modules/highlight.js/styles/atom-one-dark.css';
 
 @font-face {

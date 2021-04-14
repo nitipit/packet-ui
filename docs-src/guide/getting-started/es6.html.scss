@@ -1,0 +1,5 @@
+@use '../../../src/ui/ui';
+
+ui-input-number {
+    @include ui.input-number(red);
+}

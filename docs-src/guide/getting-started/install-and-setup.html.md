@@ -1,5 +1,4 @@
 # Install and Setup
----
 
 ## NPM
 ---

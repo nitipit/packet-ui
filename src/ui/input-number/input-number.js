@@ -17,7 +17,9 @@ export class InputNumber extends HTMLElement {
                 <pkt-button-square el="down"
                     @click=${(e) => this.el.input.stepDown()}
                     @mousedown=${(e) => this.fast_down_start()}
-                    @mouseup=${(e) => {this.interval_stop()}}>
+                    @mouseup=${(e) => {this.interval_stop()}}
+                    @mouseout=${(e) => {this.interval_stop()}}
+                >
                 -</pkt-button-square>
             </pkt-button-group>
         `
@@ -52,7 +54,7 @@ export class InputNumber extends HTMLElement {
     }
 
     interval_stop() {
-        clearTimeout(this.timeout)
-        clearInterval(this.interval)
+        clearTimeout(this.timeout);
+        clearInterval(this.interval);
     }
 }

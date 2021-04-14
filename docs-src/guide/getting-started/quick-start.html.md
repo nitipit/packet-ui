@@ -35,3 +35,5 @@ Then, use web components `<pkt-*>` anywhere in html `<body>`, for examples:
 
 <pkt-badge style="vertical-align: middle;">1</pkt-badge>
 <pkt-switch style="margin-left: 1rem;"></pkt-switch>
+
+See more components in **UI Components** section.
