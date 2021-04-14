@@ -27,7 +27,6 @@
         "module": false
     },
     "files": [
-        "dist/**/*",
-        "src/**/*"
+        "dist/**/*"
     ]
 }

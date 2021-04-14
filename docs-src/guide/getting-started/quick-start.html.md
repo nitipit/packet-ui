@@ -1,7 +1,5 @@
-## Set Up
+# Quick start using CDN
 ---
-
-### CDN
 
 To use default style and color, just put codes below in html `<head>` and you're good to go.
 
@@ -9,12 +7,12 @@ To use default style and color, just put codes below in html `<head>` and you're
 <head>
     <!-- Load default CSS -->
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/packet-ui@1.0.0/dist/normalize.css">
+        href="https://cdn.jsdelivr.net/npm/packet-ui@1.2.1/dist/normalize.css">
     <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/packet-ui@1.0.0/dist/packet-ui.css">
+        href="https://cdn.jsdelivr.net/npm/packet-ui@1.2.1/dist/packet-ui.css">
 
     <!-- Load packet-ui.js -->
-    <script defer src="https://cdn.jsdelivr.net/npm/packet-ui@1.0.0/dist/packet-ui.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/packet-ui@1.2.1/dist/packet-ui.js"></script>
 
     <!-- Set up font for UI components. Cantarell is recommended -->
     <style>
@@ -26,15 +24,7 @@ To use default style and color, just put codes below in html `<head>` and you're
 </head>
 ```
 
-### Install by NPM
-
-```
-npm install packet-ui
-```
-
-<h2 id="usage">Usage</h2>
-
-Use web components `<pkt-*>` anywhere in html `<body>`, for examples:
+Then, use web components `<pkt-*>` anywhere in html `<body>`, for examples:
 
 ```html
 <body>
