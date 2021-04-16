@@ -1,7 +1,7 @@
 @use "sass:color";
 @use "sass:map";
 
-$pallete: (
+$color: (
     red: #F44336,
     pink: #E91E63,
     purple: #9C27B0,
@@ -24,7 +24,7 @@ $pallete: (
     blue-gray: #607D8B
 );
 
-$color-primary: map.get($pallete, amber) !default;
+$color-primary: map.get($color, amber) !default;
 $saturate: 0% !default;
 $hue-distance: 30 !default;
 

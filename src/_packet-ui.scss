@@ -1,0 +1,84 @@
+@use 'sass:map';
+@use 'sass:color';
+@use '_colour.scss';
+
+$color: (
+    red: colour.$red,
+    pink: colour.$pink,
+    purple: colour.$purple,
+    deep-purple: colour.$deep-purple,
+    indigo: colour.$indigo,
+    blue: colour.$blue,
+    light-blue: colour.$light-blue,
+    cyan: colour.$cyan,
+    teal: colour.$teal,
+    green: colour.$green,
+    light-green: colour.$light-green,
+    lime: colour.$lime,
+    yellow: colour.$yellow,
+    amber: colour.$amber,
+    orange: colour.$orange,
+    deep-orange: colour.$deep-orange,
+    brown: colour.$brown,
+    grey: colour.$grey,
+    blue-grey: colour.$blue-grey,
+    blue-gray: colour.$blue-gray,
+) !default;
+
+$pallete: (
+    color-primary: #FF9800,
+    saturate: 0%,
+    hue-distance: 30,
+) !default;
+
+$ui: (
+    ui-color: #FF9800,
+    border-radius: 4px,
+) !default;
+
+$-color-primary: map.get($pallete, color-primary);
+$-saturate: map.get($pallete, saturate);
+$-hue-distance: map.get($pallete, hue-distance);
+
+$pallete: (
+    color-primary: map.get($pallete, color-primary),
+    color-complement: color.adjust(
+        $-color-primary,
+        $hue: 180,
+        $saturation: $-saturate),
+    color-analog-left: color.adjust(
+        $-color-primary,
+        $hue: -($-hue-distance),
+        $saturation: $-saturate),
+    color-analog-right: color.adjust(
+        $-color-primary,
+        $hue: $-hue-distance,
+        $saturation: $-saturate),
+    color-triadic-left: color.adjust(
+        $-color-primary,
+        $hue: 180 - ($-hue-distance),
+        $saturation: $-saturate),
+    color-triadic-right: color.adjust(
+        $-color-primary,
+        $hue: 180 + ($-hue-distance),
+        $saturation: $-saturate)
+);
+
+$pallete: map.merge(
+    $pallete, (
+        color-p: map.get($pallete, color-primary),
+        color-c: map.get($pallete, color-complement),
+        color-a1: map.get($pallete, color-analog-left),
+        color-a2: map.get($pallete, color-analog-right),
+        color-t1: map.get($pallete, color-triadic-left),
+        color-t2: map.get($pallete, color-triadic-right)
+    )
+);
+
+@function color($name) {
+    @return map.get($color, $name);
+}
+
+@function pallete($name) {
+    @return map.get($pallete, $name);
+};

@@ -1,12 +1,42 @@
 @use 'sass:map';
-@use 'style/_var';
-@use '_typography';
-@use '_components' with (
-    $ui-color: var.$ui-color,
-    $border-radius: var.$border-radius
+@use '_colour.scss';
+@use '_packet-ui.scss' with (
+    $color: (
+        red: colour.$red,
+        pink: colour.$pink,
+        purple: colour.$purple,
+        deep-purple: colour.$deep-purple,
+        indigo: colour.$indigo,
+        blue: colour.$blue,
+        light-blue: colour.$light-blue,
+        cyan: colour.$cyan,
+        teal: colour.$teal,
+        green: colour.$green,
+        light-green: colour.$light-green,
+        lime: colour.$lime,
+        yellow: colour.$yellow,
+        amber: colour.$amber,
+        orange: colour.$orange,
+        deep-orange: colour.$deep-orange,
+        brown: colour.$brown,
+        grey: colour.$grey,
+        blue-grey: colour.$blue-grey,
+        blue-gray: colour.$blue-gray,
+    ),
+    $pallete: (
+        color-primary: colour.$amber,
+        saturate: 0%,
+        hue-distance: 30,
+    ),
+    $ui: (
+        ui-color: colour.$amber,
+        border-radius: 4px,
+    ),
 );
-@use '_ui-class' with (
-    $pallete: var.$pallete,
-    $scheme: var.$scheme,
-    $border-radius: var.$border-radius
+
+@use 'typography.scss';
+@use 'ui-class.scss' with (
+    $color: packet-ui.$color,
+    $pallete: packet-ui.$pallete,
+    $ui: packet-ui.$ui,
 );
