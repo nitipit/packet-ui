@@ -11,18 +11,30 @@ def lib():
         _dir.joinpath('node_modules/adwaita-icon-web/dist/'),
         'docs/lib/adwaita-icon-web/',
         dirs_exist_ok=True)
+    shutil.copyfile(
+        _dir.joinpath('node_modules/normalize.css/normalize.css'),
+        'docs/lib/normalize.css'
+    )
 
 
 async def packet_ui_js():
-    cmd = "npx parcel watch 'src/packet-ui.js' " +\
-          "--dist-dir='docs/lib/packet-ui/'"
+    cmd = (
+        "npx parcel watch 'src/packet-ui.js' "
+        "--dist-dir='docs/lib/packet-ui/'"
+    )
     print(cmd)
-    proc = await asyncio.create_subprocess_shell(cmd)
+    proc = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE)
     await proc.communicate()
 
 
 async def packet_ui_scss():
-    cmd = "npx sass --watch src/packet-ui.scss docs/lib/packet-ui/packet-ui.css"
+    cmd = (
+        "npx sass --watch src/packet-ui.scss "
+        "docs/lib/packet-ui/packet-ui.css"
+    )
     print(cmd)
     proc = await asyncio.create_subprocess_shell(cmd)
     await proc.communicate()

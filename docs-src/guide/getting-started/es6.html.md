@@ -1,6 +1,6 @@
 # ES6 Modules
 
-To use ES6 **export & import** in browser, Javascript build/bundler tools is needed.  
+Javascript build/bundler tools is required to use ES6 **export & import** in browser, 
 We recommend using [Parcel](https://v2.parceljs.org/)
 
 

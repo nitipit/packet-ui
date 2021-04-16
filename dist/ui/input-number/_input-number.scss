@@ -16,6 +16,7 @@
     }
     pkt-button-group, .pkt-button-group {
         width: 4em;
+        user-select: none;
         pkt-button-square, .pkt-button-square {
             &:first-of-type {
                 @include mixin.border-left-radius(0)
