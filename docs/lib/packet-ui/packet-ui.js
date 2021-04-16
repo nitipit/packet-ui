@@ -1755,7 +1755,11 @@ class InputNumber extends HTMLElement {
                     @mousedown=${e => this.fast_up_start()}
                     @mouseup=${e => {
       this.interval_stop();
-    }}>
+    }}
+                    @mouseout=${e => {
+      this.interval_stop();
+    }}
+                >
                 +</pkt-button-square>
                 <pkt-button-square el="down"
                     @click=${e => this.el.input.stepDown()}

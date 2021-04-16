@@ -5,14 +5,14 @@ We recommend using [Parcel](https://v2.parceljs.org/)
 
 
 ```
-// Javascript file : index.html.js
+// Javascript file : index.js
 import * as ui from 'packet-ui';
 
 // Define ui.InputNumber component to custom element.
 customElements.define('ui-input-number', ui.InputNumber);
 ```
 ```
-// SASS file : index.html.scss
+// SASS file : index.scss
 @use '/path/to/ui/ui.scss';
 
 ui-input-number {
@@ -20,10 +20,16 @@ ui-input-number {
 }
 ```
 
+Build Javascript and SASS with Parcel
+```
+$ npx parcel build 'index.js' 'index.scss'
+```
+
+Use built Javascript and CSS in your HTML
 ```
 <!-- HTML -->
-<script defer src="./index.html.js"></script>
-<link rel="stylesheet" href="./index.html.css">
+<script defer src="./dist/index.js"></script>
+<link rel="stylesheet" href="./dist/index.css">
 
 <ui-input-number></ui-input-number>
 ```
