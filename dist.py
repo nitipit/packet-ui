@@ -1,6 +1,5 @@
 import asyncio
 from pathlib import Path
-import shutil
 
 
 class PacketUI:
@@ -12,39 +11,6 @@ class PacketUI:
         self.dist_dir = dist_dir.resolve()
         self.node_modules_dir = node_modules_dir
 
-    async def _src_copy(self):
-        # Copy SCSS
-        src_dir = self.src_dir.joinpath('style')
-        dest_dir = self.dist_dir.joinpath('style')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
-        shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
-        print('Finished')
-
-        # Copy UI JS & SCSS
-        src_dir = self.src_dir.joinpath('ui')
-        dest_dir = self.dist_dir.joinpath('ui')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
-        shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
-        print('Finished')
-
-        cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
-            f"{self.node_modules_dir.joinpath('normalize.css/normalize.css')}"
-        print(f'{cmd} ...')
-        proc = await asyncio.create_subprocess_shell(cmd)
-        await proc.communicate()
-        print('Finished')
-
-        # Copy Fonts
-        src_dir = self.src_dir.joinpath('font')
-        dest_dir = self.dist_dir.joinpath('font')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
-        shutil.copytree(
-            src_dir,
-            dest_dir,
-            dirs_exist_ok=True,
-        )
-        print('Finished')
-
     async def build(self):
         # Build packet-ui.js
         cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
@@ -55,14 +21,13 @@ class PacketUI:
         print('Finished')
 
         # Build SCSS
-        cmd = f"npx sass --style=compressed {self.src_dir}:{self.dist_dir}"
+        cmd = "npx sass --style=compressed " +\
+            f"{self.src_dir.joinpath('packet-ui.scss')} " +\
+            f"{self.dist_dir.joinpath('packet-ui.css')}"
         print(f'{cmd} ...')
         proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
         print('Finished')
-
-        # Copy source files
-        await self._src_copy()
 
 
 async def main():

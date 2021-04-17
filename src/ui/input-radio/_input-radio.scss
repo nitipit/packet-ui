@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../_mixin';
+@use '../../_mixin';
 
 @mixin input-radio($color: orange) {
     $width: 1.1em;

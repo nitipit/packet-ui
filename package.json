@@ -22,11 +22,12 @@
         "sass": "^1.26.11"
     },
     "type": "module",
-    "module": "dist/ui/ui.js",
+    "module": "src/ui/ui.js",
     "targets": {
         "module": false
     },
     "files": [
-        "dist/**/*"
+        "dist/**/*",
+        "src/**/*"
     ]
 }

@@ -1,4 +1,4 @@
-@use '_var';
+@use '_theme';
 @use '_mixin';
 @use 'sass:color';
 @use 'sass:map';
@@ -64,14 +64,14 @@ code.hljs {
 
 blockquote {
     background: color.adjust(
-        map.get(var.$scheme, color-p), $lightness: 35%
+        map.get(theme.$pallete, color-p), $lightness: 35%
     );
     p {
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
     }
     pkt-icon {
-        color: map.get(var.$scheme, color-a1);
+        color: map.get(theme.$pallete, color-a1);
     }
 }
 

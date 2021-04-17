@@ -1,6 +1,6 @@
 @use 'sass:map';
-@use 'style/_mixin';
-@use "ui/_ui";
+@use '_mixin.scss';
+@use "_ui.scss";
 
 $ui: (
     ui-color: #FF9800,

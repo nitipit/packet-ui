@@ -35,7 +35,7 @@
     ),
 );
 
-@use 'ui.scss' with (
+@use 'element.scss' with (
     $ui: theme.$ui,
 );
 

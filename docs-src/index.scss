@@ -1,8 +1,9 @@
 @use 'sass:color';
 @use 'sass:map';
-@use '_ui';
-@use '_mixin';
-@use '_var';
+@use '_ui.scss';
+@use '_mixin.scss';
+@use '_theme.scss';
+@use '_break-point.scss';
 
 #highlight {
     .container {
@@ -19,7 +20,7 @@
             }
         }
         h2 {
-            @media #{var.$sm} {
+            @media #{break-point.$sm} {
                 font-size: 1.3em;
             }
         }
@@ -98,7 +99,7 @@
                 @include mixin.bg-int-color(#eee);
             }
             button:hover {
-                color: map.get(var.$scheme, color-a1);
+                color: map.get(theme.$pallete, color-a1);
             }
         }
     }

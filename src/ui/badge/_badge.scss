@@ -1,4 +1,4 @@
-@use '../_mixin';
+@use '../../_mixin';
 
 @mixin badge($bg-color: orange) {
     @include mixin.font-ui();

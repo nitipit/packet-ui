@@ -1,5 +1,5 @@
 @use "sass:color";
-@use "style/_mixin";
+@use "_mixin.scss";
 
 html {
     @include mixin.font-fluid();

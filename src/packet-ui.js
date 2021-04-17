@@ -1,4 +1,4 @@
-import * as ui from './ui/ui.js';
+import * as ui from './ui.js';
 
 customElements.define('pkt-checkbox', ui.Checkbox);
 customElements.define('pkt-dotpulse', ui.DotPulse);

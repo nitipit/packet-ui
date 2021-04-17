@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../_mixin';
+@use '../../_mixin';
 
 @mixin switch($color-active: orange) {
     @include mixin.font-ui();

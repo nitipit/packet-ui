@@ -1,6 +1,6 @@
 @use "sass:color";
 @use "sass:map";
-@use 'style/_mixin';
+@use '_mixin.scss';
 
 $color: null !default;
 $pallete: null !default;
