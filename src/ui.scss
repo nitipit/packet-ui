@@ -1,8 +1,14 @@
+@use 'sass:map';
 @use 'style/_mixin';
 @use "ui/_ui";
 
-$ui-color: orange !default;
-$border-radius: 4px !default;
+$ui: (
+    ui-color: #FF9800,
+    border-radius: 4px,
+) !default;
+
+$ui-color: map.get($ui, ui-color);
+$border-radius: map.get($ui, border-radius);
 
 pkt-badge, .pkt-badge {
     @include ui.badge($bg-color: $ui-color)

@@ -1,6 +1,7 @@
 @use 'sass:map';
+@use 'typography.scss';
 @use '_colour.scss';
-@use '_packet-ui.scss' with (
+@use '_theme.scss' with (
     $color: (
         red: colour.$red,
         pink: colour.$pink,
@@ -34,9 +35,12 @@
     ),
 );
 
-@use 'typography.scss';
-@use 'ui-class.scss' with (
-    $color: packet-ui.$color,
-    $pallete: packet-ui.$pallete,
-    $ui: packet-ui.$ui,
+@use 'ui.scss' with (
+    $ui: theme.$ui,
+);
+
+@use 'class.scss' with (
+    $color: theme.$color,
+    $pallete: theme.$pallete,
+    $ui: theme.$ui,
 );

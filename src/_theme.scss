@@ -82,3 +82,7 @@ $pallete: map.merge(
 @function pallete($name) {
     @return map.get($pallete, $name);
 };
+
+@function ui($name) {
+    @return map.get($ui, $name);
+};
