@@ -1,6 +1,6 @@
 {
     "name": "packet-ui",
-    "version": "1.2.2dev",
+    "version": "2.0.0dev",
     "description": "Simple and Stylish <Web Components/> User Interface",
     "repository": {
         "repository": {
@@ -22,7 +22,7 @@
         "sass": "^1.26.11"
     },
     "type": "module",
-    "module": "src/ui/ui.js",
+    "module": "src/ui.js",
     "targets": {
         "module": false
     },

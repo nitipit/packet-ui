@@ -1,6 +1,5 @@
-@use 'sass:map';
-@use '../../../_ui';
-@use '../../../_var';
+@use '../../../ui';
+@use '../../../theme';
 
 .flex {
     display: flex;
@@ -10,22 +9,22 @@
 }
 
 .c-p {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-p));
+    @include ui.checkbox($color-active: theme.pallete(color-p));
 }
 .c-a1 {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-a1));
+    @include ui.checkbox($color-active: theme.pallete(color-a1));
 }
 .c-a2 {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-a2));
+    @include ui.checkbox($color-active: theme.pallete(color-a2));
 }
 .c-t1 {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-t1));
+    @include ui.checkbox($color-active: theme.pallete(color-t1));
 }
 .c-t2 {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-t2));
+    @include ui.checkbox($color-active: theme.pallete(color-t2));
 }
 .c-c {
-    @include ui.checkbox($color-active: map.get(var.$scheme, color-c));
+    @include ui.checkbox($color-active: theme.pallete(color-c));
 }
 
 .size-1 {

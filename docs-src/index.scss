@@ -1,8 +1,6 @@
 @use 'sass:color';
-@use 'sass:map';
 @use '_ui.scss';
 @use '_mixin.scss';
-@use '_theme.scss';
 @use '_break-point.scss';
 
 #highlight {
@@ -89,18 +87,6 @@
         h3 {
             @include mixin.border-top-radius(4px);
             @include mixin.bg-color(color.adjust(black, $lightness: 10%))
-        }
-    }
-
-    pkt-card[el="icon-system"] {
-        [el="icons"] {
-            font-size: 1.25rem;
-            button {
-                @include mixin.bg-int-color(#eee);
-            }
-            button:hover {
-                color: map.get(theme.$pallete, color-a1);
-            }
         }
     }
 }

@@ -1,4 +1,4 @@
-@use '../../../var';
+@use '../../../break-point';
 
 #preview {
     display: flex;
@@ -15,7 +15,7 @@
         border: 1px solid;
         margin: 2rem;
         font-size: 2rem;
-        @media #{var.$sm} {
+        @media #{break-point.$sm} {
             margin: 1rem;
         }
     }

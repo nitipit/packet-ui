@@ -1,4 +1,4 @@
-@use '../../../src/ui/ui';
+@use '../../../src/_ui.scss';
 
 ui-input-number {
     @include ui.input-number(red);
