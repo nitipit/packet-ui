@@ -26,14 +26,15 @@ $color: (
 ) !default;
 
 $pallete: (
-    color-primary: #FF9800,
+    color-primary: map.get($color, amber),
     saturate: 0%,
     hue-distance: 30,
 ) !default;
 
 $ui: (
-    ui-color: #FF9800,
+    ui-color: map.get($color, amber),
     border-radius: 4px,
+    font-family: packet-ui,
 ) !default;
 
 $-color-primary: map.get($pallete, color-primary);
@@ -77,7 +78,7 @@ $pallete: map.merge(
 
 @function color($name) {
     @return map.get($color, $name);
-}
+};
 
 @function pallete($name) {
     @return map.get($pallete, $name);

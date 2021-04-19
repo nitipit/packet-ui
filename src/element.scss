@@ -2,13 +2,8 @@
 @use '_mixin.scss';
 @use "_ui.scss";
 
-$ui: (
-    ui-color: #FF9800,
-    border-radius: 4px,
-) !default;
-
-$ui-color: map.get($ui, ui-color);
-$border-radius: map.get($ui, border-radius);
+$ui-color: #FF9800 !default;
+$border-radius: 4px !default;
 
 pkt-badge, .pkt-badge {
     @include ui.badge($bg-color: $ui-color)

@@ -1,24 +1,24 @@
-@use '_theme';
-@use '_mixin';
+@use '_colour.scss';
+@use '_theme.scss';
 @use 'sass:color';
 @use 'sass:map';
 @use '../node_modules/highlight.js/styles/atom-one-dark.css';
+
+@font-face {
+  font-family: 'packet-ui';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./lib/packet-ui/dist/font/Cantarell/Cantarell-Regular.ttf') format("truetype");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 @font-face {
     font-family: 'fira-sans';
     font-style: normal;
     font-weight: 400;
     src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-        url(./static/fonts/FiraSans-Regular.ttf);
-}
-
-@font-face {
-    /* Set UI font, Cantarell is recommended */
-    font-family: 'packet-ui';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Cantarell Regular'), local('Cantarell-Regular'),
-        url(./static/fonts/Cantarell-Regular.ttf);
+        url('./lib/packet-ui/fonts/Fira-Sans/FiraSans-Regular.ttf');
 }
 
 html {

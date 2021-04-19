@@ -10,12 +10,10 @@
         <pkt-tag class="bg-a1" style="padding: 0 0.5rem;">
             <h1>Packet UI</h1>
         </pkt-tag>
-        <h2 style="width: 100%; text-align: center;">
-            <span class="color-c">User Interface Framework</span><br>
-            with <br>
-            <strong class="color-t2">&lt;Web Components/&gt;</strong> and
-            <strong class="color-t2">SASS</strong>
-        </h2>
+        <p class="row" style="font-size: 1.5rem;">
+            <strong class="color-t2">HTML5</strong><br>
+            <strong class="color-t2">User Interface Framework</strong>
+        </p>
         <div>
             <a class="button bg-int-c" href="./guide/getting-started/quick-start.html">
                 <pkt-icon set="adwaita" name="view-dual"></pkt-icon>
@@ -28,60 +26,9 @@
         </div>
     </div>
 </div>
-<div id="description">
-{{ markdown('index.html.desc.md') }}
-</div>
 
-<div id="sample" class="container">
-    <pkt-card>
-        <table style="margin: 0.5rem;">
-            <tr>
-                <td>badge</td>
-                <td>
-                    <pkt-badge>10</pkt-badge>
-                </td>
-            </tr>
-            <tr>
-                <td>checkbox</td>
-                <td>
-                    <pkt-checkbox>
-                        <input type="checkbox" name="demo">
-                    </pkt-checkbox>
-                </td>
-            </tr>
-            <tr>
-                <td>button</td>
-                <td><button>Submit</button></td>
-            </tr>
-            <tr>
-                <td>switch</td>
-                <td>
-                    <pkt-switch>
-                        <input type="checkbox">
-                        <div el="label">
-                            <span>ON</span>
-                            <span>OFF</span>
-                        </div>
-                    </pkt-switch>
-                </td>
-            </tr>
-            <tr>
-                <td>input-number</td>
-                <td>
-                    <pkt-input-number>
-                        <input type="number" min="0" max="100">
-                    </pkt-input-number>
-                </td>
-            </tr>
-            <tr>
-                <td>dotpulse</td>
-                <td>
-                    <pkt-dotpulse></pkt-dotpulse>
-                </td>
-            </tr>
-        </table>
-        <button class="bg-int-a1" style="text-align: center;">and much more...</button>
-    </pkt-card>
+<div id="features" class="container">
+    {{ markdown('index.html.features.md') }}
 </div>
 
 <div class="container markdown">

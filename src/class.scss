@@ -6,178 +6,186 @@ $color: null !default;
 $pallete: null !default;
 $ui: null !default;
 
+@function clr($name) {
+    @return map.get($color, $name);
+};
+
+@function pallete($name){
+    @return map.get($pallete, $name);
+};
+
 .red {
-    color: map.get($color, red);
+    color: clr(red);
 };
 .pink {
-    color: map.get($color, pink);
+    color: clr(pink);
 }
 .purple {
-    color: map.get($color, purple);
+    color: clr(purple);
 }
 .deep-purple {
-    color: map.get($color, deep-purple);
+    color: clr(deep-purple);
 }
 .indigo {
-    color: map.get($color, indigo);
+    color: clr(indigo);
 }
 .blue {
-    color: map.get($color, blue);
+    color: clr(blue);
 }
 .light-blue {
-    color: map.get($color, light-blue);
+    color: clr(light-blue);
 }
 .cyan {
-    color: map.get($color, cyan);
+    color: clr(cyan);
 }
 .teal {
-    color: map.get($color, teal);
+    color: clr(teal);
 }
 .green {
-    color: map.get($color, green);
+    color: clr(green);
 }
 .light-green {
-    color: map.get($color, light-green);
+    color: clr(light-green);
 }
 .lime {
-    color: map.get($color, lime);
+    color: clr(lime);
 }
 .yellow {
-    color: map.get($color, yellow);
+    color: clr(yellow);
 }
 .amber {
-    color: map.get($color, amber);
+    color: clr(amber);
 }
 .orange {
-    color: map.get($color, orange);
+    color: clr(orange);
 }
 .deep-orange {
-    color: map.get($color, deep-orange);
+    color: clr(deep-orange);
 }
 .brown {
-    color: map.get($color, brown);
+    color: clr(brown);
 }
 .grey, .gray {
-    color: map.get($color, grey);
+    color: clr(grey);
 }
 .blue-grey, .blue-gray {
-    color: map.get($color, blue-grey);
+    color: clr(blue-grey);
 }
 
 .bg-red {
-    @include mixin.bg-color(map.get($color, red));
+    @include mixin.bg-color(clr(red));
 }
 .bg-pink {
-    @include mixin.bg-color(map.get($color, pink));
+    @include mixin.bg-color(clr(pink));
 }
 .bg-purple {
-    @include mixin.bg-color(map.get($color, purple));
+    @include mixin.bg-color(clr(purple));
 }
 .bg-deep-purple {
-    @include mixin.bg-color(map.get($color, deep-purple));
+    @include mixin.bg-color(clr(deep-purple));
 }
 .bg-indigo {
-    @include mixin.bg-color(map.get($color, indigo));
+    @include mixin.bg-color(clr(indigo));
 }
 .bg-blue {
-    @include mixin.bg-color(map.get($color, blue));
+    @include mixin.bg-color(clr(blue));
 }
 .bg-light-blue {
-    @include mixin.bg-color(map.get($color, light-blue));
+    @include mixin.bg-color(clr(light-blue));
 }
 .bg-cyan {
-    @include mixin.bg-color(map.get($color, cyan));
+    @include mixin.bg-color(clr(cyan));
 }
 .bg-teal {
-    @include mixin.bg-color(map.get($color, teal));
+    @include mixin.bg-color(clr(teal));
 }
 .bg-green {
-    @include mixin.bg-color(map.get($color, green));
+    @include mixin.bg-color(clr(green));
 }
 .bg-light-green {
-    @include mixin.bg-color(map.get($color, light-green));
+    @include mixin.bg-color(clr(light-green));
 }
 .bg-lime {
-    @include mixin.bg-color(map.get($color, lime));
+    @include mixin.bg-color(clr(lime));
 }
 .bg-yellow {
-    @include mixin.bg-color(map.get($color, yellow));
+    @include mixin.bg-color(clr(yellow));
 }
 .bg-amber {
-    @include mixin.bg-color(map.get($color, amber));
+    @include mixin.bg-color(clr(amber));
 }
 .bg-orange {
-    @include mixin.bg-color(map.get($color, orange));
+    @include mixin.bg-color(clr(orange));
 }
 .bg-deep-orange {
-    @include mixin.bg-color(map.get($color, deep-orange));
+    @include mixin.bg-color(clr(deep-orange));
 }
 .bg-brown {
-    @include mixin.bg-color(map.get($color, brown));
+    @include mixin.bg-color(clr(brown));
 }
 .bg-grey, .bg-gray {
-    @include mixin.bg-color(map.get($color, grey));
+    @include mixin.bg-color(clr(grey));
 }
 .bg-blue-grey, .bg-blue-gray {
-    @include mixin.bg-color(map.get($color, blue-grey));
+    @include mixin.bg-color(clr(blue-grey));
 }
 
 .bg-int-red {
-    @include mixin.bg-int-color(map.get($color, red));
+    @include mixin.bg-int-color(clr(red));
 }
 .bg-int-pink {
-    @include mixin.bg-int-color(map.get($color, pink));
+    @include mixin.bg-int-color(clr(pink));
 }
 .bg-int-purple {
-    @include mixin.bg-int-color(map.get($color, purple));
+    @include mixin.bg-int-color(clr(purple));
 }
 .bg-int-deep-purple {
-    @include mixin.bg-int-color(map.get($color, deep-purple));
+    @include mixin.bg-int-color(clr(deep-purple));
 }
 .bg-int-indigo {
-    @include mixin.bg-int-color(map.get($color, indigo));
+    @include mixin.bg-int-color(clr(indigo));
 }
 .bg-int-blue {
-    @include mixin.bg-int-color(map.get($color, blue));
+    @include mixin.bg-int-color(clr(blue));
 }
 .bg-int-light-blue {
-    @include mixin.bg-int-color(map.get($color, light-blue));
+    @include mixin.bg-int-color(clr(light-blue));
 }
 .bg-int-cyan {
-    @include mixin.bg-int-color(map.get($color, cyan));
+    @include mixin.bg-int-color(clr(cyan));
 }
 .bg-int-teal {
-    @include mixin.bg-int-color(map.get($color, teal));
+    @include mixin.bg-int-color(clr(teal));
 }
 .bg-int-green {
-    @include mixin.bg-int-color(map.get($color, green));
+    @include mixin.bg-int-color(clr(green));
 }
 .bg-int-light-green {
-    @include mixin.bg-int-color(map.get($color, light-green));
+    @include mixin.bg-int-color(clr(light-green));
 }
 .bg-int-lime {
-    @include mixin.bg-int-color(map.get($color, lime));
+    @include mixin.bg-int-color(clr(lime));
 }
 .bg-int-yellow {
-    @include mixin.bg-int-color(map.get($color, yellow));
+    @include mixin.bg-int-color(clr(yellow));
 }
 .bg-int-amber {
-    @include mixin.bg-int-color(map.get($color, amber));
+    @include mixin.bg-int-color(clr(amber));
 }
 .bg-int-orange {
-    @include mixin.bg-int-color(map.get($color, orange));
+    @include mixin.bg-int-color(clr(orange));
 }
 .bg-int-deep-orange {
-    @include mixin.bg-int-color(map.get($color, deep-orange));
+    @include mixin.bg-int-color(clr(deep-orange));
 }
 .bg-int-brown {
-    @include mixin.bg-int-color(map.get($color, brown));
+    @include mixin.bg-int-color(clr(brown));
 }
 .bg-int-grey, .bg-int-gray {
-    @include mixin.bg-int-color(map.get($color, grey));
+    @include mixin.bg-int-color(clr(grey));
 }
 .bg-int-blue-grey, .bg-int-blue-gray {
-    @include mixin.bg-int-color(map.get($color, blue-grey));
+    @include mixin.bg-int-color(clr(blue-grey));
 }
 .bg-int-white {
     @include mixin.bg-int-color(white);
@@ -187,7 +195,7 @@ $ui: null !default;
 }
 
 .color-primary, .color-p {
-    $color: map.get($pallete, color-p);
+    $color: pallete(color-p);
     color: $color;
     &.l1 {
         color: color.adjust($color, $lightness: 10%);
@@ -216,7 +224,7 @@ $ui: null !default;
 }
 
 .bg-primary, .bg-p {
-    $color: map.get($pallete, color-p);
+    $color: pallete(color-p);
     @include mixin.bg-color($color);
     &.l1 {
         @include mixin.bg-color(color.adjust($color, $lightness: 10%));
@@ -245,54 +253,54 @@ $ui: null !default;
 }
 
 .color-complement, .color-c {
-    color: map.get($pallete, color-complement);
+    color: pallete(color-complement);
 }
 .color-analog-left, .color-a1 {
-    color: map.get($pallete, color-analog-left);
+    color: pallete(color-analog-left);
 }
 .color-analog-right, .color-a2 {
-    color: map.get($pallete, color-analog-right);
+    color: pallete(color-analog-right);
 }
 .color-triadic-left, .color-t1 {
-    color: map.get($pallete, color-triadic-left);
+    color: pallete(color-triadic-left);
 }
 .color-triadic-right, .color-t2 {
-    color: map.get($pallete, color-triadic-right);
+    color: pallete(color-triadic-right);
 }
 
 .bg-complement, .bg-c {
-    @include mixin.bg-color(map.get($pallete, color-complement));
+    @include mixin.bg-color(pallete(color-complement));
 }
 .bg-analog-left, .bg-a1 {
-    @include mixin.bg-color(map.get($pallete, color-analog-left));
+    @include mixin.bg-color(pallete(color-analog-left));
 }
 .bg-analog-right, .bg-a2 {
-    @include mixin.bg-color(map.get($pallete, color-analog-right));
+    @include mixin.bg-color(pallete(color-analog-right));
 }
 .bg-triadic-left, .bg-t1 {
-    @include mixin.bg-color(map.get($pallete, color-triadic-left));
+    @include mixin.bg-color(pallete(color-triadic-left));
 }
 .bg-triadic-right, .bg-t2 {
-    @include mixin.bg-color(map.get($pallete, color-triadic-right));
+    @include mixin.bg-color(pallete(color-triadic-right));
 }
 
 .bg-int-primary, .bg-int-p {
-    @include mixin.bg-int-color(map.get($pallete, color-p));
+    @include mixin.bg-int-color(pallete(color-p));
 }
 .bg-int-complement, .bg-int-c {
-    @include mixin.bg-int-color(map.get($pallete, color-complement));
+    @include mixin.bg-int-color(pallete(color-complement));
 }
 .bg-int-analog-left, .bg-int-a1 {
-    @include mixin.bg-int-color(map.get($pallete, color-analog-left));
+    @include mixin.bg-int-color(pallete(color-analog-left));
 }
 .bg-int-analog-right, .bg-int-a2 {
-    @include mixin.bg-int-color(map.get($pallete, color-analog-right));
+    @include mixin.bg-int-color(pallete(color-analog-right));
 }
 .bg-int-triadic-left, .bg-int-t1 {
-    @include mixin.bg-int-color(map.get($pallete, color-triadic-left));
+    @include mixin.bg-int-color(pallete(color-triadic-left));
 }
 .bg-int-triadic-right, .bg-int-t2 {
-    @include mixin.bg-int-color(map.get($pallete, color-triadic-right));
+    @include mixin.bg-int-color(pallete(color-triadic-right));
 }
 
 .border-top-radius {

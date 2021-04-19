@@ -17,10 +17,8 @@
                 margin: 0.5rem;
             }
         }
-        h2 {
-            @media #{break-point.$sm} {
-                font-size: 1.3em;
-            }
+        p {
+            text-align: center;
         }
         a.button {
             margin: 0.5rem;
@@ -31,62 +29,43 @@
     }
 }
 
-.markdown {
-    h2 {
-        border-bottom: 1px solid;
-        margin-top: 2rem;
-    }
-}
-
-#sample {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+h2 {
     margin-top: 2rem;
-    pkt-card {
-        background-color: #f2f2f2
-    }
-    table {
-        max-width: 280px;
-        width: 280px;
-        tr {
-            background-color: #f2f2f2;
-        }
-        td {
-            text-align: center;
-        }
-    }
+    text-align: center;
 }
 
 #features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #eee;
-    padding: 2rem 0rem 5rem 0;
-    .container {
+    h3 {
+        margin: 0;
+    }
+    [el="bg-color"] {
+        font-size: 1.2rem;
+        text-align: center;
+        max-width: 300px;
+        margin: auto;
+        pkt-badge {
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+        }
+    }
+    pkt-card {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        h2 {
-            border-bottom: 1px solid;
-            text-align: center;
-            display: inline-flex;
-        }
-    }
-    .row {
-        display: flex;
-        justify-content: center;
-    }
-    pkt-card {
-        max-width: 600px;
-        min-width: 280px;
-        width: 90%;
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
         margin-top: 2rem;
-        background-color: white;
-        h3 {
-            @include mixin.border-top-radius(4px);
-            @include mixin.bg-color(color.adjust(black, $lightness: 10%))
+        background-color: #f2f2f2;
+        table {
+            max-width: 280px;
+            width: 100%;
+            tr {
+                background-color: #f2f2f2;
+            }
+            td {
+                text-align: center;
+            }
         }
     }
 }
