@@ -1,4 +1,4 @@
-@use '../../../ui';
+@use '../../../ui-mixin';
 @use '../../../theme';
 
 .flex {
@@ -9,22 +9,22 @@
 }
 
 .c-p {
-    @include ui.checkbox($color-active: theme.pallete(color-p));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-p));
 }
 .c-a1 {
-    @include ui.checkbox($color-active: theme.pallete(color-a1));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-a1));
 }
 .c-a2 {
-    @include ui.checkbox($color-active: theme.pallete(color-a2));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-a2));
 }
 .c-t1 {
-    @include ui.checkbox($color-active: theme.pallete(color-t1));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-t1));
 }
 .c-t2 {
-    @include ui.checkbox($color-active: theme.pallete(color-t2));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-t2));
 }
 .c-c {
-    @include ui.checkbox($color-active: theme.pallete(color-c));
+    @include ui-mixin.checkbox($color-active: theme.pallete(color-c));
 }
 
 .size-1 {

@@ -1,5 +1,5 @@
-@use '../../../src/_ui.scss';
+@use '../../_ui-mixin.scss';
 
 ui-input-number {
-    @include ui.input-number(red);
+    @include ui-mixin.input-number(red);
 }

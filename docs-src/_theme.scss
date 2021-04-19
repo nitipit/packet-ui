@@ -1,34 +1,11 @@
-@use '_colour.scss';
 @forward '../src/_theme.scss' with (
-    $color: (
-        red: colour.$red,
-        pink: colour.$pink,
-        purple: colour.$purple,
-        deep-purple: colour.$deep-purple,
-        indigo: colour.$indigo,
-        blue: colour.$blue,
-        light-blue: colour.$light-blue,
-        cyan: colour.$cyan,
-        teal: colour.$teal,
-        green: colour.$green,
-        light-green: colour.$light-green,
-        lime: colour.$lime,
-        yellow: colour.$yellow,
-        amber: colour.$amber,
-        orange: colour.$orange,
-        deep-orange: colour.$deep-orange,
-        brown: colour.$brown,
-        grey: colour.$grey,
-        blue-grey: colour.$blue-grey,
-        blue-gray: colour.$blue-gray,
-    ),
     $pallete: (
-        color-primary: colour.$amber,
+        color-primary: #FFC107,
         saturate: 0%,
         hue-distance: 30,
     ),
     $ui: (
-        ui-color: colour.$amber,
+        ui-color: #FFC107,
         border-radius: 4px,
     ),
 );

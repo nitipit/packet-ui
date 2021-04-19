@@ -29,11 +29,25 @@ There are 19 pre-defined color in CSS class which based on [Material Design](htt
 </div>
 
 ## Theme Framework (SASS)
-Theme framework contains color pallete and user interface CSS which are easy to customize.
+Theme Framework contains color pallete and user interface style which are easy to customize. Just set primary color then Packet UI will generate accessible and varient color pallete for you.
+
+```scss
+@forward '../src/_theme.scss' with (
+    $pallete: (
+        color-primary: #FFC107,
+        saturate: 0%,
+        hue-distance: 30,
+    ),
+    $ui: (
+        ui-color: #FFC107,
+        border-radius: 4px,
+    ),
+);
+```
 
 ## User Interface
 
-<pkt-card>
+<pkt-card style="margin-bottom: 2rem;">
     <table style="margin: 0.5rem;">
         <tr>
             <td>badge</td>
@@ -80,5 +94,36 @@ Theme framework contains color pallete and user interface CSS which are easy to 
             </td>
         </tr>
     </table>
-    <button class="bg-int-a1" style="text-align: center;">and much more...</button>
+    <button class="bg-int-a1" style="text-align: center;">
+        and much more...
+    </button>
 </pkt-card>
+
+
+UI Components are based on web components. Just place `<pkt-*>` anywhere in html `<body>`, for examples:
+
+```html
+<body>
+    <pkt-badge></pkt-badge>
+    <pkt-switch></pkt-switch>
+</body>
+```
+
+## Easy Set Up
+
+To use default style and color, just put codes below in html `<head>` and you're good to go.
+
+```html
+<head>
+    <!-- Load nomalize.css -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/packet-ui@2.0.0/dist/normalize.css">
+
+    <!-- Load default CSS -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/packet-ui@2.0.0/dist/packet-ui.css">
+
+    <!-- Load Javascript , defer is a must -->
+    <script defer src="https://cdn.jsdelivr.net/npm/packet-ui@2.0.0/dist/packet-ui.js"></script>
+</head>
+```

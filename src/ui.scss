@@ -1,93 +1,103 @@
 @use 'sass:map';
 @use '_mixin.scss';
-@use "_ui.scss";
+@use '_theme.scss';
+@use "_ui-mixin.scss";
 
-$ui-color: #FF9800 !default;
-$border-radius: 4px !default;
+$ui: theme.$ui !default;
+
+@function ui($name) {
+    @return map.get($ui, $name);
+}
+
+$color: ui(color);
+$pallete: ui(pallete);
+$ui-color: ui(ui-color);
+$font-family: ui(font-family);
+$border-radius: ui(border-radius);
 
 pkt-badge, .pkt-badge {
-    @include ui.badge($bg-color: $ui-color)
+    @include ui-mixin.badge($bg-color: $ui-color)
 }
 
 pkt-box-arrow-top, .pkt-box-arrow-top {
-    @include ui.box-arrow(
+    @include ui-mixin.box-arrow(
         $arrow: "top",
         $radius: $border-radius
     );
 }
 
 pkt-box-arrow-right, .pkt-box-arrow-right {
-    @include ui.box-arrow(
+    @include ui-mixin.box-arrow(
         $arrow: "right",
         $radius: $border-radius
     );
 }
 
 pkt-box-arrow-bottom, .pkt-box-arrow-bottom {
-    @include ui.box-arrow(
+    @include ui-mixin.box-arrow(
         $arrow: "bottom",
         $radius: $border-radius);
 }
 
 pkt-box-arrow-left, .pkt-box-arrow-left {
-    @include ui.box-arrow(
+    @include ui-mixin.box-arrow(
         $arrow: "left",
         $radius: $border-radius);
 }
 
 button, .button, input[type="button"] {
-    @include ui.button($bg-color: $ui-color);
+    @include ui-mixin.button($bg-color: $ui-color);
 }
 
 pkt-button-pin, .pkt-button-pin {
-    @include ui.button-pin($bg-color: $ui-color);
+    @include ui-mixin.button-pin($bg-color: $ui-color);
 }
 
 pkt-button-square, .pkt-button-square {
-    @include ui.button-square($bg-color: $ui-color);
+    @include ui-mixin.button-square($bg-color: $ui-color);
 }
 
 pkt-button-group, .pkt-button-group {
-    @include ui.button-group($radius: $border-radius);
+    @include ui-mixin.button-group($radius: $border-radius);
 }
 
 pkt-card, .pkt-card {
-    @include ui.card($radius: $border-radius);
+    @include ui-mixin.card($radius: $border-radius);
 }
 
 pkt-checkbox {
-    @include ui.checkbox($color-active: $ui-color);
+    @include ui-mixin.checkbox($color-active: $ui-color);
 }
 
 input {
-    @include ui.input-text(
+    @include ui-mixin.input-text(
         $outline-color: $ui-color,
         $border-radius: $border-radius);
     &[type="text"], &[type="password"], &[type="email"] {
-        @include ui.input-text(
+        @include ui-mixin.input-text(
             $outline-color: $ui-color,
             $border-radius: $border-radius);
     }
 }
 
 input[type="range"] {
-    @include ui.slider($thumb-color-active: $ui-color);
+    @include ui-mixin.slider($thumb-color-active: $ui-color);
 }
 
 pkt-input-number {
-    @include ui.input-number($bg-color: $ui-color);
+    @include ui-mixin.input-number($bg-color: $ui-color);
 }
 
 pkt-input-radio {
-    @include ui.input-radio($color: $ui-color);
+    @include ui-mixin.input-radio($color: $ui-color);
 }
 
 pkt-input-radio-btn, .pkt-input-radio-btn {
-    @include ui.input-radio-btn($color: $ui-color);
+    @include ui-mixin.input-radio-btn($color: $ui-color);
 }
 
 pkt-input-tag {
-    @include ui.input-tag();
+    @include ui-mixin.input-tag();
 }
 
 label {
@@ -95,57 +105,57 @@ label {
 }
 
 pkt-menu > ul {
-    @include ui.menu(
+    @include ui-mixin.menu(
         $border-color: $ui-color,
         $active-color: $ui-color,
         $arrow-color: $ui-color);
 }
 
 ul.pkt-path {
-    @include ui.path($color: $ui-color);
+    @include ui-mixin.path($color: $ui-color);
 }
 
 // progress
 pkt-dotpulse {
-    @include ui.dotpulse($color: $ui-color);
+    @include ui-mixin.dotpulse($color: $ui-color);
 }
 
 pkt-progress-bar {
-    @include ui.progress-bar($color: $ui-color);
+    @include ui-mixin.progress-bar($color: $ui-color);
 }
 
 pkt-spinner {
-    @include ui.spinner($color: $ui-color);
+    @include ui-mixin.spinner($color: $ui-color);
 }
 // end : progress
 
 pkt-sidebar {
-    @include ui.sidebar($bg-color: $ui-color);
+    @include ui-mixin.sidebar($bg-color: $ui-color);
 }
 
 pkt-switch {
-    @include ui.switch($color-active: $ui-color);
+    @include ui-mixin.switch($color-active: $ui-color);
 }
 
 pkt-tab, .pkt-tab {
-    @include ui.tab($highlight-color: $ui-color);
+    @include ui-mixin.tab($highlight-color: $ui-color);
 }
 
 table {
-    @include ui.table(
+    @include ui-mixin.table(
         $bg-color: $ui-color,
         $border-radius: $border-radius
     );
 }
 
 pkt-tag, .pkt-tag {
-    @include ui.tag(
+    @include ui-mixin.tag(
         $bg-color: $ui-color,
         $radius: $border-radius);
 }
 
 pkt-tag-x {
-    @include ui.tag(
+    @include ui-mixin.tag(
         $bg-color: $ui-color,
         $radius: $border-radius);
     padding-right: 0.2em;

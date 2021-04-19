@@ -1,10 +1,8 @@
 @use 'sass:map';
-@use '_colour.scss';
 @use '_theme.scss';
 @use '../src/typography.scss';
-@use '../src/element.scss' with (
-    $ui-color: theme.ui(ui-color),
-    $border-radius: theme.ui(border-radius),
+@use '../src/ui.scss' with (
+    $ui: theme.$ui,
 );
 @use '../src/class.scss' with (
     $color: theme.$color,

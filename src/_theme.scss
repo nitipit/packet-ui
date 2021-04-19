@@ -1,41 +1,50 @@
 @use 'sass:map';
-@use 'sass:color';
-@use '_colour.scss';
+@use 'sass:color' as clr;
 
-$color: (
-    red: colour.$red,
-    pink: colour.$pink,
-    purple: colour.$purple,
-    deep-purple: colour.$deep-purple,
-    indigo: colour.$indigo,
-    blue: colour.$blue,
-    light-blue: colour.$light-blue,
-    cyan: colour.$cyan,
-    teal: colour.$teal,
-    green: colour.$green,
-    light-green: colour.$light-green,
-    lime: colour.$lime,
-    yellow: colour.$yellow,
-    amber: colour.$amber,
-    orange: colour.$orange,
-    deep-orange: colour.$deep-orange,
-    brown: colour.$brown,
-    grey: colour.$grey,
-    blue-grey: colour.$blue-grey,
-    blue-gray: colour.$blue-gray,
-) !default;
+$color: () !default;
+$pallete: () !default;
+$ui: () !default;
 
-$pallete: (
+$-color: (
+    red: #F44336,
+    pink: #E91E63,
+    purple: #9C27B0,
+    deep-purple: #673AB7,
+    indigo: #3F51B5,
+    blue: #2196F3,
+    light-blue: #03A9F4,
+    cyan: #00BCD4,
+    teal: #009688,
+    green: #4CAF50,
+    light-green: #8BC34A,
+    lime: #CDDC39,
+    yellow: #FFEB3B,
+    amber: #FFC107,
+    orange: #FF9800,
+    deep-orange: #FF5722,
+    brown: #795548,
+    grey: #9E9E9E,
+    blue-grey: #607D8B,
+    blue-gray: #607D8B,
+);
+
+$color: map.merge($-color, $color);
+
+$-pallete: (
     color-primary: map.get($color, amber),
     saturate: 0%,
     hue-distance: 30,
-) !default;
+);
 
-$ui: (
+$pallete: map.merge($-pallete, $pallete);
+
+$-ui: (
     ui-color: map.get($color, amber),
     border-radius: 4px,
     font-family: packet-ui,
-) !default;
+);
+
+$ui: map.merge($-ui, $ui);
 
 $-color-primary: map.get($pallete, color-primary);
 $-saturate: map.get($pallete, saturate);
@@ -43,23 +52,23 @@ $-hue-distance: map.get($pallete, hue-distance);
 
 $pallete: (
     color-primary: map.get($pallete, color-primary),
-    color-complement: color.adjust(
+    color-complement: clr.adjust(
         $-color-primary,
         $hue: 180,
         $saturation: $-saturate),
-    color-analog-left: color.adjust(
+    color-analog-left: clr.adjust(
         $-color-primary,
         $hue: -($-hue-distance),
         $saturation: $-saturate),
-    color-analog-right: color.adjust(
+    color-analog-right: clr.adjust(
         $-color-primary,
         $hue: $-hue-distance,
         $saturation: $-saturate),
-    color-triadic-left: color.adjust(
+    color-triadic-left: clr.adjust(
         $-color-primary,
         $hue: 180 - ($-hue-distance),
         $saturation: $-saturate),
-    color-triadic-right: color.adjust(
+    color-triadic-right: clr.adjust(
         $-color-primary,
         $hue: 180 + ($-hue-distance),
         $saturation: $-saturate)

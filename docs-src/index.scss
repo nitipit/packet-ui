@@ -1,5 +1,4 @@
 @use 'sass:color';
-@use '_ui.scss';
 @use '_mixin.scss';
 @use '_break-point.scss';
 
@@ -21,10 +20,11 @@
             text-align: center;
         }
         a.button {
-            margin: 0.5rem;
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
         }
         a[el="github"] {
-            @include ui.button($bg-color: color.adjust(white, $lightness: -10%));
+            @include mixin.bg-int-color($bg-color: color.adjust(white, $lightness: -10%));
         }
     }
 }

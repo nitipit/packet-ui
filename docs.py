@@ -18,7 +18,7 @@ def lib():
 
 
 async def packet_ui_js():
-    src = _dir.joinpath('src/packet-ui.js')
+    src = _dir.joinpath('docs-src/packet-ui.js')
     dest_dir = _dir.joinpath('docs/')
     cmd = (
         f"npx parcel watch '{src}' "
@@ -35,7 +35,7 @@ async def packet_ui_js():
 
 async def packet_ui_scss():
     src = _dir.joinpath('docs-src/packet-ui.scss')
-    dest = _dir.joinpath('docs/base.css')
+    dest = _dir.joinpath('docs/packet-ui.css')
     cmd = f"npx sass --watch {src} {dest}"
     print(f'{cmd} ...')
     proc = await asyncio.create_subprocess_shell(cmd)
