@@ -1,8 +1,12 @@
 ## Fast development
-**Packet UI** provides built-in stylish **User Interface** with **Colors** and **Theme** to easily get started.
+**Packet UI** provides built-in stylish **User Interface** with **Colors**
+and **Theme** to easily get started.
 ## Color
 
-There are 19 pre-defined color in CSS class which based on [Material Design](https://material.io/). Just put `class="{color}"` or `class={bg-color}` to any element you want to render color with legible text.
+There are 19 pre-defined color in CSS class which based on
+[Material Design](https://material.io/). 
+Just put `class="{color}"` or `class={bg-color}` 
+on any element to render color with legible text.
 
 <div class="row">
     <div el="bg-color">
@@ -29,19 +33,26 @@ There are 19 pre-defined color in CSS class which based on [Material Design](htt
 </div>
 
 ## Theme Framework (SASS)
-Theme Framework contains color pallete and user interface style which are easy to customize. Just set primary color then Packet UI will generate accessible and varient color pallete for you.
+
+<div id="theme-alt" style="text-align: center; margin-top: 2rem;">
+    <button class="bg-a1">A1</button>
+    <button class="bg-p">P</button>
+    <button class="bg-a2">A2</button>
+    <button class="bg-t1">T1</button>
+    <button class="bg-c">C</button>
+    <button class="bg-t2">T2</button>
+</div>
+
+Theme Framework generate color pallete and user interface style which are easy
+to customize with configuration.
 
 ```scss
-@forward '../src/_theme.scss' with (
-    $pallete: (
-        color-primary: #FFC107,
-        saturate: 0%,
+@forward 'path/to/_theme.scss' with (
+    $-pallete: (
+        color-primary: #3F51B5,
+        saturate: 30%,
         hue-distance: 30,
-    ),
-    $ui: (
-        ui-color: #FFC107,
-        border-radius: 4px,
-    ),
+    )
 );
 ```
 
@@ -100,7 +111,7 @@ Theme Framework contains color pallete and user interface style which are easy t
 </pkt-card>
 
 
-UI Components are based on web components. Just place `<pkt-*>` anywhere in html `<body>`, for examples:
+Built-in UI components are based on <pkt-tag class="bg-blue-grey">&lt;web-components/></pkt-tag>. Just place `<pkt-*>` anywhere in html `<body>`, for examples:
 
 ```html
 <body>

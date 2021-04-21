@@ -1,5 +1,6 @@
 @use 'sass:color';
-@use '../../_mixin';
+@use '../../_mixin.scss';
+@use '../../_function.scss';
 
 @mixin switch($color-active: orange) {
     @include mixin.font-ui();
@@ -41,11 +42,7 @@
         width: 50%;
 
         &:first-of-type {
-            @if mixin.darkshade($color-active) {
-                color: white
-            } @else {
-                color: black
-            }
+            color: function.choose-contrast-color($color-active);
         }
 
         &:last-of-type {

@@ -1,6 +1,8 @@
 @use 'sass:color';
 @use '_mixin.scss';
-@use '_break-point.scss';
+@use '_theme.scss';
+@use '_theme-alt.scss';
+@use '../src/_function.scss';
 
 #highlight {
     .container {
@@ -69,3 +71,36 @@ h2 {
         }
     }
 }
+
+
+#theme-alt {
+    button {
+        width: 4rem;
+        height: 2rem;
+    }
+    button.bg-a1 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.color(red));
+        color: function.choose-contrast-color(theme-alt.color(red));
+    };
+    button.bg-p {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('color-p'));
+    };
+    button.bg-a2 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('color-a2'));
+    };
+    button.bg-t1 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('color-t1'));
+    };
+    button.bg-c {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('color-c'));
+    };
+    button.bg-t2 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('color-t2'));
+    };
+};

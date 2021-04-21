@@ -31,15 +31,15 @@ $-color: (
 $color: map.merge($-color, $color);
 
 $-pallete: (
-    color-primary: map.get($color, amber),
-    saturate: 0%,
+    color-primary: #3F51B5,
+    saturate: 30%,
     hue-distance: 30,
 );
 
 $pallete: map.merge($-pallete, $pallete);
 
 $-ui: (
-    ui-color: map.get($color, amber),
+    ui-color: map.get($color, indigo),
     border-radius: 4px,
     font-family: packet-ui,
 );

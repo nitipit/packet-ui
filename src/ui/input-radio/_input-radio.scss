@@ -1,5 +1,5 @@
 @use 'sass:color';
-@use '../../_mixin';
+@use '../../_function.scss';
 
 @mixin input-radio($color: orange) {
     $width: 1.1em;
@@ -63,10 +63,6 @@
         width: 0.4em;
         height: 0.4em;
         border-radius: 50%;
-        @if mixin.darkshade($color) {
-            background-color: white;
-        } @else {
-            background-color: black;
-        }
+        background-color: function.choose-contrast-color($color);
     }
 }

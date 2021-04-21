@@ -1,28 +1,9 @@
 @use "sass:color";
-
-@function darkshade($color) {
-    @if (color.hue($color) >= 30deg) and (color.hue($color) <= 200deg) {
-        @if color.lightness($color) >= 50% {
-            @return false;
-        } @else {
-            @return true;
-        }
-    } @else {
-        @if color.lightness($color) >= 70% {
-            @return false;
-        } @else {
-            @return true;
-        }
-    }
-}
+@use '_function.scss';
 
 @mixin bg-color($bg-color) {
     background-color: $bg-color;
-    @if darkshade($bg-color) {
-        color: white;
-    } @else {
-        color: black;
-    }
+    color: function.choose-contrast-color($bg-color);
 }
 
 @mixin bg-int-color($bg-color: orange) {
