@@ -9,23 +9,6 @@ npm install packet-ui
 ```
 Pakcage will be installed at `node_modules/pakcet-ui/` with directory tree as follows.
 
-```
-.
-├── dist/
-│   ├── font/
-│   ├── normalize.css
-│   ├── normalize.css.map
-│   ├── packet-ui.css
-│   ├── packet-ui.css.map
-│   ├── packet-ui.js
-│   ├── packet-ui.js.map
-│   ├── style/
-│   └── ui/
-├── LICENSE
-├── package.json
-├── readme.md
-```
-
 ## Simple setup
 ---
 The most simple setup can be done by including codes like in [Quick start](./quick-start.html) section. Just place files below to directory where web server can access. 
@@ -46,14 +29,6 @@ Then, put codes below in HTML <head> section.
 
     <!-- Load packet-ui.js -->
     <script defer src="//to/packet-ui.js"></script>
-
-    <!-- Set up font for UI components. Cantarell is recommended -->
-    <style>
-    @font-face {
-        font-family: 'packet-ui';
-        src: url('//to/Cantarell-Regular.ttf');
-    }
-    </style>
 </head>
 ```
 
