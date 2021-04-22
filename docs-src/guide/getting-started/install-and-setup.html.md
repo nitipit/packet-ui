@@ -5,13 +5,15 @@
 Installing **Packet UI** by **npm** is better option if you want to use **ES6** modules and customize UI styles by **SASS**
 
 ```
-npm install packet-ui
+$ npm install packet-ui
 ```
-Pakcage will be installed at `node_modules/pakcet-ui/` with directory tree as follows.
+Pakcage will be installed at `node_modules/pakcet-ui/`.
 
 ## Simple setup
 ---
-The most simple setup can be done by including codes like in [Quick start](./quick-start.html) section. Just place files below to directory where web server can access. 
+The most simple setup can be done by including codes much like as described in
+[Quick start](./quick-start.html) section. Just place files below
+to directory where web server can access. 
 ```
 1. dist/normailize.css
 2. dist/packet-ui.css

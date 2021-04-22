@@ -1,7 +1,8 @@
 # Quick start using CDN
 ---
 
-To use default style and color, just put codes below in html `<head>` and you're good to go.
+Using default style and color from CDN is a quick way to try out
+**Packet UI** and make a prototype.
 
 ```html
 <head>
@@ -16,7 +17,7 @@ To use default style and color, just put codes below in html `<head>` and you're
 </head>
 ```
 
-Then, use web components `<pkt-*>` anywhere in html `<body>`, for examples:
+Then, `<pkt-*>` can be used anywhere in html `<body>`, for examples:
 
 ```html
 <body>

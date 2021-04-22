@@ -1,34 +1,18 @@
-# Theme Framework
+# Theme Design
 
-Theme Framework generate color pallete and user interface style
-which are easy to customize with configuration in `_theme.scss`
+This guide will show how to transfrom your design into CSS.
 
-## Color
+**Packet UI Theme Framework** consist with
+5 main parts
+1. **Color set** : pre-defined colors with names.
+2. **Color pallete** : Color scheme variation generated from primary color.
+3. **Font and Typography**
+4. **User interface design**
+
+> [Material Design: Color System](https://material.io/design/color/the-color-system.html)
+> could be a good place to read and understand about color system and design.
+
+## Color set
 ---
-Start with color configuration in `src/_theme.scss`
-
-```scss
-$-color: (
-    red: #F44336,
-    pink: #E91E63,
-    purple: #9C27B0,
-    deep-purple: #673AB7,
-    indigo: #3F51B5,
-    blue: #2196F3,
-    light-blue: #03A9F4,
-    cyan: #00BCD4,
-    teal: #009688,
-    green: #4CAF50,
-    light-green: #8BC34A,
-    lime: #CDDC39,
-    yellow: #FFEB3B,
-    amber: #FFC107,
-    orange: #FF9800,
-    deep-orange: #FF5722,
-    brown: #795548,
-    grey: #9E9E9E,
-    blue-grey: #607D8B,
-    blue-gray: #607D8B,
-);
-```
-
+Color set are pre-defined colors with name that people understand such as:
+red, blue, green, yellow, pink, brown, white, green, etc.

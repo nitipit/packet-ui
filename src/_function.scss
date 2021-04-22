@@ -1,7 +1,5 @@
 // Using Sass to automatically pick text colors, refer to
 // https://medium.com/dev-channel/using-sass-to-automatically-pick-text-colors-4ba7645d2796
-
-
 @use '_constant.scss';
 
 $linear-channel-values: constant.$luminance-linear-channel-values !default;
@@ -11,11 +9,11 @@ $linear-channel-values: constant.$luminance-linear-channel-values !default;
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
  */
 @function luminance($color) {
-  $red: nth($linear-channel-values, red($color) + 1);
-  $green: nth($linear-channel-values, green($color) + 1);
-  $blue: nth($linear-channel-values, blue($color) + 1);
+    $red: nth($linear-channel-values, red($color) + 1);
+    $green: nth($linear-channel-values, green($color) + 1);
+    $blue: nth($linear-channel-values, blue($color) + 1);
 
-  @return .2126 * $red + .7152 * $green + .0722 * $blue;
+    @return .2126 * $red+.7152 * $green+.0722 * $blue;
 }
 
 /**
@@ -23,10 +21,10 @@ $linear-channel-values: constant.$luminance-linear-channel-values !default;
  * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
  */
 @function contrast($back, $front) {
-  $backLum: luminance($back) + .05;
-  $foreLum: luminance($front) + .05;
+    $backLum: luminance($back) + .05;
+    $foreLum: luminance($front) + .05;
 
-  @return max($backLum, $foreLum) / min($backLum, $foreLum);
+    @return max($backLum, $foreLum) / min($backLum, $foreLum);
 }
 
 /**
@@ -34,13 +32,14 @@ $linear-channel-values: constant.$luminance-linear-channel-values !default;
  * Returns black for dark text and white for light text.
  */
 @function choose-contrast-color($color) {
-  $lightContrast: contrast($color, white);
-  $darkContrast: contrast($color, black);
+    $lightContrast: contrast($color, white);
+    $darkContrast: contrast($color, black);
 
-  @if ($lightContrast+3 > $darkContrast) {
-    @return white;
-  }
-  @else {
-    @return black;
-  }
+    @if ($lightContrast+3 > $darkContrast) {
+        @return white;
+    }
+
+    @else {
+        @return black;
+    }
 }

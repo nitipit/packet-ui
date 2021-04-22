@@ -80,27 +80,32 @@ h2 {
     }
     button.bg-a1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.color(red));
-        color: function.choose-contrast-color(theme-alt.color(red));
+            $bg-color: theme-alt.pallete('color-a1')
+        );
     };
     button.bg-p {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-p'));
+            $bg-color: theme-alt.pallete('color-p')
+        );
     };
     button.bg-a2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-a2'));
+            $bg-color: theme-alt.pallete('color-a2')
+        );
     };
     button.bg-t1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-t1'));
+            $bg-color: theme-alt.pallete('color-t1')
+        );
     };
     button.bg-c {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-c'));
+            $bg-color: theme-alt.pallete('color-c')
+        );
     };
     button.bg-t2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-t2'));
+            $bg-color: theme-alt.pallete('color-t2')
+        );
     };
 };
