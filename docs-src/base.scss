@@ -63,14 +63,14 @@ code.hljs {
 
 blockquote {
     background: color.adjust(
-        theme.pallete(color-p), $lightness: 35%
+        theme.pallete(p), $lightness: 35%
     );
     p {
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
     }
     pkt-icon {
-        color: theme.pallete(color-a1);
+        color: theme.pallete(a1);
     }
 }
 

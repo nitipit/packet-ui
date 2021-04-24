@@ -7,25 +7,21 @@ $pallete: () !default;
 $ui: () !default;
 
 // color and background color
-
-// @each $c, $value in $color {
-//     #{"." + $c} {
-//         color: $value;
-//     };
-//     #{".bg-" + $c} {
-//         @debug clr($value);
-//         @include mixin.bg-color($bg-color: $value);
-//     };
-//     #{".bg-int-" + $c} {
-//         @debug clr($value);
-//         @include mixin.bg-int-color($bg-color: $value);
-//     };
-// };
+@each $c, $value in $color {
+    #{"." + $c} {
+        color: $value;
+    };
+    #{".bg-" + $c} {
+        @include mixin.bg-color($bg-color: $value);
+    };
+    #{".bg-int-" + $c} {
+        @include mixin.bg-int-color($bg-color: $value);
+    };
+};
 
 // monochrome for primary color
-
 .color-primary, .color-p {
-    $color: map.get($pallete, color-p);
+    $color: map.get($pallete, p);
     color: $color;
     @for $i from 1 through 4 {
         &.l#{$i} {
@@ -36,9 +32,8 @@ $ui: () !default;
         };
     };
 };
-
 .bg-primary, .bg-p {
-    $color: map.get($pallete, color-p);
+    $color: map.get($pallete, p);
     color: $color;
     @for $i from 1 through 4 {
         &.l#{$i} {
@@ -56,84 +51,46 @@ $ui: () !default;
             );
         };
     };
+};
+
+// color varient
+@each $c, $value in $pallete {
+    #{".color-" + $c} {
+        color: $value;
+    };
+    #{".bg-" + $c} {
+        @include mixin.bg-color($value);
+    };
+    #{".bg-int-" + $c} {
+        @include mixin.bg-int-color($value);
+    };
+};
+
+.border-top-radius {
+    @include mixin.border-top-radius($radius: map.get($ui, border-radius));
+}
+.border-right-radius {
+    @include mixin.border-right-radius($radius: map.get($ui, border-radius));
+}
+.border-bottom-radius {
+    @include mixin.border-bottom-radius($radius: map.get($ui, border-radius));
+}
+.border-left-radius {
+    @include mixin.border-left-radius($radius: map.get($ui, border-radius));
 }
 
-// .color-complement, .color-c {
-//     color: pallete(color-complement);
-// }
-// .color-primary-left, .color-p1 {
-//     color: pallete(color-primary-left);
-// }
-// .color-primary-right, .color-p2 {
-//     color: pallete(color-primary-right);
-// }
-// .color-complement-left, .color-c1 {
-//     color: pallete(color-complement-left);
-// }
-// .color-complement-right, .color-c2 {
-//     color: pallete(color-complement-right);
-// }
-
-// .bg-complement, .bg-c {
-//     @include mixin.bg-color(pallete(color-complement));
-// }
-// .bg-primary-left, .bg-p1 {
-//     @include mixin.bg-color(pallete(color-primary-left));
-// }
-// .bg-primary-right, .bg-p2 {
-//     @include mixin.bg-color(pallete(color-primary-right));
-// }
-// .bg-complement-left, .bg-c1 {
-//     @include mixin.bg-color(pallete(color-complement-left));
-// }
-// .bg-complement-right, .bg-c2 {
-//     @include mixin.bg-color(pallete(color-complement-right));
-// }
-
-// .bg-int-primary, .bg-int-p {
-//     @include mixin.bg-int-color(pallete(color-p));
-// }
-// .bg-int-complement, .bg-int-c {
-//     @include mixin.bg-int-color(pallete(color-complement));
-// }
-// .bg-int-primary-left, .bg-int-p1 {
-//     @include mixin.bg-int-color(pallete(color-primary-left));
-// }
-// .bg-int-primary-right, .bg-int-p2 {
-//     @include mixin.bg-int-color(pallete(color-primary-right));
-// }
-// .bg-int-complement-left, .bg-int-c1 {
-//     @include mixin.bg-int-color(pallete(color-complement-left));
-// }
-// .bg-int-complement-right, .bg-int-c2 {
-//     @include mixin.bg-int-color(pallete(color-complement-right));
-// }
-
-// .border-top-radius {
-//     @include mixin.border-top-radius($radius: map.get($ui, border-radius));
-// }
-// .border-right-radius {
-//     @include mixin.border-right-radius($radius: map.get($ui, border-radius));
-// }
-// .border-bottom-radius {
-//     @include mixin.border-bottom-radius($radius: map.get($ui, border-radius));
-// }
-// .border-left-radius {
-//     @include mixin.border-left-radius($radius: map.get($ui, border-radius));
-// }
-
-// .lift-1 {
-//     @include mixin.lift-1();
-// }
-// .lift-2 {
-//     @include mixin.lift-2();
-// }
-// .lift-3 {
-//     @include mixin.lift-3();
-// }
-// .lift-4 {
-//     @include mixin.lift-4();
-// }
-// .lift-5 {
-//     @include mixin.lift-5();
-// }
+.lift-1 {
+    @include mixin.lift-1();
+}
+.lift-2 {
+    @include mixin.lift-2();
+}
+.lift-3 {
+    @include mixin.lift-3();
+}
+.lift-4 {
+    @include mixin.lift-4();
+}
+.lift-5 {
+    @include mixin.lift-5();
+}

@@ -124,7 +124,7 @@ You can easily generate color pallete and user interface with configuration.
 Written in Javascript **ES6** and **SASS**, you can easily pick and manage
 components to make them compact and fast.
 
-<pkt-progress-bar></pkt-progress-bar>
+<pkt-progress-bar id="progress-bar"></pkt-progress-bar>
 
 ```javascript
 import * as ui from 'packet-ui';

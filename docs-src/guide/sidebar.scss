@@ -29,7 +29,7 @@ pkt-sidebar {
         pkt-button-square {
             font-size: 1.5rem;
             border-radius: 0;
-            @include mixin.bg-int-color(theme.pallete(color-c));
+            @include mixin.bg-int-color(theme.pallete(c));
         }
     }
     [el="content"] {

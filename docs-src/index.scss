@@ -86,37 +86,37 @@ h2 {
     }
     div.bg-a1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-p1')
+            $bg-color: theme-alt.pallete('p1')
         );
     };
     div.bg-p {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-p')
+            $bg-color: theme-alt.pallete('p')
         );
     };
     div.bg-a2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-p2')
+            $bg-color: theme-alt.pallete('p2')
         );
     };
     div.bg-t1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-c1')
+            $bg-color: theme-alt.pallete('c1')
         );
     };
     div.bg-c {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-c')
+            $bg-color: theme-alt.pallete('c')
         );
     };
     div.bg-t2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-c2')
+            $bg-color: theme-alt.pallete('c2')
         );
     };
 };
 
-pkt-progress-bar {
+#progress-bar {
     @include ui-mixin.progress-bar(
-        $color: theme.pallete(color-p1));
+        $color: theme.pallete(p1));
 };

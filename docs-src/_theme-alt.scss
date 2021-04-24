@@ -2,10 +2,7 @@
 @use 'sass:color'as clr;
 
 $color: () !default;
-$pallete: (
-    color-primary: #2196F3,
-    hue-distance: 20,
-) !default;
+$pallete: () !default;
 $ui: () !default;
 
 $-color: (red: #F44336,
@@ -32,7 +29,8 @@ $-color: (red: #F44336,
 
 $color: map.merge($-color, $color);
 
-$-pallete: (color-primary: map.get($color, amber),
+$-pallete: (
+    primary: #2196F3,
     saturate: 0%,
     hue-distance: 30,
 );
@@ -46,33 +44,33 @@ $-ui: (ui-color: map.get($color, amber),
 
 $ui: map.merge($-ui, $ui);
 
-$-color-primary: map.get($pallete, color-primary);
+$-primary: map.get($pallete, primary);
 $-saturate: map.get($pallete, saturate);
 $-hue-distance: map.get($pallete, hue-distance);
 
-$pallete: (color-primary: map.get($pallete, color-primary),
-    color-complement: clr.adjust($-color-primary,
-        $hue: 180,
-        $saturation: $-saturate),
-    color-primary-left: clr.adjust($-color-primary,
+$pallete: (primary: $-primary,
+    primary-1: clr.adjust($-primary,
         $hue: -($-hue-distance),
         $saturation: $-saturate),
-    color-primary-right: clr.adjust($-color-primary,
+    primary-2: clr.adjust($-primary,
         $hue: $-hue-distance,
         $saturation: $-saturate),
-    color-complement-left: clr.adjust($-color-primary,
+    complement: clr.adjust($-primary,
+        $hue: 180,
+        $saturation: $-saturate),
+    complement-1: clr.adjust($-primary,
         $hue: 180 - ($-hue-distance),
         $saturation: $-saturate),
-    color-complement-right: clr.adjust($-color-primary,
+    complement-2: clr.adjust($-primary,
         $hue: 180 + ($-hue-distance),
         $saturation: $-saturate));
 
-$pallete: map.merge($pallete, (color-p: map.get($pallete, color-primary),
-        color-c: map.get($pallete, color-complement),
-        color-p1: map.get($pallete, color-primary-left),
-        color-p2: map.get($pallete, color-primary-right),
-        color-c1: map.get($pallete, color-complement-left),
-        color-c2: map.get($pallete, color-complement-right)));
+$pallete: map.merge($pallete, (p: map.get($pallete, primary),
+        p1: map.get($pallete, primary-1),
+        p2: map.get($pallete, primary-2),
+        c: map.get($pallete, complement),
+        c1: map.get($pallete, complement-1),
+        c2: map.get($pallete, complement-2)));
 
 @function color($name) {
     @return map.get($color, $name);
