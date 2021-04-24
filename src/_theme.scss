@@ -1,11 +1,10 @@
 @use 'sass:map';
 @use 'sass:color' as clr;
 
-$color: () !default;
 $pallete: () !default;
 $ui: () !default;
 
-$-color: (
+$color: (
     red: #F44336,
     pink: #E91E63,
     purple: #9C27B0,
@@ -26,9 +25,7 @@ $-color: (
     grey: #9E9E9E,
     blue-grey: #607D8B,
     blue-gray: #607D8B,
-);
-
-$color: map.merge($-color, $color);
+) !default;
 
 $-pallete: (
     primary: map.get($color, amber),
