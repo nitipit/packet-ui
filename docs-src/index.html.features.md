@@ -49,7 +49,7 @@ and **Theme** to get started and make a user interface prototype.
             </td>
         </tr>
     </table>
-    <button class="bg-int-a1" style="text-align: center;">
+    <button class="bg-int-p1" style="text-align: center;">
         and much more...
     </button>
 </pkt-card>
@@ -73,7 +73,7 @@ There are 19 pre-defined color in CSS class which based on
 Just put `class="{color}"` or `class={bg-color}` 
 on any element to render color with legible text.
 
-<div class="row">
+<div class="row" style="margin-bottom:2rem;">
     <div el="bg-color">
         <pkt-badge class="bg-red">red</pkt-badge>
         <pkt-badge class="bg-pink">pink</pkt-badge>
@@ -100,12 +100,12 @@ on any element to render color with legible text.
 ### Theme color pallete
 
 <div id="theme-alt" style="text-align: center; margin-top: 2rem;">
-    <button class="bg-a1">A1</button>
-    <button class="bg-p">P</button>
-    <button class="bg-a2">A2</button>
-    <button class="bg-t1">T1</button>
-    <button class="bg-c">C</button>
-    <button class="bg-t2">T2</button>
+    <div class="bg-a1">P1</div>
+    <div class="bg-p">P</div>
+    <div class="bg-a2">P2</div>
+    <div class="bg-t1">C1</div>
+    <div class="bg-c">C</div>
+    <div class="bg-t2">C2</div>
 </div>
 
 You can easily generate color pallete and user interface with configuration.
@@ -124,8 +124,18 @@ You can easily generate color pallete and user interface with configuration.
 Written in Javascript **ES6** and **SASS**, you can easily pick and manage
 components to make them compact and fast.
 
+<pkt-progress-bar></pkt-progress-bar>
+
 ```javascript
 import * as ui from 'packet-ui';
 
 customElements.define('pkt-progress-bar', ui.ProgressBar);
+```
+
+```scss
+@use '/path/to/_ui-mixin.scss';
+
+pkt-progress-bar {
+    @include ui-mixin.progress-bar(red);
+};
 ```

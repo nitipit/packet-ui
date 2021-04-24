@@ -56,19 +56,19 @@ $pallete: (
         $-color-primary,
         $hue: 180,
         $saturation: $-saturate),
-    color-analog-left: clr.adjust(
+    color-primary-left: clr.adjust(
         $-color-primary,
         $hue: -($-hue-distance),
         $saturation: $-saturate),
-    color-analog-right: clr.adjust(
+    color-primary-right: clr.adjust(
         $-color-primary,
         $hue: $-hue-distance,
         $saturation: $-saturate),
-    color-triadic-left: clr.adjust(
+    color-complement-left: clr.adjust(
         $-color-primary,
         $hue: 180 - ($-hue-distance),
         $saturation: $-saturate),
-    color-triadic-right: clr.adjust(
+    color-complement-right: clr.adjust(
         $-color-primary,
         $hue: 180 + ($-hue-distance),
         $saturation: $-saturate)
@@ -78,10 +78,10 @@ $pallete: map.merge(
     $pallete, (
         color-p: map.get($pallete, color-primary),
         color-c: map.get($pallete, color-complement),
-        color-a1: map.get($pallete, color-analog-left),
-        color-a2: map.get($pallete, color-analog-right),
-        color-t1: map.get($pallete, color-triadic-left),
-        color-t2: map.get($pallete, color-triadic-right)
+        color-p1: map.get($pallete, color-primary-left),
+        color-p2: map.get($pallete, color-primary-right),
+        color-c1: map.get($pallete, color-complement-left),
+        color-c2: map.get($pallete, color-complement-right)
     )
 );
 

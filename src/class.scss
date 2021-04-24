@@ -255,33 +255,33 @@ $ui: null !default;
 .color-complement, .color-c {
     color: pallete(color-complement);
 }
-.color-analog-left, .color-a1 {
-    color: pallete(color-analog-left);
+.color-primary-left, .color-p1 {
+    color: pallete(color-primary-left);
 }
-.color-analog-right, .color-a2 {
-    color: pallete(color-analog-right);
+.color-primary-right, .color-p2 {
+    color: pallete(color-primary-right);
 }
-.color-triadic-left, .color-t1 {
-    color: pallete(color-triadic-left);
+.color-complement-left, .color-c1 {
+    color: pallete(color-complement-left);
 }
-.color-triadic-right, .color-t2 {
-    color: pallete(color-triadic-right);
+.color-complement-right, .color-c2 {
+    color: pallete(color-complement-right);
 }
 
 .bg-complement, .bg-c {
     @include mixin.bg-color(pallete(color-complement));
 }
-.bg-analog-left, .bg-a1 {
-    @include mixin.bg-color(pallete(color-analog-left));
+.bg-primary-left, .bg-p1 {
+    @include mixin.bg-color(pallete(color-primary-left));
 }
-.bg-analog-right, .bg-a2 {
-    @include mixin.bg-color(pallete(color-analog-right));
+.bg-primary-right, .bg-p2 {
+    @include mixin.bg-color(pallete(color-primary-right));
 }
-.bg-triadic-left, .bg-t1 {
-    @include mixin.bg-color(pallete(color-triadic-left));
+.bg-complement-left, .bg-c1 {
+    @include mixin.bg-color(pallete(color-complement-left));
 }
-.bg-triadic-right, .bg-t2 {
-    @include mixin.bg-color(pallete(color-triadic-right));
+.bg-complement-right, .bg-c2 {
+    @include mixin.bg-color(pallete(color-complement-right));
 }
 
 .bg-int-primary, .bg-int-p {
@@ -290,17 +290,17 @@ $ui: null !default;
 .bg-int-complement, .bg-int-c {
     @include mixin.bg-int-color(pallete(color-complement));
 }
-.bg-int-analog-left, .bg-int-a1 {
-    @include mixin.bg-int-color(pallete(color-analog-left));
+.bg-int-primary-left, .bg-int-p1 {
+    @include mixin.bg-int-color(pallete(color-primary-left));
 }
-.bg-int-analog-right, .bg-int-a2 {
-    @include mixin.bg-int-color(pallete(color-analog-right));
+.bg-int-primary-right, .bg-int-p2 {
+    @include mixin.bg-int-color(pallete(color-primary-right));
 }
-.bg-int-triadic-left, .bg-int-t1 {
-    @include mixin.bg-int-color(pallete(color-triadic-left));
+.bg-int-complement-left, .bg-int-c1 {
+    @include mixin.bg-int-color(pallete(color-complement-left));
 }
-.bg-int-triadic-right, .bg-int-t2 {
-    @include mixin.bg-int-color(pallete(color-triadic-right));
+.bg-int-complement-right, .bg-int-c2 {
+    @include mixin.bg-int-color(pallete(color-complement-right));
 }
 
 .border-top-radius {

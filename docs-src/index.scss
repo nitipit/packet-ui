@@ -3,6 +3,7 @@
 @use '_theme.scss';
 @use '_theme-alt.scss';
 @use '../src/_function.scss';
+@use '../src/_ui-mixin.scss';
 
 #highlight {
     .container {
@@ -74,38 +75,48 @@ h2 {
 
 
 #theme-alt {
-    button {
+    display: flex;
+    justify-content: center;
+    div {
         width: 4rem;
         height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    button.bg-a1 {
+    div.bg-a1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-a1')
+            $bg-color: theme-alt.pallete('color-p1')
         );
     };
-    button.bg-p {
+    div.bg-p {
         @include mixin.bg-int-color(
             $bg-color: theme-alt.pallete('color-p')
         );
     };
-    button.bg-a2 {
+    div.bg-a2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-a2')
+            $bg-color: theme-alt.pallete('color-p2')
         );
     };
-    button.bg-t1 {
+    div.bg-t1 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-t1')
+            $bg-color: theme-alt.pallete('color-c1')
         );
     };
-    button.bg-c {
+    div.bg-c {
         @include mixin.bg-int-color(
             $bg-color: theme-alt.pallete('color-c')
         );
     };
-    button.bg-t2 {
+    div.bg-t2 {
         @include mixin.bg-int-color(
-            $bg-color: theme-alt.pallete('color-t2')
+            $bg-color: theme-alt.pallete('color-c2')
         );
     };
+};
+
+pkt-progress-bar {
+    @include ui-mixin.progress-bar(
+        $color: theme.pallete(color-p1));
 };
