@@ -1,7 +1,7 @@
 @use "sass:color";
 @use '_function.scss';
 
-@mixin bg-color($bg-color) {
+@mixin bg-color($bg-color: orange) {
     background-color: $bg-color;
     color: function.choose-contrast-color($bg-color);
 }
