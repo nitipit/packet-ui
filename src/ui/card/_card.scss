@@ -1,8 +1,13 @@
+@use 'sass:map';
 @use '../../_mixin';
+@use '../../_theme-default.scss';
 
-@mixin card($radius: 4px) {
+$-ui: theme-default.$ui !default;
+$-border-radius: map.get($-ui, border-radius);
+
+@mixin card($border-radius: $-border-radius) {
     display: block;
-    border-radius: $radius;
+    border-radius: $border-radius;
     @include mixin.lift-3();
     > h1, > h2, > h3 {
         padding: 0.5rem 1rem;

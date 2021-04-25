@@ -6,11 +6,11 @@ $-ui: theme-default.$ui !default;
 
 @mixin button(
         $bg-color: map.get($-ui, ui-color),
-        $radius: map.get($-ui, border-radius)
+        $border-radius: map.get($-ui, border-radius)
     ) {
     @include mixin.lift-1();
     @include mixin.bg-int-color($bg-color);
-    border-radius: $radius;
+    border-radius: $border-radius;
     font-family: map.get($-ui, font-family);
     border: 0;
     font-size: 1em;

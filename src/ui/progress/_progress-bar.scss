@@ -1,6 +1,12 @@
 @use 'sass:color';
+@use 'sass:map';
+@use '../../_theme-default.scss';
 
-@mixin progress-bar($color: orange) {
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin progress-bar($color: $-ui-color) {
     position: relative;
     height: 0.25em;
     display: block;

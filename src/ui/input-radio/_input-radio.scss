@@ -1,7 +1,13 @@
 @use 'sass:color';
+@use 'sass:map';
 @use '../../_function.scss';
+@use '../../_theme-default.scss';
 
-@mixin input-radio($color: orange) {
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin input-radio($color: $-ui-color) {
     $width: 1.1em;
     $height: 1.1em;
     position: relative;

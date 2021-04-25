@@ -60,11 +60,6 @@ $shadow-color: color.adjust(black, $lightness: 25%);
     box-shadow: 0 16px 33px 0 $shadow-color;
 }
 
-@mixin font-ui() {
-    font-family: Cantarell;
-    font-size: 1em;
-}
-
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }

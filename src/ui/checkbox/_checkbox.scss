@@ -1,12 +1,17 @@
 @use "sass:color";
+@use 'sass:map';
 @use '../../_mixin.scss';
 @use '../../_function.scss';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
 
 @mixin checkbox(
         $bg-color: color.adjust(white, $lightness: -20%),
-        $color-active: orange) {
+        $color-active: map.get($-ui, ui-color)) {
     $size: 1em;
-    @include mixin.font-ui();
+    font-family: map.get($-ui, font-family);
+    font-size: 1em;
     position: relative;
     width: $size;
     height: $size;
