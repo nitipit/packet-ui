@@ -1,22 +1,19 @@
 @use 'sass:map';
 @use '_mixin.scss';
 @use '_theme.scss';
-@use "_ui-mixin.scss";
+@use "ui/_mixin.scss" as ui-mixin;
 
 $ui: theme.$ui !default;
 
-@function ui($name) {
-    @return map.get($ui, $name);
-}
-
 $color: ui(color);
 $pallete: ui(pallete);
-$ui-color: ui(ui-color);
-$font-family: ui(font-family);
-$border-radius: ui(border-radius);
+
+$ui-color: map.get($ui, ui-color);
+$font-family: map.get($ui, font-family);
+$border-radius: map.get($ui, border-radius);
 
 pkt-badge, .pkt-badge {
-    @include ui-mixin.badge($bg-color: $ui-color)
+    @include ui-mixin.badge($bg-color: $ui-color);
 }
 
 pkt-box-arrow-top, .pkt-box-arrow-top {

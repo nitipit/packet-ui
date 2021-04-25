@@ -10,12 +10,13 @@ $ui: () !default;
 
 // Default values.
 $-font-responsive: theme-default.$font-responsive;
-
 $-text-font-size: theme-default.$text-font-size;
+$-ui: theme-default.$ui;
 
 // Merge default values with arguments.
 $font-responsive: map.merge($-font-responsive, $font-responsive);
 $text-font-size: map.merge($-text-font-size, $text-font-size);
+$ui: map.merge($-ui, $ui);
 
 html {
     @include mixin.font-responsive(
@@ -42,7 +43,7 @@ blockquote {
     box-sizing: border-box;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-left: 4px solid orange;
+    border-left: 4px solid #FFC107;
 }
 
 code {

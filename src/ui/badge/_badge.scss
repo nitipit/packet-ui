@@ -1,8 +1,14 @@
-@use '../../_mixin';
+@use 'sass:map';
+@use '../../_theme-default.scss';
+@use '../../_mixin.scss';
 
-@mixin badge($bg-color: orange) {
-    @include mixin.font-ui();
+$-ui: theme-default.$ui !default;
+
+@mixin badge(
+        $bg-color: map.get($-ui, ui-color),
+    ) {
     @include mixin.bg-color($bg-color);
+    font-family: map.get($-ui, font-family);
     display: inline-flex;
     justify-content: center;
     align-items: center;
