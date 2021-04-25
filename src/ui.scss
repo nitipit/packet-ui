@@ -118,30 +118,23 @@ pkt-sidebar {
 }
 
 pkt-switch {
-    @include ui-mixin.switch($color-active: $ui-color);
+    @include ui-mixin.switch();
 }
 
 pkt-tab, .pkt-tab {
-    @include ui-mixin.tab($highlight-color: $ui-color);
+    @include ui-mixin.tab();
 }
 
 table {
-    @include ui-mixin.table(
-        $bg-color: $ui-color,
-        $border-radius: $border-radius
-    );
+    @include ui-mixin.table();
 }
 
 pkt-tag, .pkt-tag {
-    @include ui-mixin.tag(
-        $bg-color: $ui-color,
-        $border-radius: $border-radius);
+    @include ui-mixin.tag();
 }
 
 pkt-tag-x {
-    @include ui-mixin.tag(
-        $bg-color: $ui-color,
-        $border-radius: $border-radius);
+    @include ui-mixin.tag();
     padding-right: 0.2em;
     pkt-icon {
         cursor: pointer;

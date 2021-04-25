@@ -1,9 +1,13 @@
 @use 'sass:color';
-@use '../button/_button';
+@use 'sass:map';
+@use '../button/_button.scss';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
 
 @mixin tab(
         $button-color: color.adjust(white, $lightness: -10%),
-        $highlight-color: orange) {
+        $highlight-color: map.get($-ui, ui-color)) {
 
     display: inline-block;
     position: relative;

@@ -1,8 +1,12 @@
 @use 'sass:color';
-@use '../../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
 
 @mixin table(
-        $bg-color: orange,
+        $bg-color: map.get($-ui, ui-color),
         $vertical-line: true,
         $horizontal-line: true,
         $border-radius: 4px) {

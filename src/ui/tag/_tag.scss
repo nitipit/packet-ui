@@ -1,14 +1,23 @@
 @use 'sass:color';
-@use '../../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+$-border-radius: map.get($-ui, border-radius);
+$-font-family: map.get($-ui, font-family);
 
 @mixin tag(
-        $bg-color: orange,
-        $radius: 4px) {
-    @include mixin.font-ui();
+        $bg-color: $-ui-color,
+        $border-radius: $-border-radius) {
     @include mixin.bg-color($bg-color);
+    font-family: $-font-family;
+    font-size: 1em;
     display: inline-flex;
     align-items: center;
-    border-radius: $radius;
+    border-radius: $border-radius;
     padding: 0 0.4em;
     font-size: 0.9em;
     pkt-icon {
