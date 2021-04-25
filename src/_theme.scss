@@ -1,46 +1,17 @@
 @use 'sass:map';
 @use 'sass:color' as clr;
+@use '_theme-default.scss';
 
 $pallete: () !default;
 $ui: () !default;
+$color: () !default;
 
-$color: (
-    red: #F44336,
-    pink: #E91E63,
-    purple: #9C27B0,
-    deep-purple: #673AB7,
-    indigo: #3F51B5,
-    blue: #2196F3,
-    light-blue: #03A9F4,
-    cyan: #00BCD4,
-    teal: #009688,
-    green: #4CAF50,
-    light-green: #8BC34A,
-    lime: #CDDC39,
-    yellow: #FFEB3B,
-    amber: #FFC107,
-    orange: #FF9800,
-    deep-orange: #FF5722,
-    brown: #795548,
-    grey: #9E9E9E,
-    blue-grey: #607D8B,
-    blue-gray: #607D8B,
-) !default;
+$-color: theme-default.$color;
+$-pallete: theme-default.$pallete;
+$-ui: theme-default.$ui;
 
-$-pallete: (
-    primary: map.get($color, amber),
-    saturate: 0%,
-    hue-distance: 30,
-);
-
+$color: map.merge($-color, $color);
 $pallete: map.merge($-pallete, $pallete);
-
-$-ui: (
-    ui-color: map.get($color, amber),
-    border-radius: 4px,
-    font-family: packet-ui,
-);
-
 $ui: map.merge($-ui, $ui);
 
 $-primary: map.get($pallete, primary);
@@ -49,10 +20,12 @@ $-hue-distance: map.get($pallete, hue-distance);
 
 $pallete: (
     primary: $-primary,
-    primary-1: clr.adjust($-primary,
+    primary-1: clr.adjust(
+        $-primary,
         $hue: -($-hue-distance),
         $saturation: $-saturate),
-    primary-2: clr.adjust($-primary,
+    primary-2: clr.adjust(
+        $-primary,
         $hue: $-hue-distance,
         $saturation: $-saturate),
     complement: clr.adjust(

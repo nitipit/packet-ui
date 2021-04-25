@@ -1,9 +1,10 @@
-// @use 'typography.scss';
 @use '_theme.scss';
 
-// @use 'ui.scss' with (
-//     $ui: theme.$ui,
-// );
+@use 'typography.scss';
+
+@use 'ui.scss' with (
+    $ui: theme.$ui,
+);
 
 @use 'class.scss' with (
     $color: theme.$color,

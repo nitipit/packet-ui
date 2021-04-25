@@ -1,18 +1,39 @@
 @use "sass:color";
+@use 'sass:map';
 @use "_mixin.scss";
+@use '_theme-default.scss';
+
+// Module arguments.
+$font-responsive: () !default;
+$text-font-size: () !default;
+$ui: () !default;
+
+// Default values.
+$-font-responsive: theme-default.$font-responsive;
+
+$-text-font-size: theme-default.$text-font-size;
+
+// Merge default values with arguments.
+$font-responsive: map.merge($-font-responsive, $font-responsive);
+$text-font-size: map.merge($-text-font-size, $text-font-size);
 
 html {
-    @include mixin.font-fluid();
+    @include mixin.font-responsive(
+        $vw-min: 320px,
+        $vw-max: 1200px,
+        $font-size-min: 16px,
+        $font-size-max: 18px,
+    );
     line-height: 1.7;
-}
+};
 
-h1 {font-size: 2rem;}
-h2 {font-size: 1.5rem;}
-h3 {font-size: 1.25rem;}
-h4 {font-size: 1.1rem;}
-h5 {font-size: 1.0rem;}
-h6 {font-size: 0.9rem;}
-p {font-size: 1rem;}
+h1 {font-size: map.get($text-font-size, h1)};
+h2 {font-size: map.get($text-font-size, h2)};
+h3 {font-size: map.get($text-font-size, h3)};
+h4 {font-size: map.get($text-font-size, h4)};
+h5 {font-size: map.get($text-font-size, h5)};
+h6 {font-size: map.get($text-font-size, h6)};
+p {font-size: map.get($text-font-size, p)};
 
 blockquote {
     margin: auto;

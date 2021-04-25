@@ -69,7 +69,7 @@ $shadow-color: color.adjust(black, $lightness: 25%);
     font-size: 1em;
 }
 
-@mixin font-fluid(
+@mixin font-responsive(
         $vw-min: 320px, $vw-max: 1200px,
         $font-size-min: 16px, $font-size-max: 18px) {
     font-size: $font-size-min;

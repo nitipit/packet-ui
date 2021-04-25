@@ -1,11 +1,18 @@
-# Theme Design
+# Theme Framework
 
-This guide will show how to transfrom your design into CSS.
+**Packet UI** let you customize CSS style through **Theme Framework** which is written
+in **SASS** languange
+
+> Read more about SASS lang at [](https://sass-lang.com/)
 
 > [Material Design: Color System](https://material.io/design/color/the-color-system.html)
 > could be a good place to read and understand about color system and design.
 
 Firstly, let's take a look about how to use **Theme Framework** with **SASS**
+
+```scss
+
+```
 
 ```scss
 @use 'path-to/src/_theme.scss' with (
