@@ -1,13 +1,14 @@
 @use "sass:color";
 @use "sass:map";
 @use '_mixin.scss';
+@use '_theme-default.scss';
 
-$color: () !default;
-$pallete: () !default;
-$ui: () !default;
+$-color: theme-default.$color !default;
+$-pallete: theme-default.$pallete !default;
+$-ui: theme-default.$ui !default;
 
 // color and background color
-@each $c, $value in $color {
+@each $c, $value in $-color {
     #{"." + $c} {
         color: $value;
     };
@@ -21,7 +22,7 @@ $ui: () !default;
 
 // monochrome for primary color
 .color-primary, .color-p {
-    $color: map.get($pallete, p);
+    $color: map.get($-pallete, p);
     color: $color;
     @for $i from 1 through 4 {
         &.l#{$i} {
@@ -33,7 +34,7 @@ $ui: () !default;
     };
 };
 .bg-primary, .bg-p {
-    $color: map.get($pallete, p);
+    $color: map.get($-pallete, p);
     color: $color;
     @for $i from 1 through 4 {
         &.l#{$i} {
@@ -54,7 +55,7 @@ $ui: () !default;
 };
 
 // color varient
-@each $c, $value in $pallete {
+@each $c, $value in $-pallete {
     #{".color-" + $c} {
         color: $value;
     };
@@ -67,16 +68,16 @@ $ui: () !default;
 };
 
 .border-top-radius {
-    @include mixin.border-top-radius($radius: map.get($ui, border-radius));
+    @include mixin.border-top-radius($radius: map.get($-ui, border-radius));
 }
 .border-right-radius {
-    @include mixin.border-right-radius($radius: map.get($ui, border-radius));
+    @include mixin.border-right-radius($radius: map.get($-ui, border-radius));
 }
 .border-bottom-radius {
-    @include mixin.border-bottom-radius($radius: map.get($ui, border-radius));
+    @include mixin.border-bottom-radius($radius: map.get($-ui, border-radius));
 }
 .border-left-radius {
-    @include mixin.border-left-radius($radius: map.get($ui, border-radius));
+    @include mixin.border-left-radius($radius: map.get($-ui, border-radius));
 }
 
 .lift-1 {

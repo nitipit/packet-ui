@@ -8,7 +8,7 @@
 );
 
 @use 'class.scss' with (
-    $color: theme.$color,
-    $pallete: theme.$pallete,
-    $ui: theme.$ui,
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
 );

@@ -3,7 +3,7 @@
 @use '_theme.scss';
 @use '_theme-alt.scss';
 @use '../src/_function.scss';
-@use '../src/_ui-mixin.scss';
+@use '_ui-mixin.scss';
 
 #highlight {
     .container {

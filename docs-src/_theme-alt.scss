@@ -74,18 +74,12 @@ $pallete: map.merge($pallete, (p: map.get($pallete, primary),
 
 @function color($name) {
     @return map.get($color, $name);
-}
-
-;
+};
 
 @function pallete($name) {
     @return map.get($pallete, $name);
-}
-
-;
+};
 
 @function ui($name) {
     @return map.get($ui, $name);
-}
-
-;
+};
