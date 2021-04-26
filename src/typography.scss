@@ -4,37 +4,41 @@
 @use '_theme-default.scss';
 
 // Module arguments.
-$font-responsive: () !default;
-$text-font-size: () !default;
-$ui: () !default;
+$-font-responsive: () !default;
+$-text-font-size: () !default;
+$-ui: () !default;
 
 // Default values.
-$-font-responsive: theme-default.$font-responsive;
-$-text-font-size: theme-default.$text-font-size;
-$-ui: theme-default.$ui;
+$-font-responsive-default: theme-default.$font-responsive;
+$-text-font-size-default: theme-default.$text-font-size;
+$-ui-default: theme-default.$ui;
 
 // Merge default values with arguments.
-$font-responsive: map.merge($-font-responsive, $font-responsive);
-$text-font-size: map.merge($-text-font-size, $text-font-size);
-$ui: map.merge($-ui, $ui);
+$-font-responsive: map.merge($-font-responsive-default, $-font-responsive);
+$-text-font-size: map.merge($-text-font-size-default, $-text-font-size);
+$-ui: map.merge($-ui-default, $-ui);
 
 html {
     @include mixin.font-responsive(
-        $vw-min: 320px,
-        $vw-max: 1200px,
-        $font-size-min: 16px,
-        $font-size-max: 18px,
+        $vw-min: map.get($-font-responsive, vw-min),
+        $vw-max: map.get($-font-responsive, vw-max),
+        $font-size-min: map.get($-font-responsive, font-size-min),
+        $font-size-max: map.get($-font-responsive, font-size-max),
     );
     line-height: 1.7;
 };
 
-h1 {font-size: map.get($text-font-size, h1)};
-h2 {font-size: map.get($text-font-size, h2)};
-h3 {font-size: map.get($text-font-size, h3)};
-h4 {font-size: map.get($text-font-size, h4)};
-h5 {font-size: map.get($text-font-size, h5)};
-h6 {font-size: map.get($text-font-size, h6)};
-p {font-size: map.get($text-font-size, p)};
+h1 {font-size: map.get($-text-font-size, h1)};
+h2 {font-size: map.get($-text-font-size, h2)};
+h3 {font-size: map.get($-text-font-size, h3)};
+h4 {font-size: map.get($-text-font-size, h4)};
+h5 {font-size: map.get($-text-font-size, h5)};
+h6 {font-size: map.get($-text-font-size, h6)};
+p {font-size: map.get($-text-font-size, p)};
+
+p + ol, p + ul {
+    margin-top: -1rem;
+}
 
 blockquote {
     margin: auto;
@@ -43,7 +47,7 @@ blockquote {
     box-sizing: border-box;
     padding-left: 1rem;
     padding-right: 1rem;
-    border-left: 4px solid #FFC107;
+    border-left: 4px solid map.get($-ui, ui-color);
 }
 
 code {

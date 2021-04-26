@@ -2,17 +2,24 @@
 @use 'sass:color' as clr;
 @use '_theme-default.scss';
 
-$pallete: () !default;
-$ui: () !default;
-$color: () !default;
+$-color: () !default;
+$-pallete: () !default;
+$-ui: () !default;
+$-font-responsive: () !default;
+$-text-font-size: () !default;
 
-$-color: theme-default.$color;
-$-pallete: theme-default.$pallete;
-$-ui: theme-default.$ui;
 
-$color: map.merge($-color, $color);
-$pallete: map.merge($-pallete, $pallete);
-$ui: map.merge($-ui, $ui);
+$color: theme-default.$color;
+$pallete: theme-default.$pallete;
+$ui: theme-default.$ui;
+$font-responsive: theme-default.$font-responsive;
+$text-font-size: theme-default.$text-font-size;
+
+$color: map.merge($color, $-color);
+$pallete: map.merge($pallete, $-pallete);
+$ui: map.merge($ui, $-ui);
+$font-responsive: map.merge($font-responsive, $-font-responsive);
+$text-font-size: map.merge($text-font-size, $-text-font-size);
 
 $-primary: map.get($pallete, primary);
 $-saturate: map.get($pallete, saturate);

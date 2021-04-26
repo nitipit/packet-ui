@@ -4,6 +4,14 @@
 @use '../node_modules/highlight.js/styles/atom-one-dark.css';
 
 @font-face {
+    font-family: 'Cantarell';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+        url('./lib/packet-ui/fonts/Cantarell/Cantarell-Regular.ttf');
+}
+
+@font-face {
     font-family: 'fira-sans';
     font-style: normal;
     font-weight: 400;
