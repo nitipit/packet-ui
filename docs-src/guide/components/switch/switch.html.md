@@ -4,7 +4,7 @@
 ---
 <div data-id="preview" style="font-size: 1.5rem; display: flex;">
     <pkt-switch></pkt-switch>
-    <pkt-switch class="color-a2">
+    <pkt-switch class="color-c">
         <input type="checkbox">
         <div el="label">
             <span>YES</span>

@@ -8,10 +8,7 @@ div[data-id="preview"] {
     pkt-switch {
         margin: 0.5rem
     }
-    pkt-switch.color-p {
-        @include ui-mixin.switch(theme.pallete(color-p));
-    }
-    pkt-switch.color-a2 {
-        @include ui-mixin.switch(theme.pallete(color-a2));
+    pkt-switch.color-c {
+        @include ui-mixin.switch(theme.pallete(c));
     }
 }

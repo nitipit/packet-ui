@@ -1,14 +1,18 @@
 @use '_theme.scss';
 
-@use 'typography.scss';
-
-@use 'ui.scss' with (
+@use 'class.scss' with (
+    $-color: theme.$color,
     $-pallete: theme.$pallete,
     $-ui: theme.$ui,
 );
 
-@use 'class.scss' with (
-    $-color: theme.$color,
+@use 'typography.scss' with (
+    $-font-responsive: theme.$font-responsive,
+    $-text-font-size: theme.$text-font-size,
+    $-ui: () theme.$ui,
+);
+
+@use 'ui.scss' with (
     $-pallete: theme.$pallete,
     $-ui: theme.$ui,
 );
