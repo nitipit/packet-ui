@@ -4,7 +4,7 @@
 ---
 <div style="display: flex; justify-content:center;">
     <pkt-card style="width: 90%; max-width: 450px;">
-        <h2 class="bg-a1 border-top-radius">Dessert</h2>
+        <h2 class="bg-p1 border-top-radius">Dessert</h2>
         <img src="./dessert.jpg">
         <p>
             A whole batch of basic vanilla cupcakes, topped with the best

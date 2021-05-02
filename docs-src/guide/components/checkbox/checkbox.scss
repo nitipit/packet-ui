@@ -8,23 +8,23 @@
     align-items: baseline;
 }
 
-.c-p {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-p));
+.color-p {
+    @include ui-mixin.checkbox($color-active: theme.pallete(p));
 }
-.c-a1 {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-a1));
+.color-p1 {
+    @include ui-mixin.checkbox($color-active: theme.pallete(p1));
 }
-.c-a2 {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-a2));
+.color-p2 {
+    @include ui-mixin.checkbox($color-active: theme.pallete(p2));
 }
-.c-t1 {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-t1));
+.color-c {
+    @include ui-mixin.checkbox($color-active: theme.pallete(c));
 }
-.c-t2 {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-t2));
+.color-c1 {
+    @include ui-mixin.checkbox($color-active: theme.pallete(c1));
 }
-.c-c {
-    @include ui-mixin.checkbox($color-active: theme.pallete(color-c));
+.color-c2 {
+    @include ui-mixin.checkbox($color-active: theme.pallete(c2));
 }
 
 .size-1 {

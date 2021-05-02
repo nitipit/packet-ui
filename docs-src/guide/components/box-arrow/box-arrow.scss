@@ -1,4 +1,4 @@
-@use '../../../theme.scss';
+@use '../../../_theme.scss';
 @use '../../../_ui-mixin.scss';
 
 #preview {
@@ -13,25 +13,25 @@
         &.top {
             @include ui-mixin.box-arrow(
                 $arrow: top,
-                $bg-color: theme.pallete(color-a1)
+                $bg-color: theme.pallete(p1)
             );
         };
         &.right {
             @include ui-mixin.box-arrow(
                 $arrow: right,
-                $bg-color: theme.pallete(color-p)
+                $bg-color: theme.pallete(p)
             );
         };
         &.bottom {
             @include ui-mixin.box-arrow(
                 $arrow: bottom,
-                $bg-color: theme.pallete(color-a2)
+                $bg-color: theme.pallete(p2)
             );
         }
         &.left {
             @include ui-mixin.box-arrow(
                 $arrow: left,
-                $bg-color: theme.pallete(color-t1)
+                $bg-color: theme.pallete(c1)
             );
         }
     }
