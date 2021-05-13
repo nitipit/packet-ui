@@ -9,7 +9,7 @@
 @use 'typography.scss' with (
     $-font-responsive: theme.$font-responsive,
     $-text-font-size: theme.$text-font-size,
-    $-ui: () theme.$ui,
+    $-ui: theme.$ui,
 );
 
 @use 'ui.scss' with (

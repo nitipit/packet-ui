@@ -1,7 +1,8 @@
 {
     "name": "packet-ui",
-    "version": "2.0.0dev",
-    "description": "Simple and Stylish <Web Components/> User Interface",
+    "version": "2.0.0",
+    "description": "HTML5 User Interface Framework",
+    "keywords": ["html5", "javascript", "css", "ui", "user interface", "framework"],
     "repository": {
         "repository": {
             "type": "git",
