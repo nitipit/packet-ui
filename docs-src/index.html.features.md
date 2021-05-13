@@ -127,12 +127,14 @@ components to make them compact and fast.
 <pkt-progress-bar id="progress-bar"></pkt-progress-bar>
 
 ```javascript
+// Javascript
 import * as ui from 'packet-ui';
 
 customElements.define('pkt-progress-bar', ui.ProgressBar);
 ```
 
 ```scss
+// SASS
 @use '/path/to/_ui-mixin.scss';
 
 pkt-progress-bar {

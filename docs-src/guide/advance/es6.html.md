@@ -11,6 +11,7 @@ import * as ui from 'packet-ui';
 // Define ui.InputNumber component to custom element.
 customElements.define('ui-input-number', ui.InputNumber);
 ```
+
 ```
 // SASS file : index.scss
 @use '/path/to/ui/ui.scss';

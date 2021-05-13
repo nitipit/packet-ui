@@ -31,19 +31,45 @@ src
 └── ui.scss
 ```
 
-In this directory, `packet-ui.scss` is the main **SASS** which generates all CSS style. To make your own, just copy `packet-ui.scss` file to somewhere else in your project and run:
+In this directory, `packet-ui.scss` is the main **SASS** which generates all CSS style. To make your own, just copy `packet-ui.scss` file to somewhere else in your project and correct `@use` path
 
-```
-$ npx sass packet-ui.scss your_destination_directory/packet-ui.css
+```scss
+// @use '_theme.scss';
+@use 'node_modules/packet-ui/src/_theme.scss';
+
+// @use 'class.scss';
+@use 'node_modules/packet-ui/src/class.scss' with (
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+
+// @use 'typography.scss';
+@use 'node_modules/packet-ui/src/typography.scss' with (
+    $-font-responsive: theme.$font-responsive,
+    $-text-font-size: theme.$text-font-size,
+    $-ui: () theme.$ui,
+);
+
+// @use 'ui.scss';
+@use 'node_modules/packet-ui/src/ui.scss' with (
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
 ```
 
-Then, include `your_destination/packet-ui.css` in your **HTML**
+Then, run `sass` command:
+```
+$ npx sass packet-ui.scss dest/packet-ui.css
+```
+
+Now, you can include `dest/packet-ui.css` in your **HTML**
 
 ```html
-<link rel="stylesheet" href="your_destination/packet-ui.css">
+<link rel="stylesheet" href="dest/packet-ui.css">
 ```
 
-## Theme customization in `packet-ui.scss`
+## Theme customization
 ---
 
 `packet-ui.scss` contains 4 main parts:
