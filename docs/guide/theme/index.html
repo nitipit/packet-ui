@@ -1,0 +1,202 @@
+<html>
+<head>
+
+<title>Packet UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link icon rel="preload" set="adwaita"
+    href="../../lib/adwaita-icon-web/adwaita.svg?v=26"
+    as="image" type="image/svg+xml">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36104934-6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-36104934-6');
+</script>
+<!-- End Google Analytics -->
+
+<script type="module">
+import { Icon } from '../../lib/adwaita-icon-web/icon.js';
+customElements.define('pkt-icon', Icon);  // define custom element for icons
+</script>
+<link rel="stylesheet" href="../../lib/packet-ui/dist/normalize.css?v=26">
+<link rel="stylesheet" href="../../packet-ui.css?v=26">
+<script defer src="../../packet-ui.js?v=26"></script>
+<link rel="stylesheet" href="../../base.css?v=26">
+<script defer src="../../base.js?v=26"></script>
+
+
+
+<link rel="stylesheet" href="../../guide/base.css?v=26">
+<link rel="stylesheet" href="../../guide/sidebar.css?v=26">
+
+</head>
+<body>
+
+<div class="container">
+    <h1>Theme Framework</h1>
+<p><strong>Packet UI</strong> let you customize CSS style through <strong>Theme Framework</strong> which is written
+in <strong>SASS</strong> languange</p>
+<blockquote>
+<p>Read more about SASS lang at <a href="https://sass-lang.com/">https://sass-lang.com/</a></p>
+</blockquote>
+<h2>Create and build your own <code>packet-ui.scss</code></h2>
+<hr />
+<p>Learning how to build your own <code>packet-ui.scss</code> is a good starting point so you can try modifying it and see what happen to your user interface.</p>
+<p>Let's take a look at directory: <code>node_modules/packet-ui/src/</code></p>
+<pre><code>// $ tree src -L 1 -F --dirsfirst -v
+src
+├── font/
+├── ui/
+├── _break-point.scss
+├── _constant.scss
+├── _function.scss
+├── _mixin.scss
+├── _theme-default.scss
+├── _theme.scss
+├── class.scss
+├── packet-ui.js
+├── packet-ui.scss
+├── typography.scss
+├── ui.js
+└── ui.scss
+</code></pre>
+<p>In this directory, <code>packet-ui.scss</code> is the main <strong>SASS</strong> which generates all CSS style. To make your own, just copy <code>packet-ui.scss</code> file to somewhere else in your project and correct <code>@use</code> path</p>
+<pre><code class="language-scss">// @use '_theme.scss';
+@use 'node_modules/packet-ui/src/_theme.scss';
+
+// @use 'class.scss';
+@use 'node_modules/packet-ui/src/class.scss' with (
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+
+// @use 'typography.scss';
+@use 'node_modules/packet-ui/src/typography.scss' with (
+    $-font-responsive: theme.$font-responsive,
+    $-text-font-size: theme.$text-font-size,
+    $-ui: () theme.$ui,
+);
+
+// @use 'ui.scss';
+@use 'node_modules/packet-ui/src/ui.scss' with (
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+</code></pre>
+<p>Then, run <code>sass</code> command:</p>
+<pre><code>$ npx sass packet-ui.scss dest/packet-ui.css
+</code></pre>
+<p>Now, you can include <code>dest/packet-ui.css</code> in your <strong>HTML</strong></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;dest/packet-ui.css&quot;&gt;
+</code></pre>
+<h2>Theme customization</h2>
+<hr />
+<p><code>packet-ui.scss</code> contains 4 main parts:</p>
+<ol>
+<li>Theme variables : <code>_theme.scss</code></li>
+<li>CSS classes for general use : <code>class.scss</code></li>
+<li>Typography : <code>typography.scss</code></li>
+<li>User Interface styles : <code>ui.scss</code></li>
+</ol>
+<pre><code>// file: packet-ui.scss
+
+// Theme variables
+@use '_theme.scss';
+
+// CSS classes for general use
+@use 'class.scss' with (
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+
+// Typography
+@use 'typography.scss' with (
+    $-font-responsive: theme.$font-responsive,
+    $-text-font-size: theme.$text-font-size,
+    $-ui: () theme.$ui,
+);
+
+
+// User Interface styles
+@use 'ui.scss' with (
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+</code></pre>
+<p>Just modify <code>_theme.scss</code> and build <code>packet-ui.scss</code> again to use your own theme.</p>
+
+</div>
+
+
+
+
+
+<script>
+var sidebar = null // declare `sidebar` as global variable
+window.addEventListener('load', function () {
+    sidebar = document.querySelector('pkt-sidebar')
+    var sidebar_button = document.querySelector('#sidebar-button');
+    sidebar_button.addEventListener('click', function () {
+        sidebar.show_sidebar();
+    });
+});
+</script>
+
+<div class="pkt-button-pin" id="sidebar-button">
+    <pkt-icon set="adwaita" name="view-dual"></pkt-icon>
+</div>
+<pkt-sidebar id="sidebar" show="1150px">
+    <div el="sidebar">
+        <div el="title" class="bg-p1">
+            <a href="../../">Packet UI</a>
+            <pkt-button-square onclick="sidebar.hide_sidebar()">
+                <pkt-icon set="adwaita" name="window-close"></pkt-icon>
+            </pkt-button-square>
+        </div>
+        <div el="content">
+            <div class="h">Getting Started</div>
+            <div class="list">
+                <a href="../../guide/getting-started/quick-start.html">Quick start</a>
+                <a href="../../guide/getting-started/install-and-setup.html">Install & Setup</a>
+            </div>
+            <div class="h" style="padding-left: 0;">
+                <a href="../../guide/theme/index.html" style="font-size: inherit;">
+                    Theme Framework
+                </a>
+            </div>
+            <div class="h">UI Components</div>
+            <div class="list">
+                <a href="../../guide/components/aspect-ratio/aspect-ratio.html">Aspect Ratio</a>
+                <a href="../../guide/components/badge/badge.html">Badge</a>
+                <a href="../../guide/components/box-arrow/box-arrow.html">Box Arrow</a>
+                <a href="../../guide/components/button/button.html">Buttons</a>
+                <a href="../../guide/components/card/card.html">Card</a>
+                <a href="../../guide/components/checkbox/checkbox.html">Checkbox</a>
+                <a href="../../guide/components/icon/icon.html">Icon</a>
+                <a href="../../guide/components/input/input.html">Input</a>
+                <a href="../../guide/components/menu/menu.html">Menu</a>
+                <a href="../../guide/components/path/path.html">Path</a>
+                <a href="../../guide/components/progress/progress.html">Progress</a>
+                <a href="../../guide/components/sidebar/sidebar.html">Sidebar</a>
+                <a href="../../guide/components/switch/switch.html">Switch</a>
+                <a href="../../guide/components/tab/tab.html">Tab</a>
+                <a href="../../guide/components/table/table.html">Table</a>
+                <a href="../../guide/components/tag/tag.html">Tag</a>
+            </div>
+            <div class="h">Advance</div>
+            <a href="../../guide/advance/es6.html">ES6 Modules</a>
+
+        </div>
+    </div>
+    <div el="overlay">
+        <!-- Overlay is dark background over the page. -->
+    </div>
+</pkt-sidebar>
+
+</body>
+</html>

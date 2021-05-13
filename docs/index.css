@@ -1,0 +1,250 @@
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+#highlight .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+#highlight .container pkt-tag h1 {
+  line-height: 1;
+  margin: 0.5rem;
+}
+#highlight .container p {
+  text-align: center;
+}
+#highlight .container a.button {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+#highlight .container a[el=github] {
+  background-color: #e6e6e6;
+  color: black;
+}
+#highlight .container a[el=github]:hover {
+  background-color: white;
+}
+#highlight .container a[el=github]:active {
+  background-color: #cccccc;
+}
+
+h2 {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#features h3 {
+  margin: 0;
+}
+#features [el=bg-color] {
+  font-size: 1.2rem;
+  text-align: center;
+  max-width: 300px;
+  margin: auto;
+}
+#features [el=bg-color] pkt-badge {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+#features pkt-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  margin-top: 2rem;
+  background-color: #f2f2f2;
+}
+#features pkt-card table {
+  max-width: 280px;
+  width: 100%;
+}
+#features pkt-card table tr {
+  background-color: #f2f2f2;
+}
+#features pkt-card table td {
+  text-align: center;
+}
+
+#theme-alt {
+  display: flex;
+  justify-content: center;
+}
+#theme-alt div {
+  width: 4rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#theme-alt div.bg-a1 {
+  background-color: #21f3e7;
+  color: black;
+}
+#theme-alt div.bg-a1:hover {
+  background-color: #48fff4;
+}
+#theme-alt div.bg-a1:active {
+  background-color: #17cac0;
+}
+#theme-alt div.bg-p {
+  background-color: #2196F3;
+  color: black;
+}
+#theme-alt div.bg-p:hover {
+  background-color: #48aeff;
+}
+#theme-alt div.bg-p:active {
+  background-color: #177bca;
+}
+#theme-alt div.bg-a2 {
+  background-color: #212df3;
+  color: white;
+}
+#theme-alt div.bg-a2:hover {
+  background-color: #4853ff;
+}
+#theme-alt div.bg-a2:active {
+  background-color: #1721ca;
+}
+#theme-alt div.bg-t1 {
+  background-color: #f3212d;
+  color: white;
+}
+#theme-alt div.bg-t1:hover {
+  background-color: #ff4853;
+}
+#theme-alt div.bg-t1:active {
+  background-color: #ca1721;
+}
+#theme-alt div.bg-c {
+  background-color: #f37e21;
+  color: black;
+}
+#theme-alt div.bg-c:hover {
+  background-color: #ff9948;
+}
+#theme-alt div.bg-c:active {
+  background-color: #ca6617;
+}
+#theme-alt div.bg-t2 {
+  background-color: #f3e721;
+  color: black;
+}
+#theme-alt div.bg-t2:hover {
+  background-color: #fff448;
+}
+#theme-alt div.bg-t2:active {
+  background-color: #cac017;
+}
+
+#progress-bar {
+  position: relative;
+  height: 0.25em;
+  display: block;
+  width: 100%;
+  background-color: #d9d9d9;
+  border-radius: 10em;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+#progress-bar .value {
+  background-color: #ff4507;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: width 0.3s linear;
+}
+#progress-bar .loop {
+  background-color: #ff4507;
+}
+#progress-bar .loop:before {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+#progress-bar .loop:after {
+  content: "";
+  position: absolute;
+  background-color: inherit;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  will-change: left, right;
+  animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+  animation-delay: 1.15s;
+}
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%;
+  }
+  60% {
+    left: 100%;
+    right: -90%;
+  }
+  100% {
+    left: 100%;
+    right: -90%;
+  }
+}
+@keyframes indeterminate-short {
+  0% {
+    left: -200%;
+    right: 100%;
+  }
+  60% {
+    left: 107%;
+    right: -8%;
+  }
+  100% {
+    left: 107%;
+    right: -8%;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

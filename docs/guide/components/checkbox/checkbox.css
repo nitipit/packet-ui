@@ -1,0 +1,416 @@
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+}
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+.flex {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.color-p {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-p input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-p span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-p:hover input ~ span {
+  background-color: #ffdb6d;
+}
+.color-p input:checked ~ span {
+  background-color: #FFC107;
+}
+.color-p span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-p input:checked ~ span:after {
+  display: block;
+}
+.color-p span:after {
+  border: solid black;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.color-p1 {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-p1 input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-p1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-p1:hover input ~ span {
+  background-color: #ff926d;
+}
+.color-p1 input:checked ~ span {
+  background-color: #ff4507;
+}
+.color-p1 span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-p1 input:checked ~ span:after {
+  display: block;
+}
+.color-p1 span:after {
+  border: solid white;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.color-p2 {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-p2 input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-p2 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-p2:hover input ~ span {
+  background-color: #dbff6d;
+}
+.color-p2 input:checked ~ span {
+  background-color: #c1ff07;
+}
+.color-p2 span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-p2 input:checked ~ span:after {
+  display: block;
+}
+.color-p2 span:after {
+  border: solid black;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.color-c {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-c input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-c span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-c:hover input ~ span {
+  background-color: #6d92ff;
+}
+.color-c input:checked ~ span {
+  background-color: #0745ff;
+}
+.color-c span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-c input:checked ~ span:after {
+  display: block;
+}
+.color-c span:after {
+  border: solid white;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.color-c1 {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-c1 input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-c1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-c1:hover input ~ span {
+  background-color: #6ddbff;
+}
+.color-c1 input:checked ~ span {
+  background-color: #07c1ff;
+}
+.color-c1 span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-c1 input:checked ~ span:after {
+  display: block;
+}
+.color-c1 span:after {
+  border: solid black;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.color-c2 {
+  font-family: Cantarell;
+  font-size: 1em;
+  position: relative;
+  width: 1em;
+  height: 1em;
+  user-select: none;
+  display: inline-block;
+  /* Hide the browser's default checkbox */
+  /* Create a custom checkbox */
+  /* On mouse-over, add background color */
+  /* When the checkbox is checked, add background color */
+  /* Create the checkmark/indicator (hidden when not checked) */
+  /* Show the checkmark when checked */
+  /* Style the checkmark/indicator */
+}
+.color-c2 input {
+  opacity: 0;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  position: absolute;
+  top: 1;
+  left: 0;
+  z-index: 1;
+}
+.color-c2 span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  background-color: #cccccc;
+  box-shadow: 0 1px 1px 0 grey;
+}
+.color-c2:hover input ~ span {
+  background-color: #926dff;
+}
+.color-c2 input:checked ~ span {
+  background-color: #4507ff;
+}
+.color-c2 span:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.color-c2 input:checked ~ span:after {
+  display: block;
+}
+.color-c2 span:after {
+  border: solid white;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.6em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotate(45deg);
+}
+
+.size-1 {
+  font-size: 1rem;
+}
+
+.size-2 {
+  font-size: 2rem;
+}
+
+.size-3 {
+  font-size: 3rem;
+}
+
+.size-4 {
+  font-size: 4rem;
+}
+
+/*# sourceMappingURL=checkbox.css.map */

@@ -1,0 +1,190 @@
+<html>
+<head>
+
+<title>Packet UI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<link icon rel="preload" set="adwaita"
+    href="./lib/adwaita-icon-web/adwaita.svg?v=26"
+    as="image" type="image/svg+xml">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-36104934-6"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'UA-36104934-6');
+</script>
+<!-- End Google Analytics -->
+
+<script type="module">
+import { Icon } from './lib/adwaita-icon-web/icon.js';
+customElements.define('pkt-icon', Icon);  // define custom element for icons
+</script>
+<link rel="stylesheet" href="./lib/packet-ui/dist/normalize.css?v=26">
+<link rel="stylesheet" href="./packet-ui.css?v=26">
+<script defer src="./packet-ui.js?v=26"></script>
+<link rel="stylesheet" href="./base.css?v=26">
+<script defer src="./base.js?v=26"></script>
+
+<link rel="stylesheet" href="./index.css?v=26">
+
+</head>
+<body>
+
+<div id="highlight" class="bg-p">
+    <div class="container">
+        <pkt-tag class="bg-p1" style="padding: 0 0.5rem;">
+            <h1>Packet UI</h1>
+        </pkt-tag>
+        <p class="row" style="font-size: 1.5rem;">
+            <strong class="color-c">HTML5</strong><br>
+            <strong class="color-c">User Interface Framework</strong>
+        </p>
+        <div style="display: flex;">
+            <a class="button bg-int-c" href="./guide/getting-started/quick-start.html">
+                <pkt-icon set="adwaita" name="view-dual"></pkt-icon>
+                <span style="margin-left: 0.2rem;">Guide</span>
+            </a>
+            <a class="button" el="github" href="https://github.com/nitipit/packet-ui">
+                <pkt-icon set="brand" name="github"></pkt-icon>
+                <span style="margin-left: 0.2rem;">Github</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="features" class="container">
+    <h2>Fast prototype</h2>
+<p><strong>Packet UI</strong> provides built-in stylish <strong>User Interface</strong> with <strong>Colors</strong>
+and <strong>Theme</strong> to get started and make a user interface prototype.</p>
+<pkt-card style="margin-bottom: 2rem;">
+    <table style="margin: 0.5rem;">
+        <tr>
+            <td>badge</td>
+            <td>
+                <pkt-badge>10</pkt-badge>
+            </td>
+        </tr>
+        <tr>
+            <td>checkbox</td>
+            <td>
+                <pkt-checkbox>
+                    <input type="checkbox" name="demo">
+                </pkt-checkbox>
+            </td>
+        </tr>
+        <tr>
+            <td>button</td>
+            <td><button>Submit</button></td>
+        </tr>
+        <tr>
+            <td>switch</td>
+            <td>
+                <pkt-switch>
+                    <input type="checkbox">
+                    <div el="label">
+                        <span>ON</span>
+                        <span>OFF</span>
+                    </div>
+                </pkt-switch>
+            </td>
+        </tr>
+        <tr>
+            <td>input-number</td>
+            <td>
+                <pkt-input-number>
+                    <input type="number" min="0" max="100">
+                </pkt-input-number>
+            </td>
+        </tr>
+        <tr>
+            <td>dotpulse</td>
+            <td>
+                <pkt-dotpulse></pkt-dotpulse>
+            </td>
+        </tr>
+    </table>
+    <button class="bg-int-p1" style="text-align: center;">
+        and much more...
+    </button>
+</pkt-card>
+<p>Built-in UI components are based on <pkt-tag class="bg-blue-grey">&lt;web-components/&gt;</pkt-tag>. Just place <code>&lt;pkt-*&gt;</code> anywhere in html <code>&lt;body&gt;</code>, for examples:</p>
+<pre><code class="language-html">&lt;body&gt;
+    &lt;pkt-badge&gt;&lt;/pkt-badge&gt;
+    &lt;pkt-switch&gt;&lt;/pkt-switch&gt;
+&lt;/body&gt;
+</code></pre>
+<h2>Fast development</h2>
+<p>Quickly transfrom your design into CSS with <strong>Theme Framewok</strong> written in <strong>SASS</strong></p>
+<h3>Theme color set</h3>
+<p>There are 19 pre-defined color in CSS class which based on
+<a href="https://material.io/">Material Design</a>. 
+Just put <code>class=&quot;{color}&quot;</code> or <code>class={bg-color}</code> 
+on any element to render color with legible text.</p>
+<div class="row" style="margin-bottom:2rem;">
+    <div el="bg-color">
+        <pkt-badge class="bg-red">red</pkt-badge>
+        <pkt-badge class="bg-pink">pink</pkt-badge>
+        <pkt-badge class="bg-purple">purple</pkt-badge>
+        <pkt-badge class="bg-deep-purple">deep-purple</pkt-badge>
+        <pkt-badge class="bg-indigo">indigo</pkt-badge>
+        <pkt-badge class="bg-blue">blue</pkt-badge>
+        <pkt-badge class="bg-light-blue">light-blue</pkt-badge>
+        <pkt-badge class="bg-cyan">cyan</pkt-badge>
+        <pkt-badge class="bg-teal">teal</pkt-badge>
+        <pkt-badge class="bg-green">green</pkt-badge>
+        <pkt-badge class="bg-light-green">light-green</pkt-badge>
+        <pkt-badge class="bg-lime">lime</pkt-badge>
+        <pkt-badge class="bg-yellow">yellow</pkt-badge>
+        <pkt-badge class="bg-amber">amber</pkt-badge>
+        <pkt-badge class="bg-orange">orange</pkt-badge>
+        <pkt-badge class="bg-deep-orange">deep-orange</pkt-badge>
+        <pkt-badge class="bg-brown">brown</pkt-badge>
+        <pkt-badge class="bg-grey">grey</pkt-badge>
+        <pkt-badge class="bg-blue-grey">blue-grey</pkt-badge>
+    </div>
+</div>
+<h3>Theme color pallete</h3>
+<div id="theme-alt" style="text-align: center; margin-top: 2rem;">
+    <div class="bg-a1">P1</div>
+    <div class="bg-p">P</div>
+    <div class="bg-a2">P2</div>
+    <div class="bg-t1">C1</div>
+    <div class="bg-c">C</div>
+    <div class="bg-t2">C2</div>
+</div>
+<p>You can easily generate color pallete and user interface with configuration.</p>
+<pre><code class="language-scss">@forward 'path/to/_theme.scss' with (
+    $-pallete: (
+        color-primary: #2196F3,
+        hue-distance: 20,
+    )
+);
+</code></pre>
+<h3>Modular user interface</h3>
+<p>Written in Javascript <strong>ES6</strong> and <strong>SASS</strong>, you can easily pick and manage
+components to make them compact and fast.</p>
+<p><pkt-progress-bar id="progress-bar"></pkt-progress-bar></p>
+<pre><code class="language-javascript">// Javascript
+import * as ui from 'packet-ui';
+
+customElements.define('pkt-progress-bar', ui.ProgressBar);
+</code></pre>
+<pre><code class="language-scss">// SASS
+@use '/path/to/_ui-mixin.scss';
+
+pkt-progress-bar {
+    @include ui-mixin.progress-bar(red);
+};
+</code></pre>
+
+</div>
+
+<div data-id="footer" style="margin-top: 10rem; height: 2rem;"></div>
+
+
+
+
+</body>
+</html>

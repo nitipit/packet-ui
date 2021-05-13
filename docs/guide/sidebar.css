@@ -1,0 +1,77 @@
+/**
+ * Calculate the luminance for a color.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Calculate the contrast ratio between two colors.
+ * See https://www.w3.org/TR/WCAG20-TECHS/G17.html#G17-tests
+ */
+/**
+ * Determine whether to use dark or light text on top of given color.
+ * Returns black for dark text and white for light text.
+ */
+#sidebar-button {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.25rem;
+  z-index: 100;
+}
+
+pkt-sidebar [el=sidebar] {
+  width: 260px;
+}
+pkt-sidebar [el=title] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+pkt-sidebar [el=title] a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+  text-decoration: none;
+}
+pkt-sidebar [el=title] pkt-button-square {
+  font-size: 1.5rem;
+  border-radius: 0;
+  background-color: #0745ff;
+  color: white;
+}
+pkt-sidebar [el=title] pkt-button-square:hover {
+  background-color: #3a6bff;
+}
+pkt-sidebar [el=title] pkt-button-square:active {
+  background-color: #0b3ac8;
+}
+pkt-sidebar [el=content] {
+  padding-bottom: 5rem;
+}
+pkt-sidebar [el=content] .h {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+}
+pkt-sidebar [el=content] div.list {
+  padding-left: 0.5rem;
+}
+pkt-sidebar [el=content] a {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.1rem 0.5rem;
+}
+pkt-sidebar [el=content] a:hover {
+  background-color: red;
+  color: white;
+}
+pkt-sidebar [el=content] a:hover:hover {
+  background-color: #ff3333;
+}
+pkt-sidebar [el=content] a:hover:active {
+  background-color: #c20a0a;
+}
+
+/*# sourceMappingURL=sidebar.css.map */
