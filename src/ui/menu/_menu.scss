@@ -1,9 +1,17 @@
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_theme-default.scss';
+
+$-pallete: theme-default.$pallete !default;
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
 
 @mixin menu(
-        $border-color: orange,
-        $active-color: orange,
-        $arrow-color: red) {
+        $border-color: $-ui-color,
+        $active-color: $-ui-color,
+        $arrow-color: map.get($-pallete, p1),
+    ) {
     padding: 0;
     margin: 0;
     border: 1px solid $border-color;

@@ -1,4 +1,11 @@
-@mixin spinner($color: orange) {
+@use 'sass:map';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin spinner($color: $-ui-color) {
     display: inline-block;
     color: $color;
     svg {

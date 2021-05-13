@@ -1,8 +1,14 @@
 @use 'sass:color';
-@use '../_mixin';
-@use '../button/_button';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_theme-default.scss';
+@use '../button/_button.scss';
 
-@mixin input-radio-btn($color: orange) {
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin input-radio-btn($color: $-ui-color) {
     display: inline-block;
     position: relative;
     font-size: 1em;

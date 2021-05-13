@@ -1,12 +1,18 @@
-@use 'sass:map';
-@use 'style/_var';
-@use '_typography';
-@use '_components' with (
-    $ui-color: var.$ui-color,
-    $border-radius: var.$border-radius
+@use '_theme.scss';
+
+@use 'class.scss' with (
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
 );
-@use '_ui-class' with (
-    $pallete: var.$pallete,
-    $scheme: var.$scheme,
-    $border-radius: var.$border-radius
+
+@use 'typography.scss' with (
+    $-font-responsive: theme.$font-responsive,
+    $-text-font-size: theme.$text-font-size,
+    $-ui: theme.$ui,
+);
+
+@use 'ui.scss' with (
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
 );

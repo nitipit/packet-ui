@@ -1,4 +1,4 @@
-@use '../../../var';
+@use '../../../_break-point.scss';
 
 #preview {
     > div {
@@ -17,7 +17,7 @@
     .size-3 {
         font-size: 2.0rem;
     }
-    @media #{var.$sm} {
+    @media #{break-point.$sm} {
         .size-1 {
             font-size: 0.6rem;
         }

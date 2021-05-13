@@ -1,25 +1,31 @@
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin';
+@use '../../_theme-default.scss';
 
-@mixin button-group-border($radius: 4px) {
+$-ui: theme-default.$ui !default;
+$-border-radius: map.get($-ui, border-radius);
+
+@mixin button-group-border(
+        $border-radius: $-border-radius) {
     border-radius: 0;
     &:first-of-type {
         @include mixin.border-right-radius(0);
-        @include mixin.border-left-radius($radius);
+        @include mixin.border-left-radius($border-radius);
     }
     &:last-of-type {
         @include mixin.border-left-radius(0);
-        @include mixin.border-right-radius($radius);
+        @include mixin.border-right-radius($border-radius);
     }
 }
 
-@mixin button-group($radius: 4px) {
+@mixin button-group($border-radius: $-border-radius) {
     display: flex;
     > button, > .button {
         width: 100%;
-        @include button-group-border($radius);
+        @include button-group-border($border-radius);
     }
     > pkt-button-square, > .pkt-button-square {
-        @include button-group-border($radius)
+        @include button-group-border($border-radius)
     }
     > pkt-input-radio-btn, > .pkt-input-radio-btn,
     > pkt-tab, > .pkt-tab {
@@ -29,14 +35,14 @@
         &:first-of-type {
             button {
                 @include mixin.border-right-radius(0);
-                @include mixin.border-left-radius($radius);
+                @include mixin.border-left-radius($border-radius);
             }
         }
 
         &:last-of-type {
             button {
                 @include mixin.border-left-radius(0);
-                @include mixin.border-right-radius($radius);
+                @include mixin.border-right-radius($border-radius);
             }
         }
     }

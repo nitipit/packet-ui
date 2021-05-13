@@ -1,6 +1,12 @@
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_theme-default.scss';
 
-@mixin sidebar($bg-color: orange) {
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin sidebar($bg-color: $-ui-color) {
     position: absolute;
     top: 0;
     [el="sidebar"] {

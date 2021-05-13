@@ -1,8 +1,9 @@
 @use 'sass:color';
-@use 'sass:map';
-@use '_ui';
-@use '_mixin';
-@use '_var';
+@use '_mixin.scss';
+@use '_theme.scss';
+@use '_theme-alt.scss';
+@use '../src/_function.scss';
+@use '_ui-mixin.scss';
 
 #highlight {
     .container {
@@ -18,88 +19,104 @@
                 margin: 0.5rem;
             }
         }
-        h2 {
-            @media #{var.$sm} {
-                font-size: 1.3em;
-            }
-        }
-        a.button {
-            margin: 0.5rem;
-        }
-        a[el="github"] {
-            @include ui.button($bg-color: color.adjust(white, $lightness: -10%));
-        }
-    }
-}
-
-.markdown {
-    h2 {
-        border-bottom: 1px solid;
-        margin-top: 2rem;
-    }
-}
-
-#sample {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 2rem;
-    pkt-card {
-        background-color: #f2f2f2
-    }
-    table {
-        max-width: 280px;
-        width: 280px;
-        tr {
-            background-color: #f2f2f2;
-        }
-        td {
+        p {
             text-align: center;
         }
+        a.button {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+        a[el="github"] {
+            @include mixin.bg-int-color($bg-color: color.adjust(white, $lightness: -10%));
+        }
     }
+}
+
+h2 {
+    margin-top: 2rem;
+    text-align: center;
 }
 
 #features {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    background-color: #eee;
-    padding: 2rem 0rem 5rem 0;
-    .container {
+    h3 {
+        margin: 0;
+    }
+    [el="bg-color"] {
+        font-size: 1.2rem;
+        text-align: center;
+        max-width: 300px;
+        margin: auto;
+        pkt-badge {
+            padding-left: 0.4rem;
+            padding-right: 0.4rem;
+        }
+    }
+    pkt-card {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        h2 {
-            border-bottom: 1px solid;
-            text-align: center;
-            display: inline-flex;
-        }
-    }
-    .row {
-        display: flex;
-        justify-content: center;
-    }
-    pkt-card {
-        max-width: 600px;
-        min-width: 280px;
-        width: 90%;
+        width: 100%;
+        max-width: 300px;
+        margin: auto;
         margin-top: 2rem;
-        background-color: white;
-        h3 {
-            @include mixin.border-top-radius(4px);
-            @include mixin.bg-color(color.adjust(black, $lightness: 10%))
-        }
-    }
-
-    pkt-card[el="icon-system"] {
-        [el="icons"] {
-            font-size: 1.25rem;
-            button {
-                @include mixin.bg-int-color(#eee);
+        background-color: #f2f2f2;
+        table {
+            max-width: 280px;
+            width: 100%;
+            tr {
+                background-color: #f2f2f2;
             }
-            button:hover {
-                color: map.get(var.$scheme, color-a1);
+            td {
+                text-align: center;
             }
         }
     }
 }
+
+
+#theme-alt {
+    display: flex;
+    justify-content: center;
+    div {
+        width: 4rem;
+        height: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    div.bg-a1 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('p1')
+        );
+    };
+    div.bg-p {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('p')
+        );
+    };
+    div.bg-a2 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('p2')
+        );
+    };
+    div.bg-t1 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('c1')
+        );
+    };
+    div.bg-c {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('c')
+        );
+    };
+    div.bg-t2 {
+        @include mixin.bg-int-color(
+            $bg-color: theme-alt.pallete('c2')
+        );
+    };
+};
+
+#progress-bar {
+    @include ui-mixin.progress-bar(
+        $color: theme.pallete(p1));
+};

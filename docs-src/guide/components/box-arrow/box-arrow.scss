@@ -1,6 +1,5 @@
-@use 'sass:map';
-@use '../../../var';
-@use '../../../ui';
+@use '../../../_theme.scss';
+@use '../../../_ui-mixin.scss';
 
 #preview {
     > div {
@@ -12,27 +11,27 @@
         padding: 0.5rem;
         margin: 0.5rem;
         &.top {
-            @include ui.box-arrow(
+            @include ui-mixin.box-arrow(
                 $arrow: top,
-                $bg-color: map.get(var.$scheme, color-a1)
+                $bg-color: theme.pallete(p1)
             );
         };
         &.right {
-            @include ui.box-arrow(
+            @include ui-mixin.box-arrow(
                 $arrow: right,
-                $bg-color: map.get(var.$scheme, color-p)
+                $bg-color: theme.pallete(p)
             );
         };
         &.bottom {
-            @include ui.box-arrow(
+            @include ui-mixin.box-arrow(
                 $arrow: bottom,
-                $bg-color: map.get(var.$scheme, color-a2)
+                $bg-color: theme.pallete(p2)
             );
         }
         &.left {
-            @include ui.box-arrow(
+            @include ui-mixin.box-arrow(
                 $arrow: left,
-                $bg-color: map.get(var.$scheme, color-t1)
+                $bg-color: theme.pallete(c1)
             );
         }
     }
@@ -40,7 +39,7 @@
         padding: 1rem;
         margin: 0.5rem;
         margin-top: 2rem;
-        @include ui.box-arrow(
+        @include ui-mixin.box-arrow(
             $arrow: top,
             $bg-color: white,
             $arrow-size: 20px)

@@ -1,0 +1,85 @@
+@use 'sass:map';
+@use 'sass:color'as clr;
+
+$color: () !default;
+$pallete: () !default;
+$ui: () !default;
+
+$-color: (red: #F44336,
+    pink: #E91E63,
+    purple: #9C27B0,
+    deep-purple: #673AB7,
+    indigo: #3F51B5,
+    blue: #2196F3,
+    light-blue: #03A9F4,
+    cyan: #00BCD4,
+    teal: #009688,
+    green: #4CAF50,
+    light-green: #8BC34A,
+    lime: #CDDC39,
+    yellow: #FFEB3B,
+    amber: #FFC107,
+    orange: #FF9800,
+    deep-orange: #FF5722,
+    brown: #795548,
+    grey: #9E9E9E,
+    blue-grey: #607D8B,
+    blue-gray: #607D8B,
+);
+
+$color: map.merge($-color, $color);
+
+$-pallete: (
+    primary: #2196F3,
+    saturate: 0%,
+    hue-distance: 30,
+);
+
+$pallete: map.merge($-pallete, $pallete);
+
+$-ui: (ui-color: map.get($color, amber),
+    border-radius: 4px,
+    font-family: packet-ui,
+);
+
+$ui: map.merge($-ui, $ui);
+
+$-primary: map.get($pallete, primary);
+$-saturate: map.get($pallete, saturate);
+$-hue-distance: map.get($pallete, hue-distance);
+
+$pallete: (primary: $-primary,
+    primary-1: clr.adjust($-primary,
+        $hue: -($-hue-distance),
+        $saturation: $-saturate),
+    primary-2: clr.adjust($-primary,
+        $hue: $-hue-distance,
+        $saturation: $-saturate),
+    complement: clr.adjust($-primary,
+        $hue: 180,
+        $saturation: $-saturate),
+    complement-1: clr.adjust($-primary,
+        $hue: 180 - ($-hue-distance),
+        $saturation: $-saturate),
+    complement-2: clr.adjust($-primary,
+        $hue: 180 + ($-hue-distance),
+        $saturation: $-saturate));
+
+$pallete: map.merge($pallete, (p: map.get($pallete, primary),
+        p1: map.get($pallete, primary-1),
+        p2: map.get($pallete, primary-2),
+        c: map.get($pallete, complement),
+        c1: map.get($pallete, complement-1),
+        c2: map.get($pallete, complement-2)));
+
+@function color($name) {
+    @return map.get($color, $name);
+};
+
+@function pallete($name) {
+    @return map.get($pallete, $name);
+};
+
+@function ui($name) {
+    @return map.get($ui, $name);
+};

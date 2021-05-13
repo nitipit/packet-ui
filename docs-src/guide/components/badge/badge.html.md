@@ -4,28 +4,28 @@
 ---
 <div id="preview">
     <div class="size-1">
-        <pkt-badge class="bg-a1">1</pkt-badge>
+        <pkt-badge class="bg-p1">1</pkt-badge>
         <pkt-badge class="bg-p">10</pkt-badge>
-        <pkt-badge class="bg-a2">100</pkt-badge>
-        <pkt-badge class="bg-t1">1000</pkt-badge>
+        <pkt-badge class="bg-p2">100</pkt-badge>
+        <pkt-badge class="bg-c1">1000</pkt-badge>
         <pkt-badge class="bg-c">+</pkt-badge>
-        <pkt-badge class="bg-t2">-</pkt-badge>
+        <pkt-badge class="bg-c2">-</pkt-badge>
     </div>
     <div class="size-2">
-        <pkt-badge class="bg-a1">1</pkt-badge>
+        <pkt-badge class="bg-p1">1</pkt-badge>
         <pkt-badge class="bg-p">10</pkt-badge>
-        <pkt-badge class="bg-a2">100</pkt-badge>
-        <pkt-badge class="bg-t1">1000</pkt-badge>
+        <pkt-badge class="bg-p2">100</pkt-badge>
+        <pkt-badge class="bg-c1">1000</pkt-badge>
         <pkt-badge class="bg-c">+</pkt-badge>
-        <pkt-badge class="bg-t2">-</pkt-badge>
+        <pkt-badge class="bg-c2">-</pkt-badge>
     </div>
     <div class="size-3">
-        <pkt-badge class="bg-a1">1</pkt-badge>
+        <pkt-badge class="bg-p1">1</pkt-badge>
         <pkt-badge class="bg-p">10</pkt-badge>
-        <pkt-badge class="bg-a2">100</pkt-badge>
-        <pkt-badge class="bg-t1">1000</pkt-badge>
+        <pkt-badge class="bg-p2">100</pkt-badge>
+        <pkt-badge class="bg-c1">1000</pkt-badge>
         <pkt-badge class="bg-c">+</pkt-badge>
-        <pkt-badge class="bg-t2">-</pkt-badge>
+        <pkt-badge class="bg-c2">-</pkt-badge>
     </div>
 </div>
 

@@ -11,33 +11,36 @@ def lib():
         _dir.joinpath('node_modules/adwaita-icon-web/dist/'),
         'docs/lib/adwaita-icon-web/',
         dirs_exist_ok=True)
-    shutil.copyfile(
-        _dir.joinpath('node_modules/normalize.css/normalize.css'),
-        'docs/lib/normalize.css'
-    )
+    shutil.copytree(
+        _dir.joinpath('dist/'),
+        'docs/lib/packet-ui/dist/',
+        dirs_exist_ok=True)
 
 
 async def packet_ui_js():
+    src = _dir.joinpath('docs-src/packet-ui.js')
+    dest_dir = _dir.joinpath('docs/')
     cmd = (
-        "npx parcel watch 'src/packet-ui.js' "
-        "--dist-dir='docs/lib/packet-ui/'"
+        f"npx parcel watch '{src}' "
+        f"--dist-dir='{dest_dir}'"
     )
-    print(cmd)
+    print(f'{cmd} ...')
     proc = await asyncio.create_subprocess_shell(
         cmd,
         stdout=asyncio.subprocess.PIPE,
         stderr=asyncio.subprocess.PIPE)
     await proc.communicate()
+    print('Finished')
 
 
 async def packet_ui_scss():
-    cmd = (
-        "npx sass --watch src/packet-ui.scss "
-        "docs/lib/packet-ui/packet-ui.css"
-    )
-    print(cmd)
+    src = _dir.joinpath('docs-src/packet-ui.scss')
+    dest = _dir.joinpath('docs/packet-ui.css')
+    cmd = f"npx sass --watch {src} {dest}"
+    print(f'{cmd} ...')
     proc = await asyncio.create_subprocess_shell(cmd)
     await proc.communicate()
+    print('Finished')
 
 
 async def engrave():
@@ -50,8 +53,8 @@ async def main():
     lib()
     await asyncio.gather(
         engrave(),
-        packet_ui_js(),
-        packet_ui_scss(),
+        # packet_ui_js(),
+        # packet_ui_scss(),
     )
 
 asyncio.run(main())

@@ -3,25 +3,25 @@
 ## Preview
 ---
 <div data-is="ui" class="flex">
-    <pkt-checkbox class="size-1 c-c">
+    <pkt-checkbox class="size-1 color-c">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-2 c-t2">
+    <pkt-checkbox class="size-2 color-c2">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-3 c-a1">
+    <pkt-checkbox class="size-3 color-p1">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-4 c-p">
+    <pkt-checkbox class="size-4 color-p">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-3 c-a2">
+    <pkt-checkbox class="size-3 color-p2">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-2 c-t1">
+    <pkt-checkbox class="size-2 color-c1">
         <input type="checkbox" checked>
     </pkt-checkbox>
-    <pkt-checkbox class="size-1 c-c">
+    <pkt-checkbox class="size-1 color-c">
         <input type="checkbox" checked>
     </pkt-checkbox>
 </div>

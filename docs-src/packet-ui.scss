@@ -1,0 +1,14 @@
+@use '_theme.scss';
+
+@use '../src/typography.scss';
+
+@use '../src/ui.scss' with (
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);
+
+@use '../src/class.scss' with (
+    $-color: theme.$color,
+    $-pallete: theme.$pallete,
+    $-ui: theme.$ui,
+);

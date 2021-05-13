@@ -12,7 +12,7 @@
     </div>
     <div class="flex">
         <div class="pkt-button-group" style="width: 10rem;">
-            <button class="bg-int-a1">OK</button>
+            <button class="bg-int-p1">OK</button>
             <button class="bg-int-white">Cancel</button>
         </div>
         <div class="pkt-button-group" style="display: inline-flex;">
@@ -31,7 +31,7 @@
         </div>
     </div>
     <div class="flex">
-        <button class="bg-int-a2" style="font-size: 2rem">Big Button</button>
+        <button class="bg-int-p2" style="font-size: 2rem">Big Button</button>
     </div>
 </div>
 
@@ -109,7 +109,7 @@ Grouping buttons together. Can apply to `button` and `pkt-button-square`
 
 <div class="flex p">
     <pkt-button-group style="width: 10rem;">
-        <button class="bg-int-a1">OK</button>
+        <button class="bg-int-p1">OK</button>
         <button class="bg-int-white">Cancel</button>
     </pkt-button-group>
     <pkt-button-group style="margin-left: 2rem;">
@@ -130,7 +130,7 @@ Grouping buttons together. Can apply to `button` and `pkt-button-square`
 
 ```html
 <pkt-button-group>
-    <button class="bg-int-a1">OK</button>
+    <button class="bg-int-p1">OK</button>
     <button class="bg-int-white">Cancel</button>
 </pkt-button-group>
 <pkt-button-group>

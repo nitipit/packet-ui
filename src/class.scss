@@ -1,0 +1,97 @@
+@use "sass:color";
+@use "sass:map";
+@use '_mixin.scss';
+@use '_theme-default.scss';
+
+$-color: theme-default.$color !default;
+$-pallete: theme-default.$pallete !default;
+$-ui: theme-default.$ui !default;
+
+// color and background color
+@each $c, $value in $-color {
+    #{"." + $c} {
+        color: $value;
+    };
+    #{".bg-" + $c} {
+        @include mixin.bg-color($bg-color: $value);
+    };
+    #{".bg-int-" + $c} {
+        @include mixin.bg-int-color($bg-color: $value);
+    };
+};
+
+// monochrome for primary color
+.color-primary, .color-p {
+    $color: map.get($-pallete, p);
+    color: $color;
+    @for $i from 1 through 4 {
+        &.l#{$i} {
+            color: color.adjust($color, $lightness: (0.1*$i*100%));
+        };
+        &.d#{$i} {
+            color: color.adjust($color, $lightness: -(0.1*$i*100%));
+        };
+    };
+};
+.bg-primary, .bg-p {
+    $color: map.get($-pallete, p);
+    color: $color;
+    @for $i from 1 through 4 {
+        &.l#{$i} {
+            @include mixin.bg-color(
+                color.adjust(
+                    $color, $lightness: (0.1*$i*100%)
+                )
+            );
+        };
+        &.d#{$i} {
+            @include mixin.bg-color(
+                color.adjust(
+                    $color, $lightness: (0.1*$i*100%)
+                )
+            );
+        };
+    };
+};
+
+// color varient
+@each $c, $value in $-pallete {
+    #{".color-" + $c} {
+        color: $value;
+    };
+    #{".bg-" + $c} {
+        @include mixin.bg-color($value);
+    };
+    #{".bg-int-" + $c} {
+        @include mixin.bg-int-color($value);
+    };
+};
+
+.border-top-radius {
+    @include mixin.border-top-radius($radius: map.get($-ui, border-radius));
+}
+.border-right-radius {
+    @include mixin.border-right-radius($radius: map.get($-ui, border-radius));
+}
+.border-bottom-radius {
+    @include mixin.border-bottom-radius($radius: map.get($-ui, border-radius));
+}
+.border-left-radius {
+    @include mixin.border-left-radius($radius: map.get($-ui, border-radius));
+}
+
+.lift-1 {
+    @include mixin.lift-1();
+}
+.lift-2 {
+    @include mixin.lift-2();
+}
+.lift-3 {
+    @include mixin.lift-3();
+}
+.lift-4 {
+    @include mixin.lift-4();
+}
+.lift-5 {
+    @include mixin.lift-5();
+}

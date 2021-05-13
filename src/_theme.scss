@@ -1,0 +1,72 @@
+@use 'sass:map';
+@use 'sass:color' as clr;
+@use '_theme-default.scss';
+
+$-color: () !default;
+$-pallete: () !default;
+$-ui: () !default;
+$-font-responsive: () !default;
+$-text-font-size: () !default;
+
+$color: theme-default.$color;
+$pallete: theme-default.$pallete;
+$ui: theme-default.$ui;
+$font-responsive: theme-default.$font-responsive;
+$text-font-size: theme-default.$text-font-size;
+
+$color: map.merge($color, $-color);
+$pallete: map.merge($pallete, $-pallete);
+$ui: map.merge($ui, $-ui);
+$font-responsive: map.merge($font-responsive, $-font-responsive);
+$text-font-size: map.merge($text-font-size, $-text-font-size);
+
+$-primary: map.get($pallete, primary);
+$-saturate: map.get($pallete, saturate);
+$-hue-distance: map.get($pallete, hue-distance);
+
+$pallete: (
+    primary: $-primary,
+    primary-1: clr.adjust(
+        $-primary,
+        $hue: -($-hue-distance),
+        $saturation: $-saturate),
+    primary-2: clr.adjust(
+        $-primary,
+        $hue: $-hue-distance,
+        $saturation: $-saturate),
+    complement: clr.adjust(
+        $-primary,
+        $hue: 180,
+        $saturation: $-saturate),
+    complement-1: clr.adjust(
+        $-primary,
+        $hue: 180 - ($-hue-distance),
+        $saturation: $-saturate),
+    complement-2: clr.adjust(
+        $-primary,
+        $hue: 180 + ($-hue-distance),
+        $saturation: $-saturate)
+);
+
+$pallete: map.merge(
+    $pallete, (
+        p: map.get($pallete, primary),
+        p1: map.get($pallete, primary-1),
+        p2: map.get($pallete, primary-2),
+        c: map.get($pallete, complement),
+        c1: map.get($pallete, complement-1),
+        c2: map.get($pallete, complement-2)
+    )
+);
+
+@function color($name) {
+    @return map.get($color, $name);
+};
+
+@function pallete($name) {
+    @return map.get($pallete, $name);
+};
+
+@function ui($name) {
+    @return map.get($ui, $name);
+};

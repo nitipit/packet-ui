@@ -1,0 +1,5 @@
+@use '../../_ui-mixin.scss';
+
+ui-input-number {
+    @include ui-mixin.input-number(red);
+}

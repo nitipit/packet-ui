@@ -1,8 +1,17 @@
 @use 'sass:color';
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_function.scss';
+@use '../../_theme-default.scss';
 
-@mixin switch($color-active: orange) {
-    @include mixin.font-ui();
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+$-font-family: map.get($-ui, font-family);
+
+@mixin switch($color-active: $-ui-color) {
+    font-family: $-font-family;
+    font-size: 1em;
     display: inline-flex;
     font-weight: bold;
     width: 4.5em;
@@ -41,11 +50,7 @@
         width: 50%;
 
         &:first-of-type {
-            @if mixin.darkshade($color-active) {
-                color: white
-            } @else {
-                color: black
-            }
+            color: function.choose-contrast-color($color-active);
         }
 
         &:last-of-type {

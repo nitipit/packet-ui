@@ -1,29 +1,26 @@
-@use '_var';
-@use '_mixin';
 @use 'sass:color';
 @use 'sass:map';
+@use '_theme.scss';
 @use '../node_modules/highlight.js/styles/atom-one-dark.css';
+
+@font-face {
+    font-family: 'Cantarell';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Fira Sans Regular'), local('FiraSans-Regular'),
+        url('./lib/packet-ui/fonts/Cantarell/Cantarell-Regular.ttf');
+}
 
 @font-face {
     font-family: 'fira-sans';
     font-style: normal;
     font-weight: 400;
     src: local('Fira Sans Regular'), local('FiraSans-Regular'),
-        url(./static/fonts/FiraSans-Regular.ttf);
-}
-
-@font-face {
-    /* Set UI font, Cantarell is recommended */
-    font-family: 'packet-ui';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Cantarell Regular'), local('Cantarell-Regular'),
-        url(./static/fonts/Cantarell-Regular.ttf);
+        url('./lib/packet-ui/dist/font/Fira_Sans/FiraSans-Regular.ttf');
 }
 
 html {
     font-family: fira-sans;
-    font-size: 18px;
 }
 
 a { color: inherit; }
@@ -64,14 +61,14 @@ code.hljs {
 
 blockquote {
     background: color.adjust(
-        map.get(var.$scheme, color-p), $lightness: 35%
+        theme.pallete(p), $lightness: 35%
     );
     p {
         padding-top: 0.75rem;
         padding-bottom: 0.75rem;
     }
     pkt-icon {
-        color: map.get(var.$scheme, color-a1);
+        color: theme.pallete(p1);
     }
 }
 

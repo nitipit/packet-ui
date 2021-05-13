@@ -1,7 +1,8 @@
 {
     "name": "packet-ui",
-    "version": "1.2.2dev",
-    "description": "Simple and Stylish <Web Components/> User Interface",
+    "version": "2.0.0",
+    "description": "HTML5 User Interface Framework",
+    "keywords": ["html5", "javascript", "css", "ui", "user interface", "framework"],
     "repository": {
         "repository": {
             "type": "git",
@@ -18,15 +19,16 @@
         "highlight.js": "^10.2.0",
         "lit-html": "^1.3.0",
         "normalize.css": "^8.0.1",
-        "parcel": "^2.0.0-beta.1",
-        "sass": "^1.26.11"
+        "parcel": "^2.0.0-beta.2",
+        "sass": "^1.32.12"
     },
     "type": "module",
-    "module": "dist/ui/ui.js",
+    "module": "src/ui.js",
     "targets": {
         "module": false
     },
     "files": [
-        "dist/**/*"
+        "dist/**/*",
+        "src/**/*"
     ]
 }

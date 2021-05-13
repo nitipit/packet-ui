@@ -1,0 +1,142 @@
+@use 'sass:map';
+@use '_mixin.scss';
+@use '_theme-default.scss';
+
+$-pallete: theme-default.$pallete !default;
+$-ui: theme-default.$ui !default;
+@use "ui/_mixin.scss" as ui-mixin with (
+    $-pallete: $-pallete,
+    $-ui: $-ui,
+);
+
+$-font-family: map.get($-ui, font-family);
+
+// $ui-color: map.get($-ui, ui-color);
+// $font-family: map.get($-ui, font-family);
+// $border-radius: map.get($-ui, border-radius);
+
+pkt-badge, .pkt-badge {
+    @include ui-mixin.badge();
+}
+
+pkt-box-arrow-top, .pkt-box-arrow-top {
+    @include ui-mixin.box-arrow($arrow: "top");
+}
+
+pkt-box-arrow-right, .pkt-box-arrow-right {
+    @include ui-mixin.box-arrow($arrow: "right");
+}
+
+pkt-box-arrow-bottom, .pkt-box-arrow-bottom {
+    @include ui-mixin.box-arrow($arrow: "bottom");
+}
+
+pkt-box-arrow-left, .pkt-box-arrow-left {
+    @include ui-mixin.box-arrow($arrow: "left");
+}
+
+button, .button, input[type="button"] {
+    @include ui-mixin.button();
+}
+
+pkt-button-pin, .pkt-button-pin {
+    @include ui-mixin.button-pin();
+}
+
+pkt-button-square, .pkt-button-square {
+    @include ui-mixin.button-square();
+}
+
+pkt-button-group, .pkt-button-group {
+    @include ui-mixin.button-group();
+}
+
+pkt-card, .pkt-card {
+    @include ui-mixin.card();
+}
+
+pkt-checkbox {
+    @include ui-mixin.checkbox();
+}
+
+input {
+    @include ui-mixin.input-text();
+    &[type="text"], &[type="password"], &[type="email"] {
+        @include ui-mixin.input-text();
+    }
+}
+
+input[type="range"] {
+    @include ui-mixin.slider();
+}
+
+pkt-input-number {
+    @include ui-mixin.input-number();
+}
+
+pkt-input-radio {
+    @include ui-mixin.input-radio();
+}
+
+pkt-input-radio-btn, .pkt-input-radio-btn {
+    @include ui-mixin.input-radio-btn();
+}
+
+pkt-input-tag {
+    @include ui-mixin.input-tag();
+}
+
+label {
+    font-family: $-font-family;
+    font-size: 1em;
+}
+
+pkt-menu > ul {
+    @include ui-mixin.menu();
+}
+
+ul.pkt-path {
+    @include ui-mixin.path();
+}
+
+// progress
+pkt-dotpulse {
+    @include ui-mixin.dotpulse();
+}
+
+pkt-progress-bar {
+    @include ui-mixin.progress-bar();
+}
+
+pkt-spinner {
+    @include ui-mixin.spinner();
+}
+// end : progress
+
+pkt-sidebar {
+    @include ui-mixin.sidebar();
+}
+
+pkt-switch {
+    @include ui-mixin.switch();
+}
+
+pkt-tab, .pkt-tab {
+    @include ui-mixin.tab();
+}
+
+table {
+    @include ui-mixin.table();
+}
+
+pkt-tag, .pkt-tag {
+    @include ui-mixin.tag();
+}
+
+pkt-tag-x {
+    @include ui-mixin.tag();
+    padding-right: 0.2em;
+    pkt-icon {
+        cursor: pointer;
+    }
+}

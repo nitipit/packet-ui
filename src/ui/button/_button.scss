@@ -1,22 +1,28 @@
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
 
 @mixin button(
-        $bg-color: orange,
-        $radius: 4px) {
-    @include mixin.font-ui();
+        $bg-color: map.get($-ui, ui-color),
+        $border-radius: map.get($-ui, border-radius)
+    ) {
     @include mixin.lift-1();
     @include mixin.bg-int-color($bg-color);
+    border-radius: $border-radius;
+    font-family: map.get($-ui, font-family);
+    border: 0;
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
     outline: none;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border: 0;
-    border-radius: $radius;
+    height: 2em;
     padding-left: 0.4em;
     padding-right: 0.4em;
-    height: 2em;
-    font-weight: bold;
-    text-decoration: none;
     cursor: pointer;
     transition: 0.2s;
     box-sizing: border-box;
@@ -36,7 +42,9 @@
     }
 }
 
-@mixin button-pin($bg-color: orange) {
+@mixin button-pin(
+        $bg-color: map.get($-ui, ui-color)
+    ) {
     @include button($bg-color);
     border-radius: 50%;
     width: 2em;
@@ -55,7 +63,9 @@
     }
 }
 
-@mixin button-square($bg-color: orange) {
+@mixin button-square(
+        $bg-color: map.get($-ui, ui-color)
+    ) {
     @include button($bg-color);
     width: 2em;
     height: 2em;

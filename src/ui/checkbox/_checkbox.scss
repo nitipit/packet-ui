@@ -1,11 +1,17 @@
 @use "sass:color";
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_mixin.scss';
+@use '../../_function.scss';
+@use '../../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
 
 @mixin checkbox(
         $bg-color: color.adjust(white, $lightness: -20%),
-        $color-active: orange) {
+        $color-active: map.get($-ui, ui-color)) {
     $size: 1em;
-    @include mixin.font-ui();
+    font-family: map.get($-ui, font-family);
+    font-size: 1em;
     position: relative;
     width: $size;
     height: $size;
@@ -60,11 +66,7 @@
 
     /* Style the checkmark/indicator */
     span:after {
-        @if mixin.darkshade($color-active) {
-            border: solid white;
-        } @else {
-            border: solid black
-        }
+        border: solid function.choose-contrast-color($color-active);
         left: 0.25em;
         width: 0.3em;
         height: 0.6em;

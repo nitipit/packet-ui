@@ -1,7 +1,13 @@
 @use 'sass:color';
-@use '../_mixin';
+@use 'sass:map';
+@use '../../_function.scss';
+@use '../../_theme-default.scss';
 
-@mixin input-radio($color: orange) {
+$-ui: theme-default.$ui !default;
+
+$-ui-color: map.get($-ui, ui-color);
+
+@mixin input-radio($color: $-ui-color) {
     $width: 1.1em;
     $height: 1.1em;
     position: relative;
@@ -63,10 +69,6 @@
         width: 0.4em;
         height: 0.4em;
         border-radius: 50%;
-        @if mixin.darkshade($color) {
-            background-color: white;
-        } @else {
-            background-color: black;
-        }
+        background-color: function.choose-contrast-color($color);
     }
 }

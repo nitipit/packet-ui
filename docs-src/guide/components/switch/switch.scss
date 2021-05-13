@@ -1,6 +1,5 @@
-@use 'sass:map';
-@use '../../../_var';
-@use '../../../_ui';
+@use '../../../theme';
+@use '../../../ui-mixin';
 
 div[data-id="preview"] {
     display: flex;
@@ -9,10 +8,7 @@ div[data-id="preview"] {
     pkt-switch {
         margin: 0.5rem
     }
-    pkt-switch.color-p {
-        @include ui.switch(map.get(var.$scheme, color-p));
-    }
-    pkt-switch.color-a2 {
-        @include ui.switch(map.get(var.$scheme, color-a2));
+    pkt-switch.color-c {
+        @include ui-mixin.switch(theme.pallete(c));
     }
 }

@@ -3,6 +3,9 @@ from pathlib import Path
 import shutil
 
 
+_dir = Path(__file__).parent
+
+
 class PacketUI:
     def __init__(
             self, src_dir: Path,
@@ -12,32 +15,12 @@ class PacketUI:
         self.dist_dir = dist_dir.resolve()
         self.node_modules_dir = node_modules_dir
 
-    async def _src_copy(self):
-        # Copy SCSS
-        src_dir = self.src_dir.joinpath('style')
-        dest_dir = self.dist_dir.joinpath('style')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
-        shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
-        print('Finished')
+    async def build(self):
 
-        # Copy UI JS & SCSS
-        src_dir = self.src_dir.joinpath('ui')
-        dest_dir = self.dist_dir.joinpath('ui')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
-        shutil.copytree(src_dir, dest_dir, dirs_exist_ok=True)
-        print('Finished')
-
-        cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
-            f"{self.node_modules_dir.joinpath('normalize.css/normalize.css')}"
-        print(f'{cmd} ...')
-        proc = await asyncio.create_subprocess_shell(cmd)
-        await proc.communicate()
-        print('Finished')
-
-        # Copy Fonts
+        # Copy fonts
+        print('Copy fonts ...')
         src_dir = self.src_dir.joinpath('font')
         dest_dir = self.dist_dir.joinpath('font')
-        print(f'copy: {src_dir} -> {dest_dir} ...')
         shutil.copytree(
             src_dir,
             dest_dir,
@@ -45,7 +28,13 @@ class PacketUI:
         )
         print('Finished')
 
-    async def build(self):
+        # Copy normalize.css
+        print('Copy normalize.css')
+        src = self.node_modules_dir.joinpath('normalize.css/normalize.css')
+        dest = self.dist_dir.joinpath('normalize.css')
+        shutil.copyfile(src, dest)
+        print('Finished')
+
         # Build packet-ui.js
         cmd = f"npx parcel build --dist-dir {self.dist_dir} " +\
             f"{self.src_dir.joinpath('packet-ui.js')}"
@@ -54,23 +43,21 @@ class PacketUI:
         await proc.communicate()
         print('Finished')
 
-        # Build SCSS
-        cmd = f"npx sass --style=compressed {self.src_dir}:{self.dist_dir}"
+        # Build packet-ui.scss
+        cmd = "npx sass --style=compressed " +\
+            f"{self.src_dir.joinpath('packet-ui.scss')} " +\
+            f"{self.dist_dir.joinpath('packet-ui.css')}"
         print(f'{cmd} ...')
         proc = await asyncio.create_subprocess_shell(cmd)
         await proc.communicate()
         print('Finished')
 
-        # Copy source files
-        await self._src_copy()
-
 
 async def main():
-    base_dir = Path(__file__).parent
     packet_ui = PacketUI(
-        src_dir=base_dir.joinpath('src'),
-        dist_dir=base_dir.joinpath('dist'),
-        node_modules_dir=base_dir.joinpath('node_modules')
+        src_dir=_dir.joinpath('src'),
+        dist_dir=_dir.joinpath('dist'),
+        node_modules_dir=_dir.joinpath('node_modules')
     )
     await packet_ui.build()
 

@@ -1,1 +1,27 @@
-@forward "../style/_mixin";
+@use '../_theme-default.scss';
+
+$-ui: theme-default.$ui !default;
+$-pallete: theme-default.$pallete !default;
+
+@forward 'aspect-ratio/aspect-ratio';
+@forward 'badge/_badge' with($-ui: $-ui);
+@forward 'box-arrow/_box-arrow' with($-ui: $-ui);
+@forward 'button/_button' with($-ui: $-ui);
+@forward 'button-group/_button-group' with($-ui: $-ui);
+@forward 'card/_card' with($-ui: $-ui);
+@forward 'checkbox/_checkbox' with($-ui: $-ui);
+@forward 'input/_input' with($-ui: $-ui);
+@forward 'input-number/_input-number' with($-ui: $-ui);
+@forward 'input-radio/_input-radio' with($-ui: $-ui);
+@forward 'input-radio-btn/_input-radio-btn' with($-ui: $-ui);
+@forward 'input-tag/_input-tag';
+@forward 'menu/_menu' with($-pallete: $-pallete, $-ui: $-ui);
+@forward 'path/_path' with($-ui: $-ui);
+@forward 'progress/_progress-bar' with($-ui: $-ui);
+@forward 'progress/_dotpulse' with($-ui: $-ui);
+@forward 'progress/_spinner' with($-ui: $-ui);
+@forward 'sidebar/_sidebar' with($-ui: $-ui);
+@forward 'switch/_switch' with($-ui: $-ui);
+@forward 'tab/_tab' with($-ui: $-ui);
+@forward 'table/_table' with($-ui: $-ui);
+@forward 'tag/_tag' with($-ui: $-ui);
