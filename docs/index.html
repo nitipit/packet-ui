@@ -167,12 +167,12 @@ on any element to render color with legible text.</p>
 components to make them compact and fast.</p>
 <p><pkt-progress-bar id="progress-bar"></pkt-progress-bar></p>
 <pre><code class="language-javascript">// Javascript
-import * as ui from 'packet-ui';
+import * as ui from 'node_modules/packet-ui/src/ui.js';
 
 customElements.define('pkt-progress-bar', ui.ProgressBar);
 </code></pre>
 <pre><code class="language-scss">// SASS
-@use '/path/to/_ui-mixin.scss';
+@use 'node_modules/packet-ui/src/ui/_mixin.scss';
 
 pkt-progress-bar {
     @include ui-mixin.progress-bar(red);
