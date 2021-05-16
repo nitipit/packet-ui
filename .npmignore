@@ -4,6 +4,6 @@ node_modules
 venv
 .gitignore
 .npmignore
-build.py
+*.py
 require.pip
 yarn.lock
