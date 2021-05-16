@@ -1,6 +1,6 @@
 {
     "name": "packet-ui",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "HTML5 User Interface Framework",
     "keywords": ["html5", "javascript", "css", "ui", "user interface", "framework"],
     "repository": {
