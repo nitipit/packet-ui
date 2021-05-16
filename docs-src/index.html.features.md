@@ -128,14 +128,14 @@ components to make them compact and fast.
 
 ```javascript
 // Javascript
-import * as ui from 'packet-ui';
+import * as ui from 'node_modules/packet-ui/src/ui.js';
 
 customElements.define('pkt-progress-bar', ui.ProgressBar);
 ```
 
 ```scss
 // SASS
-@use '/path/to/_ui-mixin.scss';
+@use 'node_modules/packet-ui/src/ui/_mixin.scss';
 
 pkt-progress-bar {
     @include ui-mixin.progress-bar(red);
