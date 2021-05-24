@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @use "sass:color";
 @use '_function.scss';
 
@@ -61,7 +63,7 @@ $shadow-color: color.adjust(black, $lightness: 25%);
 }
 
 @function strip-unit($value) {
-  @return $value / ($value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }
 
 @mixin font-responsive(
