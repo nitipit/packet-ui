@@ -54,7 +54,7 @@ p {
 }
 
 p + ol, p + ul {
-  margin-top: -1rem;
+  margin-top: 0;
 }
 
 blockquote {

@@ -34,10 +34,10 @@ h3 {font-size: map.get($-text-font-size, h3)};
 h4 {font-size: map.get($-text-font-size, h4)};
 h5 {font-size: map.get($-text-font-size, h5)};
 h6 {font-size: map.get($-text-font-size, h6)};
-p {font-size: map.get($-text-font-size, p)};
+p {font-size: map.get($-text-font-size, normal)};
 
 p + ol, p + ul {
-    margin-top: -1rem;
+    margin-top: 0;
 }
 
 blockquote {
