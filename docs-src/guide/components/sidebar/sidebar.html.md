@@ -29,7 +29,7 @@ window.addEventListener('load', function(){
 </span>
 
 <pkt-sidebar show="1000px">
-    <div el="wrapper" style="background-color: white;">
+    <div el="sidebar" style="background-color: white;">
         <!-- Sidebar contents -->
     </div>
     <div el="overlay"></div>
