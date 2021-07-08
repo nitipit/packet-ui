@@ -982,6 +982,7 @@ pkt-spinner circle {
 pkt-sidebar {
   position: absolute;
   top: 0;
+  left: 0;
 }
 pkt-sidebar [el=sidebar] {
   background-color: #FFC107;
@@ -1003,6 +1004,7 @@ pkt-sidebar [el=sidebar].show {
 pkt-sidebar [el=overlay] {
   position: fixed;
   top: 0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   display: none;

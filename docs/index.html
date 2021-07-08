@@ -7,6 +7,10 @@
     href="./lib/adwaita-icon-web/adwaita.svg?v=27"
     as="image" type="image/svg+xml">
 
+<link icon rel="preload" set="brand"
+    href="./asset/icon/brand/symbol-defs.svg?v=27"
+    as="image" type="image/svg+xml">
+
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-36104934-6"></script>
 <script>
@@ -47,7 +51,7 @@ customElements.define('pkt-icon', Icon);  // define custom element for icons
                 <span style="margin-left: 0.2rem;">Guide</span>
             </a>
             <a class="button" el="github" href="https://github.com/nitipit/packet-ui">
-                <pkt-icon set="brand" name="github"></pkt-icon>
+                <pkt-icon set="brand" name="github" style="margin-top: -0.1rem;"></pkt-icon>
                 <span style="margin-left: 0.2rem;">Github</span>
             </a>
         </div>

@@ -10,4 +10,4 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('css', css);
 hljs.registerLanguage('scss', scss);
 hljs.registerLanguage('shell', shell);
-hljs.initHighlightingOnLoad();
+hljs.highlightAll();
