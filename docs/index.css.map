@@ -1,0 +1,1 @@
+{"mappings":"AAAA;;;;;AAKA;;;;AAIA","sources":["docs-src/index.scss"],"sourcesContent":["@font-face {\n    font-family: fira-sans;\n    src: url('./asset/Fira_Sans/FiraSans-Regular.ttf');\n}\n\nhtml {\n    font-family: fira-sans;\n}\n\nh1 {\n    text-align: center;\n}"],"names":[],"version":3,"file":"index.css.map","sourceRoot":"../"}

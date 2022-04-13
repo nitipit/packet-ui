@@ -1,0 +1,14 @@
+@font-face {
+  font-family: fira-sans;
+  src: url("FiraSans-Regular.3daed8c5.ttf");
+}
+
+html {
+  font-family: fira-sans;
+}
+
+h1 {
+  text-align: center;
+}
+
+/*# sourceMappingURL=index.css.map */
